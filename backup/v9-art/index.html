@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海味山东：从渔港到世界餐桌 · 蓝色创想</title>
+<meta name="description" content="海味山东：从渔港到世界餐桌——山东海洋饮食文化的多语种交互叙事。蓝色创想·以语为桥 数字传播赛道作品。">
+<meta name="theme-color" content="#071b26">
+
+<!-- ===== 社交分享卡片（OG） =====
+     部署后把下面的占位网址（og:url / og:image / twitter:image / canonical）替换成实际网址（含 https://，结尾不要加斜杠）。
+     可运行：powershell -ExecutionPolicy Bypass -File tools/set-site-url.ps1 https://你的域名
+     未部署时保留占位符即可，不影响本地打开和页面运行。 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="海味山东 · 蓝色创想">
+<meta property="og:title" content="海味山东：从渔港到世界餐桌">
+<meta property="og:description" content="四座山东渔港，八道家常海味，六个漂洋过海的词。以语为桥，点击翻页，听见同一片海在不同语言里的名字。">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/preview/og-cover.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="海味山东：从渔港到世界餐桌">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="海味山东：从渔港到世界餐桌">
+<meta name="twitter:description" content="四座山东渔港，八道家常海味，六个漂洋过海的词。以语为桥，点击翻页。">
+<meta name="twitter:image" content="__SITE_URL__/preview/og-cover.jpg">
+<link rel="canonical" href="__SITE_URL__/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071b26'/%3E%3Ccircle cx='32' cy='30' r='17' fill='none' stroke='%2379cfd6' stroke-width='1.5'/%3E%3Cpath d='M12 40c6-5 12-5 20 0s14 5 20 0' fill='none' stroke='%23e7f3f2' stroke-width='1.6'/%3E%3Ctext x='32' y='37' font-size='18' text-anchor='middle' fill='%23e7f3f2' font-family='serif'%3E海%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/deck.css">
+<link rel="stylesheet" href="css/art.css">
+</head>
+<body class="deck">
+
+<noscript>
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;padding:14px 20px;background:#0a2233;color:#e7f3f2;font:14px/1.6 sans-serif;text-align:center;">
+    本作品含交互内容，请启用浏览器 JavaScript 后刷新页面。（海味山东 · 蓝色创想）
+  </div>
+</noscript>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress"><i id="progressBar"></i></div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#home" aria-label="海味山东">
+    <svg class="nav-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M6 30c5-4 9-4 15 0s10 4 15 0" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M6 24c5-4 9-4 15 0s10 4 15 0" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <path d="M24 8v5M24 35v5M8 24h5M35 24h5" stroke="currentColor" stroke-width="1" opacity=".6"/>
+    </svg>
+    <span class="nav-brand-cn">海味山东</span>
+    <span class="nav-brand-en">FLAVORS OF SHANDONG</span>
+  </a>
+
+  <nav class="nav-links" aria-label="章节导航">
+    <a href="#ports" data-i18n="nav_ports"></a>
+    <a href="#lexicon" data-i18n="nav_lex"></a>
+    <a href="#glyph" data-i18n="nav_glyph"></a>
+    <a href="#banquet" data-i18n="nav_banquet"></a>
+    <a href="#tide" data-i18n="nav_tide"></a>
+    <a href="#craft" data-i18n="nav_craft"></a>
+    <a href="#quiz" data-i18n="nav_quiz"></a>
+    <a href="#timeline" data-i18n="nav_time"></a>
+    <a href="#about" data-i18n="nav_about"></a>
+  </nav>
+
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" class="on">中文</button>
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="ja">日本語</button>
+    <button type="button" data-lang="ko">한국어</button>
+  </div>
+</header>
+
+<div class="deck" id="deck">
+<main>
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero" id="home">
+    <div class="hero-waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 420" preserveAspectRatio="none">
+        <path class="w w1" d="M0 250 C 180 210 300 300 480 275 C 660 250 780 175 960 195 C 1140 215 1260 290 1440 260 L1440 420 L0 420 Z"/>
+        <path class="w w2" d="M0 300 C 170 265 320 345 520 320 C 720 295 830 230 1020 255 C 1210 280 1310 340 1440 315 L1440 420 L0 420 Z"/>
+        <path class="w w3" d="M0 355 C 200 325 350 395 560 370 C 770 345 880 300 1070 320 C 1240 338 1340 380 1440 365 L1440 420 L0 420 Z"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner wrap">
+      <div class="hero-copy">
+        <p class="hero-eyebrow"><i></i><span data-i18n="hero_eyebrow"></span></p>
+        <h1 class="hero-title">
+          <span class="ht-cn">海味山东</span>
+          <span class="ht-en">FLAVORS&nbsp;OF&nbsp;SHANDONG</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub"></p>
+        <p class="hero-tag" data-i18n="hero_tag"></p>
+        <p class="hero-desc" data-i18n="hero_desc"></p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#ports"><span data-i18n="hero_btn1"></span><em>→</em></a>
+          <button class="btn btn-ghost" type="button" data-open-ai><span data-i18n="hero_btn2"></span></button>
+        </div>
+
+        <ul class="hero-stats">
+          <li><b>4</b><span data-i18n="hero_stat_1"></span></li>
+          <li><b>8</b><span data-i18n="hero_stat_2"></span></li>
+          <li><b>6</b><span data-i18n="hero_stat_3"></span></li>
+          <li><b>4</b><span data-i18n="hero_stat_4"></span></li>
+        </ul>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg class="compass" viewBox="0 0 600 600">
+          <defs>
+            <path id="circlePath" d="M300,300 m-236,0 a236,236 0 1,1 472,0 a236,236 0 1,1 -472,0"/>
+            <radialGradient id="seaGlow" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="#1d6f7a" stop-opacity=".55"/>
+              <stop offset="60%" stop-color="#0d3a4c" stop-opacity=".18"/>
+              <stop offset="100%" stop-color="#071b26" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="innerSea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0e4457"/>
+              <stop offset="100%" stop-color="#082430"/>
+            </linearGradient>
+          </defs>
+
+          <circle cx="300" cy="300" r="282" fill="url(#seaGlow)"/>
+          <circle cx="300" cy="300" r="272" class="ring ring-a"/>
+          <circle cx="300" cy="300" r="250" class="ring ring-b"/>
+          <circle cx="300" cy="300" r="186" fill="url(#innerSea)" opacity=".45"/>
+          <circle cx="300" cy="300" r="186" class="ring ring-c"/>
+
+          <!-- 刻度 -->
+          <g class="ticks" stroke="currentColor">
+            <line x1="300" y1="18" x2="300" y2="36"/>
+            <line x1="300" y1="564" x2="300" y2="546"/>
+            <line x1="18" y1="300" x2="36" y2="300"/>
+            <line x1="564" y1="300" x2="582" y2="300"/>
+            <line x1="100" y1="100" x2="113" y2="113"/>
+            <line x1="500" y1="100" x2="487" y2="113"/>
+            <line x1="100" y1="500" x2="113" y2="487"/>
+            <line x1="500" y1="500" x2="487" y2="487"/>
+          </g>
+
+          <text class="ring-text">
+            <textPath href="#circlePath" startOffset="0">以语为桥 · A BRIDGE OF LANGUAGES · 蓝色创想 · BLUE IMAGINATION · 海味山东 · FLAVORS OF SHANDONG · </textPath>
+          </text>
+
+          <!-- 中央：帆船与浪 -->
+          <g class="art-boat" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M232 330 l136 0 l-16 30 l-104 0 z"/>
+            <path d="M300 330 V246"/>
+            <path d="M300 252 C 268 268 254 292 254 318 L300 318 Z"/>
+            <path d="M300 252 C 332 268 346 292 346 318 L300 318 Z"/>
+            <path d="M300 322 C 276 340 262 344 240 344"/>
+            <path d="M300 322 C 324 340 338 344 360 344"/>
+            <path d="M252 360 l14 0 M270 368 l22 0 M300 376 l18 0 M326 368 l16 0" opacity=".55"/>
+          </g>
+          <g class="art-waves" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".8">
+            <path d="M180 400 c 22 -18 40 -18 62 0 s 40 18 62 0"/>
+            <path d="M292 412 c 22 -18 40 -18 62 0 s 40 18 62 0" opacity=".7"/>
+          </g>
+
+          <g class="art-star">
+            <circle cx="150" cy="180" r="2.2"/>
+            <circle cx="452" cy="164" r="1.6"/>
+            <circle cx="470" cy="400" r="2"/>
+            <circle cx="136" cy="392" r="1.5"/>
+          </g>
+        </svg>
+
+        <svg class="seal-oval" viewBox="0 0 120 132" aria-hidden="true">
+          <defs>
+            <filter id="sealRough" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <g filter="url(#sealRough)">
+            <g fill="none" stroke="currentColor">
+              <ellipse cx="60" cy="66" rx="51" ry="58" stroke-width="2.4"/>
+              <ellipse cx="60" cy="66" rx="44.5" ry="51.5" stroke-width=".9" opacity=".55"/>
+            </g>
+            <g fill="currentColor" text-anchor="middle" class="seal-chars">
+              <text x="42" y="59" transform="rotate(-1.5 42 59)">以</text>
+              <text x="78" y="59" transform="rotate(1.5 78 59)">语</text>
+              <text x="42" y="99" transform="rotate(1.5 42 99)">为</text>
+              <text x="78" y="99" transform="rotate(-1.5 78 99)">桥</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span data-i18n="scroll_hint"></span>
+      <i></i>
+    </div>
+  </section>
+
+  <!-- ============ 壹 · 港口 ============ -->
+  <section class="section sec-paper" id="ports">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">壹</div>
+        <div class="sec-kicker" data-i18n="s1_kicker"></div>
+        <h2 class="sec-title" data-i18n="s1_title"></h2>
+        <p class="sec-lead" data-i18n="s1_lead"></p>
+      </header>
+
+      <div class="port-layout">
+        <div class="map-card reveal">
+          <div class="map-frame">
+            <svg class="map" viewBox="0 0 760 620" role="img" aria-label="山东半岛手绘示意图">
+              <defs>
+                <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#0a2233" opacity=".16"/>
+                </pattern>
+                <pattern id="seaGrid" width="46" height="46" patternUnits="userSpaceOnUse">
+                  <path d="M46 0 H0 V46" fill="none" stroke="#0a2233" stroke-width=".5" opacity=".07"/>
+                </pattern>
+                <pattern id="coastHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="#0a2233" stroke-width=".8" stroke-opacity=".3"/>
+                </pattern>
+                <pattern id="seaWave" width="34" height="18" patternUnits="userSpaceOnUse">
+                  <path d="M2 9 q 5 -4 10 0" fill="none" stroke="#1e6f7a" stroke-width=".9" stroke-opacity=".22"/>
+                  <path d="M18 15 q 4 -3 8 0" fill="none" stroke="#1e6f7a" stroke-width=".9" stroke-opacity=".14"/>
+                </pattern>
+                <linearGradient id="landFill" x1="0" y1="0" x2=".2" y2="1">
+                  <stop offset="0%" stop-color="#f2e9d8"/>
+                  <stop offset="55%" stop-color="#eaddc7"/>
+                  <stop offset="100%" stop-color="#ddcdb1"/>
+                </linearGradient>
+                <linearGradient id="seaFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#e9f3f1"/>
+                  <stop offset="60%" stop-color="#dbeae8"/>
+                  <stop offset="100%" stop-color="#cde2e0"/>
+                </linearGradient>
+                <linearGradient id="fadeWest" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#e6f0ee" stop-opacity=".95"/>
+                  <stop offset=".55" stop-color="#e6f0ee" stop-opacity=".62"/>
+                  <stop offset="1" stop-color="#e6f0ee" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#0a2233" flood-opacity=".16"/>
+                </filter>
+              </defs>
+
+              <!-- 海 -->
+              <rect width="760" height="620" fill="url(#seaFill)"/>
+              <rect width="760" height="620" fill="url(#seaGrid)"/>
+              <rect width="760" height="620" fill="url(#seaWave)"/>
+
+              <!-- 海流 -->
+              <g class="sea-currents" fill="none" stroke="#1e6f7a" stroke-width="1.1" stroke-opacity=".24">
+                <path d="M340 110 C 430 130 516 108 606 142 C 668 166 704 196 722 230"/>
+                <path d="M392 146 C 476 166 556 152 632 182"/>
+                <path d="M486 468 C 552 492 616 496 682 522"/>
+                <path d="M64 512 C 142 544 210 532 288 558"/>
+              </g>
+
+              <!-- 海域名 -->
+              <text x="238" y="128" class="sea-label">渤 海</text>
+              <text x="644" y="540" class="sea-label">黄 海</text>
+              <text x="452" y="418" class="sea-small" text-anchor="end">胶州湾</text>
+              <text x="392" y="296" class="sea-small">莱州湾</text>
+              <text x="498" y="162" class="sea-small">长 山 列 岛</text>
+              <text x="714" y="60" class="map-title" text-anchor="end">山东半岛</text>
+              <text x="714" y="76" class="map-title-en" text-anchor="end">SHANDONG PENINSULA</text>
+
+              <!-- 黄海上的一只小帆船 -->
+              <g transform="translate(596 476) scale(.62)" opacity=".5">
+                <path d="M0 -34 V6" stroke="#1e6f7a" stroke-opacity=".6" stroke-width="1.6"/>
+                <path d="M3 -30 C 20 -20 24 -8 24 4 L 24 8 C 16 6 10 5 3 5 Z" fill="#1e6f7a" fill-opacity=".22" stroke="#1e6f7a" stroke-opacity=".45"/>
+                <path d="M-3 -26 C -16 -16 -20 -6 -20 4 L -20 8 C -14 6 -10 5 -3 5 Z" fill="#1e6f7a" fill-opacity=".16" stroke="#1e6f7a" stroke-opacity=".35"/>
+                <path d="M-24 8 C -13 19 13 19 24 8 C 20 20 10 24 0 24 C -10 24 -20 20 -24 8 Z" fill="#1e6f7a" fill-opacity=".3" stroke="#1e6f7a" stroke-opacity=".5"/>
+              </g>
+
+              <!-- 庙岛群岛 -->
+              <g fill="#8fb9b6" opacity=".8" stroke="#0a2233" stroke-opacity=".22" stroke-width=".6">
+                <ellipse cx="470" cy="198" rx="4.6" ry="2.6"/>
+                <ellipse cx="482" cy="189" rx="3.4" ry="2"/>
+                <ellipse cx="492" cy="182" rx="2.4" ry="1.5"/>
+                <ellipse cx="501" cy="176" rx="1.7" ry="1.1"/>
+              </g>
+              <!-- 石岛外的小岛 -->
+              <g fill="#8fb9b6" opacity=".7" stroke="#0a2233" stroke-opacity=".2" stroke-width=".5">
+                <ellipse cx="706" cy="342" rx="3.2" ry="2"/>
+                <ellipse cx="713" cy="352" rx="2" ry="1.3"/>
+                <ellipse cx="508" cy="432" rx="3.6" ry="2.2"/>
+              </g>
+
+              <!-- 陆地 -->
+              <path class="land" filter="url(#softShadow)" d="M 148 196
+  C 176 188 200 200 214 216
+  C 222 226 229 213 237 224
+  C 247 235 253 217 263 230
+  C 278 245 292 262 308 278
+  C 322 292 336 306 352 308
+  C 366 309 374 294 386 282
+  C 402 266 422 250 443 240
+  C 459 232 477 226 495 220
+  C 509 216 521 222 533 228
+  C 549 234 563 240 579 248
+  C 597 257 617 265 635 275
+  C 649 283 665 288 679 294
+  C 693 300 701 310 691 318
+  C 681 326 665 329 651 334
+  C 635 340 621 346 605 354
+  C 590 361 574 360 566 366
+  C 560 371 566 378 556 379
+  C 538 381 521 388 508 394
+  C 499 399 492 406 483 411
+  C 474 417 465 426 458 436
+  C 453 444 449 452 443 462
+  C 435 474 421 486 403 496
+  C 383 506 359 512 335 518
+  C 307 524 281 530 255 538
+  C 227 546 197 556 169 570
+  C 143 582 97 598 41 610 L 0 616 L 0 140 L 110 172 Z" fill="url(#landFill)"/>
+              <path class="land-dots" d="M 148 196
+  C 176 188 200 200 214 216
+  C 222 226 229 213 237 224
+  C 247 235 253 217 263 230
+  C 278 245 292 262 308 278
+  C 322 292 336 306 352 308
+  C 366 309 374 294 386 282
+  C 402 266 422 250 443 240
+  C 459 232 477 226 495 220
+  C 509 216 521 222 533 228
+  C 549 234 563 240 579 248
+  C 597 257 617 265 635 275
+  C 649 283 665 288 679 294
+  C 693 300 701 310 691 318
+  C 681 326 665 329 651 334
+  C 635 340 621 346 605 354
+  C 590 361 574 360 566 366
+  C 560 371 566 378 556 379
+  C 538 381 521 388 508 394
+  C 499 399 492 406 483 411
+  C 474 417 465 426 458 436
+  C 453 444 449 452 443 462
+  C 435 474 421 486 403 496
+  C 383 506 359 512 335 518
+  C 307 524 281 530 255 538
+  C 227 546 197 556 169 570
+  C 143 582 97 598 41 610 L 0 616 L 0 140 L 110 172 Z" fill="url(#dots)"/>
+
+              <!-- 海岸晕染：排纹 + 双线 -->
+              <path class="land-coast-wash" d="M 148 196
+  C 176 188 200 200 214 216
+  C 222 226 229 213 237 224
+  C 247 235 253 217 263 230
+  C 278 245 292 262 308 278
+  C 322 292 336 306 352 308
+  C 366 309 374 294 386 282
+  C 402 266 422 250 443 240
+  C 459 232 477 226 495 220
+  C 509 216 521 222 533 228
+  C 549 234 563 240 579 248
+  C 597 257 617 265 635 275
+  C 649 283 665 288 679 294
+  C 693 300 701 310 691 318
+  C 681 326 665 329 651 334
+  C 635 340 621 346 605 354
+  C 590 361 574 360 566 366
+  C 560 371 566 378 556 379
+  C 538 381 521 388 508 394
+  C 499 399 492 406 483 411
+  C 474 417 465 426 458 436
+  C 453 444 449 452 443 462
+  C 435 474 421 486 403 496
+  C 383 506 359 512 335 518
+  C 307 524 281 530 255 538
+  C 227 546 197 556 169 570
+  C 143 582 97 598 41 610"
+                fill="none" stroke="url(#coastHatch)" stroke-width="14" stroke-opacity=".6"/>
+              <path class="land-coast" d="M 148 196
+  C 176 188 200 200 214 216
+  C 222 226 229 213 237 224
+  C 247 235 253 217 263 230
+  C 278 245 292 262 308 278
+  C 322 292 336 306 352 308
+  C 366 309 374 294 386 282
+  C 402 266 422 250 443 240
+  C 459 232 477 226 495 220
+  C 509 216 521 222 533 228
+  C 549 234 563 240 579 248
+  C 597 257 617 265 635 275
+  C 649 283 665 288 679 294
+  C 693 300 701 310 691 318
+  C 681 326 665 329 651 334
+  C 635 340 621 346 605 354
+  C 590 361 574 360 566 366
+  C 560 371 566 378 556 379
+  C 538 381 521 388 508 394
+  C 499 399 492 406 483 411
+  C 474 417 465 426 458 436
+  C 453 444 449 452 443 462
+  C 435 474 421 486 403 496
+  C 383 506 359 512 335 518
+  C 307 524 281 530 255 538
+  C 227 546 197 556 169 570
+  C 143 582 97 598 41 610"
+                fill="none" stroke="#0a2233" stroke-width="1.8" stroke-opacity=".7"/>
+              <path class="land-coast2" d="M 148 196
+  C 176 188 200 200 214 216
+  C 222 226 229 213 237 224
+  C 247 235 253 217 263 230
+  C 278 245 292 262 308 278
+  C 322 292 336 306 352 308
+  C 366 309 374 294 386 282
+  C 402 266 422 250 443 240
+  C 459 232 477 226 495 220
+  C 509 216 521 222 533 228
+  C 549 234 563 240 579 248
+  C 597 257 617 265 635 275
+  C 649 283 665 288 679 294
+  C 693 300 701 310 691 318
+  C 681 326 665 329 651 334
+  C 635 340 621 346 605 354
+  C 590 361 574 360 566 366
+  C 560 371 566 378 556 379
+  C 538 381 521 388 508 394
+  C 499 399 492 406 483 411
+  C 474 417 465 426 458 436
+  C 453 444 449 452 443 462
+  C 435 474 421 486 403 496
+  C 383 506 359 512 335 518
+  C 307 524 281 530 255 538
+  C 227 546 197 556 169 570
+  C 143 582 97 598 41 610"
+                fill="none" stroke="#0a2233" stroke-width=".6" stroke-opacity=".28" transform="translate(1.6,2.4)"/>
+
+              <!-- 胶州湾：内湾细线 -->
+              <g fill="none" stroke="#0a2233" stroke-opacity=".26" stroke-width=".9">
+                <path d="M508 394 C 497 400 489 406 481 411 C 472 417 464 425 458 434"/>
+                <path d="M501 401 C 494 407 487 411 480 416"/>
+              </g>
+
+              <!-- 西侧内陆淡出，视线收向海岸 -->
+              <rect x="0" y="0" width="230" height="620" fill="url(#fadeWest)"/>
+
+              <!-- 黄河与三角洲 -->
+              <path d="M0 292 C 52 282 96 262 136 244 C 172 228 204 226 236 224"
+                fill="none" stroke="#1e6f7a" stroke-width="1.8" stroke-opacity=".55"/>
+              <path d="M236 224 c 7 5 12 1 14 7 M232 219 c 5 5 9 1 11 7 M240 229 c 4 4 7 2 9 7"
+                fill="none" stroke="#1e6f7a" stroke-width="1" stroke-opacity=".45"/>
+              <text x="150" y="266" class="river-label">黄 河</text>
+
+              <!-- 山脊 -->
+              <path class="land-ridge" d="M96 402 C 158 368 214 352 272 348 C 318 346 350 356 384 368"
+                fill="none" stroke="#0a2233" stroke-width=".8" stroke-dasharray="1 6" opacity=".2"/>
+              <path class="land-ridge" d="M94 432 C 148 410 196 402 246 404 C 286 406 318 418 344 430"
+                fill="none" stroke="#0a2233" stroke-width=".8" stroke-dasharray="1 6" opacity=".14"/>
+              <text x="272" y="396" class="land-label">山 东</text>
+              <text x="132" y="482" class="land-small">沂 蒙</text>
+
+              <!-- 航线 -->
+              <path id="seaRoute" class="route" d="M533 226
+                C 592 186 666 212 684 272
+                C 696 318 644 356 586 372
+                C 546 383 514 392 492 402
+                C 474 412 458 434 448 446"
+                fill="none" stroke="#b8452f" stroke-width="1.5" stroke-dasharray="7 9" stroke-opacity=".7"/>
+
+              <!-- 罗盘 -->
+              <g class="map-compass" transform="translate(86,88)" fill="none" stroke="#0a2233" stroke-width="1">
+                <circle r="30" opacity=".4"/>
+                <circle r="20" opacity=".22"/>
+                <path d="M0 -30 V-42 M0 30 V42 M-30 0 H-42 M30 0 H42" opacity=".4"/>
+                <path d="M0 -18 L6 6 L0 2 L-6 6 Z" fill="#b8452f" stroke="none"/>
+                <g stroke="none" fill="#b8452f" opacity=".3">
+                  <circle cx="21" cy="21" r="1.6"/><circle cx="-21" cy="21" r="1.6"/>
+                </g>
+                <text x="0" y="-48" text-anchor="middle" font-size="11" fill="#0a2233" stroke="none" letter-spacing="2">N</text>
+              </g>
+
+              <!-- 港口由 JS 渲染 -->
+              <g id="portLayer"></g>
+            </svg>
+          </div>
+
+          <div class="map-meta">
+            <p class="map-hint"><i class="dot"></i><span data-i18n="map_hint"></span></p>
+            <p class="map-disclaimer" data-i18n="map_disclaimer"></p>
+          </div>
+        </div>
+
+        <aside class="port-panel" id="portPanel" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 贰 · 词源 ============ -->
+  <section class="section sec-dark" id="lexicon">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">贰</div>
+        <div class="sec-kicker" data-i18n="s2_kicker"></div>
+        <h2 class="sec-title" data-i18n="s2_title"></h2>
+        <p class="sec-lead" data-i18n="s2_lead"></p>
+      </header>
+      <p class="hint-line reveal"><span data-i18n="lex_hint"></span><i>↻</i></p>
+      <div class="lex-grid" id="lexGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 叁 · 解字「鲜」 ============ -->
+  <section class="section sec-dark sec-glyph" id="glyph">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">叁</div>
+        <div class="sec-kicker" data-i18n="s_glyph_kicker"></div>
+        <h2 class="sec-title" data-i18n="s_glyph_title"></h2>
+        <p class="sec-lead" data-i18n="s_glyph_lead"></p>
+      </header>
+
+      <div class="glyph-layout">
+        <div class="glyph-art reveal" id="glyphArt"></div>
+        <div class="glyph-copy reveal">
+          <p class="glyph-body" data-i18n="s_glyph_body"></p>
+          <p class="glyph-body" data-i18n="s_glyph_body2"></p>
+          <ul class="glyph-words" id="glyphWords"></ul>
+          <p class="glyph-note" data-i18n="s_glyph_note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 肆 · 宴席 ============ -->
+  <section class="section sec-paper" id="banquet">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">肆</div>
+        <div class="sec-kicker" data-i18n="s3_kicker"></div>
+        <h2 class="sec-title" data-i18n="s3_title"></h2>
+        <p class="sec-lead" data-i18n="s3_lead"></p>
+      </header>
+      <p class="hint-line reveal"><span data-i18n="banquet_hint"></span><i>↗</i></p>
+      <div class="dish-grid" id="dishGrid"></div>
+      <div class="table-line" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ============ 伍 · 四时 ============ -->
+  <section class="section sec-paper sec-tide" id="tide">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">伍</div>
+        <div class="sec-kicker" data-i18n="s_tide_kicker"></div>
+        <h2 class="sec-title" data-i18n="s_tide_title"></h2>
+        <p class="sec-lead" data-i18n="s_tide_lead"></p>
+      </header>
+
+      <div class="tide-layout">
+        <div class="tide-wheel reveal" id="tideWheel" role="img" aria-label="四时海味"></div>
+        <div class="tide-panel reveal">
+          <div class="tide-tabs" id="tideTabs"></div>
+          <div class="tide-body" id="tideBody"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 陆 · 工序 ============ -->
+  <section class="section sec-dark sec-craft" id="craft">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">陆</div>
+        <div class="sec-kicker" data-i18n="s4_kicker"></div>
+        <h2 class="sec-title" data-i18n="s4_title"></h2>
+        <p class="sec-lead" data-i18n="s4_lead"></p>
+      </header>
+
+      <div class="craft-rail">
+        <div class="rail-line" aria-hidden="true"><i></i></div>
+        <div class="craft-grid" id="craftGrid"></div>
+      </div>
+      <p class="craft-note reveal"><i></i><span data-i18n="craft_note"></span></p>
+    </div>
+  </section>
+
+  <!-- ============ 柒 · 词源侦探 ============ -->
+  <section class="section sec-paper" id="quiz">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">柒</div>
+        <div class="sec-kicker" data-i18n="s5_kicker"></div>
+        <h2 class="sec-title" data-i18n="s5_title"></h2>
+        <p class="sec-lead" data-i18n="s5_lead"></p>
+      </header>
+      <div class="quiz-shell reveal">
+        <div class="quiz-box" id="quizBox"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 捌 · 年表 ============ -->
+  <section class="section sec-dark" id="timeline">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-no">捌</div>
+        <div class="sec-kicker" data-i18n="s6_kicker"></div>
+        <h2 class="sec-title" data-i18n="s6_title"></h2>
+        <p class="sec-lead" data-i18n="s6_lead"></p>
+      </header>
+
+      <div class="time-head reveal">
+        <p class="time-hint"><span data-i18n="time_drag"></span></p>
+        <div class="time-nav">
+          <button type="button" id="timePrev" aria-label="上一页">←</button>
+          <button type="button" id="timeNext" aria-label="下一页">→</button>
+        </div>
+      </div>
+
+      <div class="time-track" id="timeTrack" tabindex="0"></div>
+      <div class="time-dots" id="timeDots"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 尾页 ============ -->
+<footer class="footer" id="about">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="reveal">
+        <p class="footer-kicker">01 · CONCEPT</p>
+        <h3 data-i18n="about_concept_title"></h3>
+        <p data-i18n="about_concept"></p>
+      </div>
+      <div class="reveal">
+        <p class="footer-kicker">02 · REFERENCES</p>
+        <h3 data-i18n="about_ref_title"></h3>
+        <ul class="refs" id="refList"></ul>
+        <p class="tiny" data-i18n="about_ref_note"></p>
+      </div>
+      <div class="reveal">
+        <p class="footer-kicker">03 · TEAM</p>
+        <h3 data-i18n="about_team_title"></h3>
+        <p data-i18n="about_team"></p>
+        <p class="muted" data-i18n="about_team2"></p>
+        <button class="btn btn-ghost btn-small" type="button" data-open-ai>
+          <span data-i18n="about_ai_btn"></span>
+        </button>
+        <p class="tiny" data-i18n="about_ai_note"></p>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-note" data-i18n="footer_note"></span>
+      <button class="to-top" type="button" id="toTop" aria-label="回到顶部">↑</button>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- ============ AI 说明 ============ -->
+<div class="modal" id="aiModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-ai></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="aiTitle">
+    <button class="modal-x" type="button" data-close-ai aria-label="关闭">×</button>
+    <p class="modal-kicker">AI · CREATION NOTE</p>
+    <h2 id="aiTitle" data-i18n="ai_title"></h2>
+    <p class="modal-note" data-i18n="ai_note"></p>
+    <div class="modal-body" id="aiBody"></div>
+    <button class="btn btn-primary btn-block" type="button" data-close-ai>
+      <span data-i18n="ai_close"></span>
+    </button>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/art.js"></script>
+</body>
+</html>

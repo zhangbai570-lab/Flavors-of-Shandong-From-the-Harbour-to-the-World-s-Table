@@ -67,7 +67,7 @@ window.SITE = {
     {
       id: "weihai",
       no: "03",
-      x: 652, y: 300, labelDx: -14, labelDy: 6, labelAnchor: "end",
+      x: 652, y: 300, labelDx: -16, labelDy: 8, labelAnchor: "end",
       name: { zh: "威海", en: "Weihai", ja: "威海", ko: "웨이하이" },
       en: "WEIHAI",
       region: { zh: "胶东 · 家常", en: "JIAODONG · HOME TABLE", ja: "膠東 · 家庭", ko: "자오둥 · 집밥" },
@@ -522,6 +522,126 @@ window.SITE = {
         en: "Qingdao and Yantai joined the first wave of open coastal cities, and Shandong seafood reached tables in Japan, Korea, Europe and America. Today cold chains and prepared dishes write the next route.",
         ja: "青島と煙台は最初の沿海開放都市に選ばれ、山東の海産物は日韓・欧米の食卓へ。今はコールドチェーンと調理済み食品が新しい航路を描いています。",
         ko: "칭다오와 옌타이는 첫 연해 개방 도시가 되었고, 산둥 해산물은 한일과 구미의 식탁에 올랐습니다. 오늘은 콜드체인과 간편식이 새로운 항로를 씁니다."
+      }
+    }
+  ],
+
+  /* ---------- 伍 · 四时（一年绕海一圈） ---------- */
+  seasons: [
+    {
+      id: "spring", no: "01",
+      season: { zh: "春", en: "Spring", ja: "春", ko: "봄" },
+      dish: { zh: "鲅鱼", en: "Mackerel", ja: "サワラ", ko: "삼치" },
+      word: {
+        zh: "鲅鱼 bà yú",
+        en: "Japanese Spanish mackerel",
+        ja: "サワラ（鰆）",
+        ko: "삼치"
+      },
+      line: {
+        zh: "春天鲅鱼洄游到近岸产卵，肉最厚。胶东的老话是「鲅鱼跳，丈人笑」——女婿提着最新鲜的一条去看岳父。",
+        en: "In spring the mackerel runs inshore to spawn, its flesh at its thickest. Jiaodong has a saying: when the mackerel jumps, the father-in-law smiles — the son-in-law brings the freshest fish to his wife's parents.",
+        ja: "春、サワラは産卵のために沿岸へ寄り、身が最も厚くなります。膠東の言い習わしは「サワラが跳ねれば、義父が笑う」。婿が一番新しい一尾を義父母へ届けるのです。",
+        ko: "봄이면 삼치가 산란을 위해 연안으로 들어와 살이 가장 두툼해집니다. 자오둥의 옛말은 '삼치가 뛰면 장인이 웃는다'—사위가 가장 신선한 한 마리를 장인댁에 갖다 드립니다."
+      },
+      note: {
+        zh: "同一条鱼，英语叫 Japanese Spanish mackerel，日语サワラ，韩语삼치。谁给谁命名，常常取决于谁的船先到。",
+        en: "One fish, three names: Japanese Spanish mackerel in English, sawara in Japanese, samchi in Korean. Who names whom often depends on whose boat arrived first.",
+        ja: "同じ魚が、英語では Japanese Spanish mackerel、日本語ではサワラ、韓国語では삼치。誰が誰に名をつけるかは、どちらの船が先に着いたかで決まります。",
+        ko: "같은 물고기가 영어로는 Japanese Spanish mackerel, 일본어로는 사와라, 한국어로는 삼치입니다. 누가 누구에게 이름을 붙이는지는 어느 배가 먼저 닿았는지로 갈립니다."
+      },
+      meta: {
+        zh: "农历三月 · 谷雨前后",
+        en: "THIRD LUNAR MONTH · AROUND GUYU",
+        ja: "旧暦三月 · 穀雨のころ",
+        ko: "음력 3월 · 곡우 무렵"
+      }
+    },
+    {
+      id: "summer", no: "02",
+      season: { zh: "夏", en: "Summer", ja: "夏", ko: "여름" },
+      dish: { zh: "蛤蜊", en: "Clams", ja: "アサリ", ko: "바지락" },
+      word: {
+        zh: "蛤蜊 gé lí · 青岛话「嘎啦」",
+        en: "clam",
+        ja: "アサリ",
+        ko: "바지락"
+      },
+      line: {
+        zh: "夏夜的青岛，散啤装塑料袋，辣炒嘎啦装铁盘。蛤蜊在胶东话里叫「嘎啦」，两个音节，像壳与壳相碰。",
+        en: "On a Qingdao summer night, draught beer comes in a plastic bag and spicy clams in an iron pan. The Jiaodong dialect calls a clam 'gá la' — two syllables knocking like shells.",
+        ja: "夏の夜の青島。生ビールはビニール袋に、アサリの辛炒めは鉄板に。膠東方言ではアサリを「嘎啦」と呼び、貝と貝がぶつかる音のようです。",
+        ko: "여름밤 칭다오에서는 생맥주를 비닐봉지에, 매운 바지락 볶음을 철판에 담습니다. 자오둥 방언의 '嘎啦'는 껍데기끼리 부딪는 두 음절입니다."
+      },
+      note: {
+        zh: "英语 clam 在古英语里是「夹紧」的意思。一只合上壳的蛤蜊，就是一把小锁。",
+        en: "English 'clam' comes from an Old English word meaning to clamp or grip. A closed clam is, quite literally, a small lock.",
+        ja: "英語 clam は古英語で「締めつける」の意。殻を閉じたアサリは、小さな錠前なのです。",
+        ko: "영어 clam은 고대 영어에서 '꽉 집다'를 뜻했습니다. 껍데기를 닫은 바지락은 작은 자물쇠입니다."
+      },
+      meta: {
+        zh: "六月至八月 · 退潮后的滩涂",
+        en: "JUNE–AUGUST · TIDAL FLATS AT LOW TIDE",
+        ja: "六月から八月 · 干潟",
+        ko: "6월에서 8월 · 썰물의 갯벌"
+      }
+    },
+    {
+      id: "autumn", no: "03",
+      season: { zh: "秋", en: "Autumn", ja: "秋", ko: "가을" },
+      dish: { zh: "梭子蟹", en: "Swimming Crab", ja: "ワタリガニ", ko: "꽃게" },
+      word: {
+        zh: "梭子蟹 suō zi xiè",
+        en: "swimming crab",
+        ja: "ワタリガニ（渡り蟹）",
+        ko: "꽃게"
+      },
+      line: {
+        zh: "秋风一起，莱州湾的梭子蟹开始囤膏。清蒸最好，任何调料都嫌多。",
+        en: "When the autumn wind rises, swimming crabs in Laizhou Bay begin to fill with roe. Steam them plain — any seasoning is one too many.",
+        ja: "秋風が吹くと、萊州湾のワタリガニは膏を蓄えます。蒸すだけが一番。薬味はどれも余計です。",
+        ko: "가을바람이 불면 라이저우만의 꽃게가 알을 채웁니다. 찌는 것이 가장 좋고, 어떤 양념도 과합니다."
+      },
+      note: {
+        zh: "梭子蟹学名 Portunus trituberculatus，英语常译 swimming crab：它会游，也横着走。",
+        en: "Its scientific name is Portunus trituberculatus, often rendered 'swimming crab' — it swims, and it also walks sideways.",
+        ja: "学名は Portunus trituberculatus。英語では swimming crab と訳されます。泳ぎもすれば、横歩きもします。",
+        ko: "학명은 Portunus trituberculatus, 영어로는 swimming crab입니다. 헤엄도 치고 옆으로도 걷습니다."
+      },
+      meta: {
+        zh: "九月至十一月 · 莱州湾",
+        en: "SEPTEMBER–NOVEMBER · LAIZHOU BAY",
+        ja: "九月から十一月 · 萊州湾",
+        ko: "9월에서 11월 · 라이저우만"
+      }
+    },
+    {
+      id: "winter", no: "04",
+      season: { zh: "冬", en: "Winter", ja: "冬", ko: "겨울" },
+      dish: { zh: "牡蛎", en: "Oysters", ja: "カキ", ko: "굴" },
+      word: {
+        zh: "牡蛎 mǔ lì · 乳山牡蛎",
+        en: "oyster",
+        ja: "カキ（牡蠣）",
+        ko: "굴"
+      },
+      line: {
+        zh: "冬天的牡蛎最甜。乳山一带把蛎子养在潮间带，冷水期它们把养分存成糖原，肉才肥。",
+        en: "Winter oysters are the sweetest. Around Rushan they are farmed on the tidal flats; through the cold months they store their food as glycogen, and the flesh turns plump.",
+        ja: "冬のカキは最も甘い。乳山周辺では潮間帯で養殖し、冷水期に養分をグリコーゲンとして蓄えるため身が肥えます。",
+        ko: "겨울 굴이 가장 답니다. 루산 일대에서는 조간대에서 굴을 기르는데, 찬물철에 양분을 글리코겐으로 저장해 살이 통통해집니다."
+      },
+      note: {
+        zh: "牡蛎有两个常用的英语名字：oyster 指上桌的那一只，Ostrea 是它的属名。",
+        en: "Two English names: oyster for the one on your plate, Ostrea for its genus.",
+        ja: "英語の名前は二つ。食卓に上るのが oyster、属名が Ostrea。",
+        ko: "영어 이름은 둘. 식탁에 오르는 것이 oyster, 속명이 Ostrea입니다."
+      },
+      meta: {
+        zh: "十二月至二月 · 潮间带",
+        en: "DECEMBER–FEBRUARY · INTERTIDAL ZONE",
+        ja: "十二月から二月 · 潮間帯",
+        ko: "12월에서 2월 · 조간대"
       }
     }
   ],
