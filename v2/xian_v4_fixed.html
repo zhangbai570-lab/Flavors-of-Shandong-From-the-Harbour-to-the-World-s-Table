@@ -280,6 +280,122 @@ section.active{visibility:visible;pointer-events:auto}
   #voyageStorySheet::backdrop{background:#051827a8}
   .voyage-sheet-close{display:block;border:1px solid #c8af83;border-radius:16px;background:#fffbf3;color:#713a13;padding:6px 11px}
 }
+
+/* LANGUAGE_PAGE_START */
+/* Scoped to the new language page and seventh-page placeholder. */
+#s6,#s7{background:linear-gradient(180deg,var(--deep1),var(--deep2) 90%);color:#eaf6ff;overflow-y:auto;padding:clamp(24px,5vh,50px) 6vw 110px;font-family:"Noto Serif SC","Songti SC","Malgun Gothic",serif}
+#s6{background:radial-gradient(ellipse at 30% -10%,rgba(90,170,220,.28),transparent 55%),linear-gradient(180deg,var(--deep1),var(--deep2) 90%)}
+#s7{background:linear-gradient(180deg,var(--deep1),var(--deep2) 90%)}
+#s6 .language-content{position:relative;z-index:1;max-width:1280px;margin:auto}
+#s6 h1,#s7 h1{font-size:clamp(24px,3vw,38px);font-weight:600;color:#ffe3a3;line-height:1.6}
+#s6 .language-header p,#s7 p{margin-top:12px;line-height:1.9;color:#bad8e8;font-size:15px}
+#s6 .language-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,1fr);gap:clamp(24px,5vw,70px);align-items:center;margin-top:clamp(24px,5vh,52px)}
+#s6 .language-stage{height:clamp(240px,38vh,390px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border-bottom:1px solid #63889955}
+#s6 .language-glyphs{display:flex;gap:.14em;align-items:center;justify-content:center;font-size:clamp(100px,12vw,190px);line-height:1.2;color:#fff3d4;white-space:nowrap}
+#s6 .language-glyph-note{font-size:14px;color:#b0d0df;line-height:1.7;text-align:center;min-height:24px}
+#s6 .language-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+#s6 .language-buttons button,#s6 .language-audio{font:inherit;font-size:14px;padding:10px 18px;border:1px solid #b7cbd288;border-radius:24px;background:#12354b;color:#eaf6ff;cursor:pointer}
+#s6 .language-buttons button[aria-pressed="true"]{background:#ffe3a3;color:#18394a;border-color:#ffe3a3}
+#s6 button:focus-visible{outline:2px solid #ffe3a3;outline-offset:4px}
+#s6 .language-info{padding:clamp(20px,3vw,34px);border:1px solid #8bb3c244;border-radius:18px;background:#0a263cb3;line-height:1.9;min-height:350px}
+#s6 .language-info h2{font-size:24px;color:#ffe3a3;margin-bottom:14px}
+#s6 .language-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 16px;font-size:15px;margin-bottom:18px}
+#s6 .language-facts dt{color:#97bfce}
+#s6 .language-facts dd{margin:0;overflow-wrap:anywhere}
+#s6 .language-description{font-size:15px;color:#d1e5ef;line-height:2}
+#s6 .language-audio{margin-top:22px}
+#s6 .language-audio:disabled{opacity:.65;cursor:default}
+#s6 .language-audio-note{font-size:12px;color:#9fc2d3;margin-top:10px;line-height:1.8}
+#s6 .language-header,#s6 .language-stage,#s6 .language-info,#s6 .language-buttons button{opacity:0;visibility:hidden}
+#s6 .language-ripple{position:absolute;inset:0;pointer-events:none;opacity:.18;background:repeating-radial-gradient(ellipse at 10% 70%,transparent 0 62px,#91d7e719 64px 65px,transparent 68px 118px)}
+.page-nav[data-page="6"],.page-nav[data-page="7"]{color:#eaf6ff}
+@media(max-width:700px){#s6{padding:24px 6vw 110px}#s6 .language-layout{grid-template-columns:1fr;gap:28px;margin-top:20px}#s6 .language-stage{height:240px}#s6 .language-glyphs{font-size:112px}#s6 .language-info{min-height:0}#s6 .language-buttons button{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){#s6 .language-ripple{display:none}}
+
+/* LANGUAGE_PAGE_END */
+
+/* UMAMI_LAB_CSS_START */
+/* All laboratory styles are scoped to page seven. */
+#s7{background:radial-gradient(ellipse at 50% 40%,#fff9e8 0%,#f0e1c4 70%,#dfc49a);color:#193b4e;padding:clamp(24px,4vh,44px) 5vw 120px;overflow-y:auto}
+#s7 .lab-content{max-width:1380px;margin:auto}
+#s7 .lab-eyebrow{font-size:12px;letter-spacing:.25em;color:#8a653d;margin:0}
+#s7 h1{font-size:clamp(26px,3vw,40px);line-height:1.5;color:#193b4e;margin:8px 0}
+#s7 p{color:#526571;font-size:14px;line-height:1.9;margin-top:8px}
+#s7 h2{font-size:19px;line-height:1.6;font-weight:600;color:#193b4e}
+#s7 .lab-layout{display:grid;grid-template-columns:minmax(240px,1fr) minmax(260px,1.2fr) minmax(260px,1fr);gap:clamp(20px,3vw,46px);align-items:center;margin-top:32px}
+#s7 .lab-ingredients{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+#s7 .lab-card{font:inherit;text-align:left;background:#fffcf2;border:1px solid #c7b28a;border-radius:14px;padding:14px 12px;color:#193b4e;cursor:pointer;transition:background .2s,border-color .2s;min-width:0}
+#s7 .lab-card[aria-pressed="true"]{background:#e4eee5;border:2px solid #52785d;padding:13px 11px}
+#s7 .lab-card:focus-visible,#s7 .lab-reset:focus-visible,#s7 summary:focus-visible{outline:3px solid #ad7427;outline-offset:4px}
+#s7 .lab-card svg{display:block;width:64px;height:64px;margin:0 auto 10px}
+#s7 .lab-card strong{display:block;font-size:17px}
+#s7 .lab-card small{display:block;font-size:11px;color:#7b5c32;margin-top:5px;line-height:1.6}
+#s7 .lab-card .lab-card-info{font-size:12px;line-height:1.7;margin-top:8px;display:block}
+#s7 .lab-kitchen{text-align:center;min-width:0}
+#s7 .lab-pot-scene{position:relative;padding:75px 20px 15px}
+#s7 .lab-pot{position:relative;width:100%;max-width:340px;height:210px;margin:auto;border:9px solid #21465a;border-top-width:15px;border-radius:45% 45% 42% 42%;background:linear-gradient(#426779,#193b4e);box-shadow:0 18px 26px #1e3c4b22}
+#s7 .lab-pot::before,#s7 .lab-pot::after{content:"";position:absolute;top:65px;width:27px;height:46px;border:8px solid #21465a;border-radius:40%;z-index:0}
+#s7 .lab-pot::before{left:-32px}#s7 .lab-pot::after{right:-32px}
+#s7 .lab-water{position:absolute;left:3%;top:-3%;width:94%;height:60%;border:3px solid #d9c79c;border-radius:50%;overflow:hidden;background:repeating-radial-gradient(ellipse at 50% 40%,#dec68c 0 12px,#eedcae 14px 16px,#dec68c 18px 28px)}
+#s7 .lab-pot-items{position:absolute;inset:14px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;z-index:1}
+#s7 .lab-pot-items svg{width:48px;height:48px;display:block}
+#s7 .lab-ripples{position:absolute;inset:0;pointer-events:none;z-index:2}
+#s7 .lab-ring{position:absolute;left:20%;top:22%;width:60%;height:56%;border:2px solid #fff9df;border-radius:50%;opacity:0}
+#s7 .lab-ring.is-gold{border:3px solid #bd862d;box-shadow:0 0 12px #ffe7a9}
+#s7 .lab-steam{position:absolute;top:15px;left:30%;right:30%;height:90px;display:flex;justify-content:space-between;pointer-events:none}
+#s7 .lab-steam span{display:block;width:12px;height:70px;border-radius:50%;background:linear-gradient(transparent,#fffaf0cc,transparent);filter:blur(5px);opacity:.3}
+#s7 .lab-reset{font:inherit;font-size:14px;background:#193b4e;color:#fff3d4;border:1px solid #193b4e;border-radius:24px;padding:11px 24px;cursor:pointer;margin-top:12px}
+#s7 .lab-discovery{background:#fffaf0;border:1px solid #d4bd91;border-radius:18px;padding:24px;align-self:stretch;min-width:0}
+#s7 .lab-compounds{list-style:none;margin:18px 0;padding:0}
+#s7 .lab-compounds li{font-size:13px;line-height:1.9;border-bottom:1px solid #d3c39f66;padding:10px 0;overflow-wrap:anywhere}
+#s7 .lab-compounds strong{color:#193b4e}
+#s7 .lab-insight{border-radius:12px;background:#f0e6cf;padding:16px;min-height:110px}
+#s7 .lab-insight.is-synergy{background:#f5e2a7;color:#684a11;border:1px solid #cbab5f}
+#s7 .lab-footer{margin-top:30px;border-top:1px solid #c8b58e;padding-top:18px}
+#s7 .lab-science{font-size:12px;max-width:1000px}
+#s7 .lab-ending{font-size:17px;color:#193b4e;margin-top:22px}
+#s7 .lab-sources{font-size:12px;color:#53616a;margin-top:18px;line-height:2}
+#s7 .lab-sources summary{cursor:pointer}#s7 .lab-sources a{color:#2b596e;text-underline-offset:3px}
+#s7 .lab-sources ul{padding-left:20px}
+#s7 .lab-header,#s7 .lab-card,#s7 .lab-kitchen,#s7 .lab-discovery,#s7 .lab-footer{opacity:0;visibility:hidden}
+.page-nav[data-page="7"]{color:#193b4e}
+@media(max-width:1000px){#s7 .lab-layout{grid-template-columns:minmax(210px,1fr) minmax(250px,1.2fr)}#s7 .lab-discovery{grid-column:1/-1}}
+@media(max-width:700px){#s7 .lab-layout{grid-template-columns:1fr;gap:24px;margin-top:24px}#s7 .lab-discovery{grid-column:auto}#s7 .lab-pot{max-width:300px}#s7 .lab-card{padding:14px}#s7 .lab-card[aria-pressed="true"]{padding:13px}#s7 .lab-pot-scene{padding-left:30px;padding-right:30px}#s7 .lab-card svg{width:60px;height:60px}}
+
+/* UMAMI_LAB_CSS_END */
+
+/* ENDING_CSS_START */
+#s8,#endingTransition{background:radial-gradient(ellipse at 40% 0%,#123f58,transparent 65%),linear-gradient(180deg,#072738,#01080f 90%)}
+#s8{color:#d7e9f1;overflow-y:auto;padding:clamp(24px,4vh,42px) 6vw 130px}
+#endingTransition{position:fixed;inset:0;z-index:45;pointer-events:none;opacity:0;visibility:hidden}
+#s8 .ending-content{position:relative;z-index:1;max-width:1150px;margin:auto;text-align:center}
+#s8 h1{font-size:clamp(23px,2.7vw,36px);font-weight:500;line-height:1.6;color:#e4f1f6}
+#s8 .ending-header p{font-size:14px;color:#9ec2d3;margin-top:12px;line-height:1.9}
+#s8 .ending-legend{font-size:11px;line-height:1.9;margin-top:20px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;color:#afd6e7}
+#s8 .ending-legend span:nth-child(2){color:#e8c98e}#s8 .ending-legend span:nth-child(3){color:#d0bfdf}
+#s8 .ending-legend p{flex-basis:100%;color:#89adbf;margin-top:-6px}
+#s8 .ending-sea{height:clamp(270px,40vh,370px);position:relative;margin-top:12px}
+#s8 .ending-word{position:absolute;transform:translate(-50%,-50%);font-size:clamp(17px,2.3vw,28px);white-space:nowrap;color:#acd8e9}
+#s8 .ending-word small{display:block;font-size:10px;letter-spacing:.05em;margin-top:5px;opacity:.8}
+#s8 .ending-word[data-kind="food"]{color:#e8c98e}#s8 .ending-word[data-kind="reading"]{color:#d0bfdf}
+#s8 .ending-character{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(140px,20vh,200px);line-height:1;color:#f5e6c2;font-family:"Songti SC","STSong","SimSun",serif}
+#s8 .ending-spark,#s8 .ending-star{position:absolute;width:3px;height:3px;border-radius:50%;background:#acd8e9;pointer-events:none}
+#s8 .ending-spark:nth-child(2n){background:#ead19a}
+#s8 .ending-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#s8 .ending-copy h2{font-size:clamp(24px,3vw,34px);font-weight:500;color:#f5e6c2;margin-bottom:18px}
+#s8 .ending-copy p{font-size:clamp(14px,1.4vw,17px);line-height:2.1;color:#c4dce7}
+#s8 .ending-copy .ending-wish{margin-top:24px;color:#f2dba7}
+#s8 .ending-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+#s8 button{font:inherit;font-size:14px;border:1px solid #a3c2cf77;border-radius:24px;padding:11px 22px;background:#103449;color:#e5eff4;cursor:pointer}
+#s8 button:focus-visible,#s8 a:focus-visible{outline:2px solid #f2dba7;outline-offset:4px}
+#s8 .ending-header,#s8 .ending-legend,#s8 .ending-word,#s8 .ending-character,#s8 .ending-copy,#s8 .ending-actions,#s8 .ending-star,#s8 .ending-spark{opacity:0;visibility:hidden}
+#s8 .ending-sources{max-width:min(640px,90vw);max-height:75dvh;overflow-y:auto;margin:auto;border:1px solid #668b9d;border-radius:18px;padding:28px;background:#0b283b;color:#dcebf2;line-height:1.9}
+#s8 .ending-sources::backdrop{background:#010910cc}#s8 .ending-sources h2{color:#f2dba7}#s8 .ending-sources p{font-size:14px;margin:16px 0}
+#s8 .ending-source-list{padding-left:20px;font-size:14px}#s8 .ending-source-list li{margin:14px 0}#s8 .ending-source-list a{color:#b8dff1}#s8 .ending-close{margin-top:20px}
+.page-nav[data-page="8"]{color:#eaf6ff}
+@media(max-width:700px){#s8{padding-left:4vw;padding-right:4vw}#s8 .ending-sea{height:310px}#s8 .ending-word{font-size:17px}#s8 .ending-word small{font-size:9px}#s8 .ending-actions{gap:10px}#s8 .ending-actions button{padding:11px 16px}}
+
+/* ENDING_CSS_END */
 </style>
 </head>
 <body>
@@ -536,10 +652,96 @@ section.active{visibility:visible;pointer-events:auto}
   </div>
 </section>
 
+<section id="s6" aria-labelledby="languageTitle" aria-hidden="true" inert>
+  <div class="language-ripple" aria-hidden="true"></div>
+  <div class="language-content">
+    <header class="language-header">
+      <h1 id="languageTitle">第六话 · 一个汉字，几种声音</h1>
+      <p>同一个汉字，在不同的语言里，留下了不同的声音。</p>
+    </header>
+    <div class="language-layout">
+      <div>
+        <div class="language-stage" aria-label="当前语言的字形">
+          <div class="language-glyphs" lang="zh-Hant"><span>鮮</span></div>
+          <p class="language-glyph-note">一个汉字，四种语言的回声</p>
+        </div>
+        <div class="language-buttons" role="group" aria-label="选择语言">
+          <button type="button" data-language="zh" aria-pressed="false">中文</button>
+          <button type="button" data-language="ja" aria-pressed="false">日语</button>
+          <button type="button" data-language="ko" aria-pressed="false">韩语</button>
+          <button type="button" data-language="vi" aria-pressed="false">越南语</button>
+        </div>
+      </div>
+      <aside class="language-info" aria-label="读音与文化说明">
+        <div class="language-detail" aria-live="polite" aria-atomic="true">
+          <h2>选择一种语言</h2><dl class="language-facts"></dl>
+          <p class="language-description">从字形、读音与现代用词，看看这个汉字如何进入不同的语言生活。</p>
+        </div>
+        <button class="language-audio" type="button" disabled>发音（尚未配置）</button>
+        <p class="language-audio-note" role="status">尚未配置真实音频，不会播放模拟语音。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+<section id="s7" aria-labelledby="labTitle" aria-hidden="true" inert>
+  <div class="lab-content">
+    <header class="lab-header"><p class="lab-eyebrow">从文化叙事，到味觉科学</p><h1 id="labTitle">第七话 · 鲜味，从哪里来？</h1><p>有些味道来自一种食材，有些鲜美，诞生于相遇。</p></header>
+    <div class="lab-layout">
+      <div class="lab-pantry"><h2>选择食材</h2><p class="lab-help">点击加入，再次点击取出。</p><div class="lab-ingredients" role="group" aria-label="选择汤锅食材"></div></div>
+      <div class="lab-kitchen">
+        <div class="lab-pot-scene" aria-label="汤锅与已选择的食材">
+          <div class="lab-steam" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="lab-pot"><div class="lab-water"><div class="lab-pot-items"></div><div class="lab-ripples" aria-hidden="true"></div></div></div>
+          <p class="lab-pot-caption">一锅汤，等待食材相遇</p>
+        </div>
+        <button type="button" class="lab-reset">重置实验</button>
+      </div>
+      <aside class="lab-discovery" aria-label="鲜味发现">
+        <h2>鲜味发现</h2><div class="lab-reading" aria-live="polite" aria-atomic="true"><p class="lab-selection">尚未选择食材。</p><ul class="lab-compounds"></ul><p class="lab-insight">选择一种食材，看看鲜味从哪里来。</p></div>
+      </aside>
+    </div>
+    <footer class="lab-footer">
+      <p class="lab-science">这是一项定性科普演示，不是精确的味觉测量。实际风味受品种、加工、浓度及烹调条件影响，协同不意味着所有组合一定更好吃。</p>
+      <p class="lab-ending">鲜味不只藏在海里，也存在于山林与田野。<br>当不同食材相遇，人们发现：鲜，可以有更多可能。</p>
+      <details class="lab-sources"><summary>科学资料来源</summary><ul>
+        <li><a href="https://www.umamiinfo.com/richfood/" target="_blank" rel="noopener noreferrer">Umami Information Center：食材中的谷氨酸、肌苷酸与鸟苷酸</a></li>
+        <li><a href="https://www.umamiinfo.com/what/whatisumami/" target="_blank" rel="noopener noreferrer">Umami Information Center：鲜味及其协同作用</a></li>
+        <li><a href="https://link.springer.com/article/10.1186/2044-7248-1-4" target="_blank" rel="noopener noreferrer">Mouritsen 等，2012，Flavour：海藻与鲜味的研究</a></li>
+      </ul></details>
+    </footer>
+  </div>
+</section>
+
+
+<section id="s8" aria-labelledby="endingTitle" aria-hidden="true" inert>
+  <div class="ending-stars" aria-hidden="true"></div>
+  <div class="ending-content">
+    <header class="ending-header"><h1 id="endingTitle">第八话 · 鲜，不止一种语言</h1><p>从一条鱼，到一个字；从一种语言，到无数张餐桌。</p></header>
+    <div class="ending-legend"><span>浅蓝 · 字形与汉字词</span><span>浅金 · 饮食与味觉相关词</span><span>淡紫 · 历史读音</span><p>这些词具有不同的含义与文化背景，并非完全等义的翻译。</p></div>
+    <div class="ending-sea" aria-label="多语言文字汇聚为汉字鲜">
+      <div class="ending-words"></div><div class="ending-sparks" aria-hidden="true"></div>
+      <div class="ending-character" aria-hidden="true">鲜</div>
+    </div>
+    <div class="ending-copy">
+      <h2>鲜，不止一种语言。</h2>
+      <p>一条鱼，从大海游向餐桌。<br>一个字，从中国走向更远的地方。<br>不同的语言记录不同的滋味，<br>不同的文化创造各自的鲜美。<br>而每一次对美味的追寻，<br>都连接着人与土地、海洋和时间。</p>
+      <p class="ending-wish">愿我们记得鲜的味道，也记得鲜从何而来。</p>
+    </div>
+    <div class="ending-actions" aria-label="作品结束后的操作" inert>
+      <button type="button" data-ending="restart">重新开始</button><button type="button" data-ending="map">再看文化地图</button><button type="button" data-ending="sources">查看资料来源</button>
+    </div>
+  </div>
+  <dialog class="ending-sources" aria-labelledby="endingSourcesTitle">
+    <h2 id="endingSourcesTitle">作品参考资料</h2><p>地理数据、食材呈味物质与鲜味协同的参考资料。地图连线是文化交流示意，不是已证实的历史航线。</p>
+    <ul class="ending-source-list"></ul><button type="button" class="ending-close">关闭</button>
+  </dialog>
+</section>
+<div id="endingTransition" aria-hidden="true"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <nav class="page-nav" aria-label="翻页导航">
   <button id="prevBtn" type="button" disabled>← 上一页</button>
-  <span id="pageIndicator" aria-live="polite">1 / 5</span>
+  <span id="pageIndicator" aria-live="polite">1 / 8</span>
   <button id="nextBtn" type="button">下一页 →</button>
 </nav>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
@@ -713,11 +915,293 @@ tl4.to('.final-line', {autoAlpha:1, y:0, duration:.7, ease:'sine.out'}, 4.55);
 tl4.to({}, {duration:.8});
 
 /* 第五页预留 GSAP 时间线，暂不添加地图或入场动画。 */
+/* LANGUAGE_LOGIC_START */
+/* Sixth page: data, pronunciation-file interface, repeatable entry and switching. */
+const languageData = {
+  zh:{name:'中国汉语',lang:'zh-Hans',glyphs:['鲜','鮮'],note:'简体：鲜 · 繁体：鮮',
+    facts:[['拼音','xiān'],['核心意义','新鲜、鲜美，也有其他语境中的不同含义。']],
+    description:'在汉语中，“鲜”既可以描述食材的新鲜，也可以描述味道的鲜美。它为中国人理解食物与海洋提供了一个生动的文化入口。'},
+  ja:{name:'日本日语',lang:'ja',glyphs:['鮮'],note:'汉字：鮮',
+    facts:[['音读','セン（sen）'],['关联词','新鮮（しんせん / shinsen）'],['味觉词汇','旨味（うま味）']],
+    description:'汉字传入日本后，“鮮”成为日语汉字词汇的一部分。日语仍使用“新鮮”等词描述新鲜，而表示鲜美滋味的“旨味（うま味）”则具有自己的语言和饮食文化背景。“鮮”与“旨味”并不是同一个词。'},
+  ko:{name:'韩国韩语',lang:'ko',glyphs:['선'],note:'汉字：鮮 · 韩语汉字音：선',
+    facts:[['汉字音','선（seon）'],['关联词','신선（新鮮，sinseon）'],['味觉表达','감칠맛（gamchilmat）']],
+    description:'在朝鲜半岛的汉字文化传统中，“鮮”进入了汉字词体系。现代韩语通常使用谚文书写，而“감칠맛”等词体现了当地描述鲜美滋味的方式。'},
+  vi:{name:'越南越南语',lang:'vi',glyphs:['tiên'],note:'历史汉字：鮮 · 汉越音：tiên',
+    facts:[['汉越音','tiên'],['当代饮食关联词','nước mắm（鱼露）']],
+    description:'越南历史上曾广泛使用汉字和喃字，汉越音保存了部分历史语言交流的痕迹。现代越南语主要使用国语字。鱼露是重要的本地饮食文化，但其名称并非“鲜”字的直接翻译。'}
+};
+// Set each URL to a real pronunciation recording, e.g. audio/xian-zh.mp3.
+// Keep empty until a recording has been supplied; no synthetic voice fallback.
+const pronunciationSources = {zh:'',ja:'',ko:'',vi:''};
+const languagePage = (() => {
+  const page = document.getElementById('s6');
+  const glyphs = page.querySelector('.language-glyphs');
+  const note = page.querySelector('.language-glyph-note');
+  const detail = page.querySelector('.language-detail');
+  const buttons = [...page.querySelectorAll('[data-language]')];
+  const audioButton = page.querySelector('.language-audio');
+  const audioNote = page.querySelector('.language-audio-note');
+  const audio = new Audio();
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let change = null;
+  let selected = null;
+  const ripple = gsap.to(page.querySelector('.language-ripple'), {
+    backgroundPosition:'80px 30px',duration:16,repeat:-1,yoyo:true,ease:'sine.inOut',paused:true
+  });
+  function stopAudio() { audio.pause(); audio.removeAttribute('src'); }
+  function configureAudio(key) {
+    audioButton.disabled = !key || !pronunciationSources[key];
+    audioButton.textContent = audioButton.disabled ? '发音（尚未配置）' : '播放真实发音';
+    audioNote.textContent = audioButton.disabled ? '尚未配置真实音频，不会播放模拟语音。' : '点击播放已配置的真实录音。';
+  }
+  function render(key) {
+    const data = languageData[key];
+    const spans = (data ? data.glyphs : ['鮮']).map(text => {
+      const span = document.createElement('span'); span.textContent = text; return span;
+    });
+    glyphs.replaceChildren(...spans);
+    glyphs.lang = data?.lang || 'zh-Hant';
+    note.textContent = data?.note || '一个汉字，四种语言的回声';
+    detail.querySelector('h2').textContent = data?.name || '选择一种语言';
+    const facts = detail.querySelector('dl'); facts.replaceChildren();
+    for (const [label,value] of data?.facts || []) {
+      const dt = document.createElement('dt'); dt.textContent = label;
+      const dd = document.createElement('dd'); dd.textContent = value; dd.lang = data.lang;
+      facts.append(dt,dd);
+    }
+    detail.querySelector('p').textContent = data?.description || '从字形、读音与现代用词，看看这个汉字如何进入不同的语言生活。';
+    configureAudio(key);
+  }
+  function choose(key) {
+    if (selected === key) return;
+    selected = key;
+    stopAudio();
+    change?.kill();
+    buttons.forEach(button => button.setAttribute('aria-pressed',String(button.dataset.language === key)));
+    const textNodes = [glyphs,note,detail];
+    change = gsap.timeline()
+      .to(textNodes,{autoAlpha:0,y:-8,duration:.20,ease:'sine.in'})
+      .call(() => render(key))
+      .set(textNodes,{y:10})
+      .to([glyphs,note],{autoAlpha:1,y:0,duration:.25,ease:'sine.out'})
+      .to(detail,{autoAlpha:1,y:0,duration:.25,ease:'sine.out'},.30);
+  }
+  function stop() { change?.kill(); change=null; ripple.pause(); stopAudio(); }
+  function reset() {
+    stop(); selected=null; render(null);
+    buttons.forEach(button => button.setAttribute('aria-pressed','false'));
+    gsap.set([glyphs,note,detail],{autoAlpha:1,y:0});
+    gsap.set(page.querySelectorAll('.language-header,.language-stage,.language-info,.language-buttons button'),{autoAlpha:0,y:16});
+    ripple.pause(0);
+    if (!reduced.matches) ripple.play();
+    page.scrollTop=0;
+  }
+  buttons.forEach(button => button.addEventListener('click',()=>choose(button.dataset.language)));
+  audioButton.addEventListener('click',async () => {
+    const key=selected;
+    if (!key || !pronunciationSources[key]) return;
+    stopAudio(); audio.src=pronunciationSources[key];
+    try { await audio.play(); if(selected===key) audioNote.textContent='正在播放真实录音。'; }
+    catch (_) { if(selected===key) audioNote.textContent='录音暂时无法播放，请检查音频文件路径。'; }
+  });
+  audio.addEventListener('ended',()=>configureAudio(selected));
+  function syncRipple() {
+    if (current===5 && !document.hidden && !reduced.matches) ripple.resume(); else ripple.pause();
+  }
+  document.addEventListener('visibilitychange',syncRipple);
+  reduced.addEventListener('change',syncRipple);
+  return {reset,stop,choose};
+})();
+const tl6=gsap.timeline({paused:true,defaults:{immediateRender:false}})
+  .to('#s6 .language-header',{autoAlpha:1,y:0,duration:.6,ease:'sine.out'},0)
+  .to('#s6 .language-stage',{autoAlpha:1,y:0,duration:.8,ease:'sine.out'},.15)
+  .to('#s6 .language-buttons button',{autoAlpha:1,y:0,duration:.4,stagger:.12,ease:'sine.out'},.5)
+  .to('#s6 .language-info',{autoAlpha:1,y:0,duration:.45,ease:'sine.out'},.9);
+
+
+/* LANGUAGE_LOGIC_END */
+/* UMAMI_LAB_LOGIC_START */
+/* Qualitative ingredient model. No flavour scores or measured-intensity claims. */
+const labIngredients = {
+  kombu:{name:'昆布',category:'glutamate',compound:'谷氨酸 · 氨基酸类',description:'代表性呈味物质为谷氨酸。',
+    art:'<path d="M25 8Q12 22 23 36T21 73L40 73Q51 57 39 43T42 10Z" fill="#567756"/><path d="M33 13Q24 31 32 46T30 70" stroke="#b8c58d" stroke-width="3" fill="none"/>'},
+  fish:{name:'鱼干',category:'nucleotide',compound:'肌苷酸等 · 呈味核苷酸类',description:'可含有肌苷酸等呈味物质，具体情况取决于品种和加工方法。',
+    art:'<path d="M9 39Q33 13 58 39Q33 65 9 39Z" fill="#8d9d9f"/><path d="M55 39L75 23L70 39L75 55Z" fill="#526f7d"/><circle cx="22" cy="35" r="3" fill="#193b4e"/><path d="M30 30L43 47M39 28L49 42" stroke="#ecdfb9" stroke-width="2"/>'},
+  shiitake:{name:'香菇',category:'nucleotide',compound:'鸟苷酸等 · 呈味核苷酸类',description:'代表性呈味物质包括鸟苷酸，含量受干燥、复水等加工条件影响。',
+    art:'<path d="M33 42L29 72Q39 79 50 70L45 41Z" fill="#e7d5b3"/><path d="M6 43Q8 7 39 8Q70 9 74 43Q39 60 6 43Z" fill="#875c3f"/><path d="M26 20L50 39M49 20L27 40" stroke="#f0dfb4" stroke-width="4" stroke-linecap="round"/>'},
+  tomato:{name:'番茄',category:'glutamate',compound:'谷氨酸等 · 氨基酸类',description:'含有谷氨酸等呈味物质，含量随成熟等条件变化。',
+    art:'<path d="M39 23C8 10 0 56 21 70Q39 80 58 69C79 54 68 11 39 23Z" fill="#c96b49"/><path d="M39 26L23 17L35 18L40 6L45 19L58 15L48 27L39 22L29 30Z" fill="#5c7d50"/><path d="M19 39Q12 49 20 58" fill="none" stroke="#efb38a" stroke-width="4" stroke-linecap="round"/>'}
+};
+const labPage = (() => {
+  const page=document.getElementById('s7');
+  const pantry=page.querySelector('.lab-ingredients');
+  const water=page.querySelector('.lab-water');
+  const items=page.querySelector('.lab-pot-items');
+  const insight=page.querySelector('.lab-insight');
+  const selected=new Set(), flights=new Map(), effects=new Set();
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  let synergy=false;
+  const icon=key=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" aria-hidden="true">${labIngredients[key].art}</svg>`;
+  for(const [key,data] of Object.entries(labIngredients)) {
+    const button=document.createElement('button');button.type='button';button.className='lab-card';button.dataset.ingredient=key;button.setAttribute('aria-pressed','false');
+    button.innerHTML=icon(key)+`<strong>${data.name}</strong><small>${data.compound}</small><span class="lab-card-info">${data.description}</span>`;
+    pantry.append(button);
+  }
+  const steam=gsap.to(page.querySelectorAll('.lab-steam span'),{y:-20,opacity:.6,duration:3.5,stagger:.5,yoyo:true,repeat:-1,ease:'sine.inOut',paused:true});
+  const waves=gsap.to(water,{backgroundPosition:'35px 6px',duration:8,yoyo:true,repeat:-1,ease:'sine.inOut',paused:true});
+  function cancelFlight(key) {const f=flights.get(key);if(f){f.animation.kill();f.node.remove();flights.delete(key);}}
+  function ring(gold=false) {
+    if(reduced.matches)return;
+    const node=document.createElement('span');node.className='lab-ring'+(gold?' is-gold':'');page.querySelector('.lab-ripples').append(node);
+    const effect={node,animation:null};effects.add(effect);
+    effect.animation=gsap.fromTo(node,{scale:.45,opacity:.75},{scale:1.65,opacity:0,duration:gold?1.1:.6,ease:'sine.out',onComplete:()=>{node.remove();effects.delete(effect);}});
+  }
+  function drawItems() {
+    items.replaceChildren();
+    for(const key of selected){const node=document.createElement('span');node.dataset.potIngredient=key;node.innerHTML=icon(key);node.setAttribute('aria-label',labIngredients[key].name);if(flights.has(key))node.style.opacity='0';items.append(node);}
+  }
+  function update(animate=true) {
+    const data=[...selected].map(key=>labIngredients[key]);
+    page.querySelector('.lab-selection').textContent=data.length?'当前所选：'+data.map(d=>d.name).join('、')+'。':'尚未选择食材。';
+    const list=page.querySelector('.lab-compounds');list.replaceChildren();
+    data.forEach(d=>{const li=document.createElement('li');const strong=document.createElement('strong');strong.textContent=d.name+' · '+d.compound;const text=document.createElement('div');text.textContent=d.description;li.append(strong,text);list.append(li);});
+    const next=data.some(d=>d.category==='glutamate')&&data.some(d=>d.category==='nucleotide');
+    insight.textContent=next?'发现鲜味协同组合！谷氨酸与部分呈味核苷酸在适当条件下可以相互增强鲜味感知。':data.length?'这里展示的是食材中的代表性呈味物质；可以加入另一类来源，探索可能的协同作用。':'选择一种食材，看看鲜味从哪里来。';
+    insight.classList.toggle('is-synergy',next);
+    gsap.killTweensOf(insight);
+    if(animate&&!reduced.matches)gsap.fromTo(insight,{opacity:.2,y:4},{opacity:1,y:0,duration:.5,ease:'sine.out'});
+    else gsap.set(insight,{opacity:1,y:0});
+    if(next&&!synergy&&animate)ring(true);
+    synergy=next;
+    pantry.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(selected.has(button.dataset.ingredient))));
+    drawItems();
+  }
+  function fly(key,button) {
+    if(reduced.matches){ring();return;}
+    const a=button.querySelector('svg').getBoundingClientRect(),b=water.getBoundingClientRect();
+    const start={x:a.left+a.width/2-28,y:a.top+a.height/2-28};
+    const end={x:b.left+b.width/2-28,y:b.top+b.height/2-28};
+    const control={x:(start.x+end.x)/2,y:Math.min(start.y,end.y)-70};
+    const node=document.createElement('div');node.className='lab-flying-icon';node.innerHTML=icon(key);
+    node.setAttribute('aria-hidden','true');node.style.cssText='position:fixed;left:0;top:0;width:56px;height:56px;pointer-events:none;z-index:90';
+    document.body.append(node);gsap.set(node,{x:start.x,y:start.y});
+    const position={t:0},flight={node,animation:null};flights.set(key,flight);
+    flight.animation=gsap.to(position,{t:1,duration:.8,ease:'sine.inOut',onUpdate:()=>{
+      const t=position.t,u=1-t;
+      gsap.set(node,{x:u*u*start.x+2*u*t*control.x+t*t*end.x,y:u*u*start.y+2*u*t*control.y+t*t*end.y,opacity:1-.2*t});
+    },onComplete:()=>{
+      node.remove();flights.delete(key);
+      if(page.classList.contains('active')&&selected.has(key)){drawItems();ring();}
+    }});
+  }
+  function toggle(key,button) {
+    cancelFlight(key);
+    if(selected.has(key))selected.delete(key);else{selected.add(key);fly(key,button);}
+    update();
+  }
+  function clearTemporary() {
+    [...flights.keys()].forEach(cancelFlight);
+    effects.forEach(effect=>{effect.animation.kill();effect.node.remove();});effects.clear();
+    gsap.killTweensOf(insight);
+  }
+  function resetExperiment() {clearTemporary();selected.clear();synergy=false;update(false);}
+  function stop(){clearTemporary();steam.pause();waves.pause();}
+  function reset(){stop();resetExperiment();page.scrollTop=0;gsap.set(page.querySelectorAll('.lab-header,.lab-card,.lab-kitchen,.lab-discovery,.lab-footer'),{autoAlpha:0,y:12});steam.pause(0);waves.pause(0);sync();}
+  function sync(){const play=page.classList.contains('active')&&!document.hidden&&!reduced.matches;[steam,waves].forEach(animation=>play?animation.resume():animation.pause());}
+  pantry.addEventListener('click',event=>{const button=event.target.closest('[data-ingredient]');if(button)toggle(button.dataset.ingredient,button);});
+  page.querySelector('.lab-reset').addEventListener('click',resetExperiment);
+  page.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight'].includes(event.key))event.stopPropagation();});
+  document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);
+  window.addEventListener('resize',()=>{clearTemporary();drawItems();});
+  page.addEventListener('scroll',()=>{if(flights.size){[...flights.keys()].forEach(cancelFlight);drawItems();}},{passive:true});
+  resetExperiment();
+  return {reset,stop,resetExperiment};
+})();
+const tl7=gsap.timeline({paused:true,defaults:{immediateRender:false}})
+  .to('#s7 .lab-header',{autoAlpha:1,y:0,duration:.7,ease:'sine.out'},0)
+  .to('#s7 .lab-card',{autoAlpha:1,y:0,duration:.4,stagger:.1,ease:'sine.out'},.15)
+  .to('#s7 .lab-kitchen,#s7 .lab-discovery,#s7 .lab-footer',{autoAlpha:1,y:0,duration:.7,ease:'sine.out'},.2);
+
+/* UMAMI_LAB_LOGIC_END */
 const tl5 = gsap.timeline({paused:true});
 
-/* 五页导航：pages 按 DOM 顺序自动包含新增的 s5。 */
+/* pages 按 DOM 顺序统一管理全部页面，含语言页与鲜味食材实验室。 */
+/* ENDING_LOGIC_START */
+/* Final chapter: semantic word categories, deterministic paths, stable character. */
+const endingPage=(() => {
+  const page=document.getElementById('s8'),sea=page.querySelector('.ending-sea');
+  const wordsData=[
+    ['鲜','汉字 · 中文','han','zh-Hans',19,18],['鮮','繁体及日语汉字等形式','han','zh-Hant',71,15],
+    ['新鮮','しんせん · 日语汉字词','han','ja',42,33],['신선','韩语汉字词','han','ko',82,40],
+    ['旨味 / うま味','umami · 日语味觉词','food','ja',29,58],['감칠맛','韩语鲜味相关表达','food','ko',72,67],
+    ['tiên','汉越音 · 历史读音','reading','vi',17,85],['nước mắm','越南鱼露 · 饮食词','food','vi',49,88]
+  ];
+  const words=wordsData.map(([text,label,kind,lang,x,y])=>{
+    const word=document.createElement('div');word.className='ending-word';word.dataset.kind=kind;word.lang=lang;word.style.left=x+'%';word.style.top=y+'%';
+    const name=document.createElement('span');name.textContent=text;const small=document.createElement('small');small.textContent=label;small.lang='zh-Hans';word.append(name,small);page.querySelector('.ending-words').append(word);return word;
+  });
+  const stars=Array.from({length:20},(_,i)=>{
+    const dot=document.createElement('span');dot.className='ending-star';dot.style.left=(5+i*37%90)+'%';dot.style.top=(5+i*23%85)+'%';page.querySelector('.ending-stars').append(dot);return dot;
+  });
+  const sparks=Array.from({length:18},(_,i)=>{
+    const dot=document.createElement('span');dot.className='ending-spark';dot.style.left=(10+i*31%80)+'%';dot.style.top=(9+i*19%82)+'%';page.querySelector('.ending-sparks').append(dot);return dot;
+  });
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const drift=gsap.to(stars,{y:-14,duration:7,stagger:.12,yoyo:true,repeat:-1,ease:'sine.inOut',paused:true});
+  const progress={t:0};let paths=[];
+  const actions=page.querySelector('.ending-actions');
+  const dialog=page.querySelector('dialog');
+  function move(){const t=progress.t,u=1-t;paths.forEach((p,i)=>gsap.set(words[i],{x:2*u*t*p.cx+t*t*p.x,y:2*u*t*p.cy+t*t*p.y}));}
+  function reset(){
+    stop();progress.t=0;page.scrollTop=0;
+    gsap.set(page.querySelectorAll('.ending-header,.ending-legend,.ending-word,.ending-character,.ending-copy,.ending-actions,.ending-star,.ending-spark'),{autoAlpha:0,x:0,y:0});
+    gsap.set(words,{xPercent:-50,yPercent:-50});
+    paths=words.map((word,i)=>{const x=sea.clientWidth/2-word.offsetLeft,y=sea.clientHeight/2-word.offsetTop;return{x,y,cx:x*.5+(i%2?24:-24),cy:y*.5-24};});
+    actions.inert=true;
+    gsap.set(sparks,{x:0,y:0});drift.pause(0);sync();
+  }
+  function stop(){drift.pause();if(dialog.open)dialog.close();}
+  function sync(){if(page.classList.contains('active')&&!document.hidden&&!reduced.matches)drift.resume();else drift.pause();}
+  function finish(){actions.inert=false;}
+  function restart(){const url=new URL(location.href);url.search='';url.hash='';location.assign(url.href);}
+  function map(){const url=new URL(location.href);url.hash='';url.searchParams.delete('scene');url.searchParams.delete('end');
+    if(url.searchParams.get('debug')==='1'){url.searchParams.set('page','5');url.searchParams.delete('start');}
+    else{url.searchParams.delete('page');url.searchParams.set('start','5');}location.assign(url.href);}
+  const list=page.querySelector('.ending-source-list'),seen=new Set();
+  document.querySelectorAll('#s5 .map-source a,#s7 .lab-sources a').forEach(source=>{
+    if(seen.has(source.href))return;seen.add(source.href);
+    const li=document.createElement('li');li.append(source.cloneNode(true));list.append(li);
+  });
+  page.querySelector('[data-ending="restart"]').addEventListener('click',restart);
+  page.querySelector('[data-ending="map"]').addEventListener('click',map);
+  page.querySelector('[data-ending="sources"]').addEventListener('click',()=>dialog.showModal());
+  page.querySelector('.ending-close').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+  page.addEventListener('keydown',event=>{if(dialog.open||event.target.closest('button'))event.stopPropagation();});
+  document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);
+  return {reset,stop,finish,restart,map,move,progress,reduced,words,sparks,sea};
+})();
+const tl8=gsap.timeline({paused:true,defaults:{immediateRender:false}})
+  .to('#s8 .ending-header',{autoAlpha:1,duration:.6},0)
+  .to('#s8 .ending-legend',{autoAlpha:1,duration:.6},.3)
+  .to('#s8 .ending-star',{autoAlpha:.35,duration:1.2},.3)
+  .fromTo(endingPage.words,{autoAlpha:0,y:10},{autoAlpha:1,y:0,duration:.7,stagger:.12,ease:'sine.out'},.7)
+  .to(endingPage.words,{y:-4,duration:.45,yoyo:true,repeat:1,ease:'sine.inOut'},2.5)
+  .to(endingPage.progress,{t:1,duration:2.2,ease:'sine.inOut',onUpdate:endingPage.move},3.5)
+  .to(endingPage.sparks,{autoAlpha:.6,duration:.6},3.5)
+  .to(endingPage.sparks,{x:(_,dot)=>endingPage.sea.clientWidth/2-dot.offsetLeft,y:(_,dot)=>endingPage.sea.clientHeight/2-dot.offsetTop,duration:2.2,ease:'sine.inOut'},3.5)
+  .to(endingPage.words,{autoAlpha:0,duration:.7},5)
+  .to('#s8 .ending-legend',{autoAlpha:0,duration:.7},5)
+  .to(endingPage.sparks,{autoAlpha:0,duration:.8},5.5)
+  .to('#s8 .ending-character',{autoAlpha:1,duration:1,ease:'sine.inOut'},5.6)
+  .fromTo('#s8 .ending-copy',{y:10,autoAlpha:0},{y:0,autoAlpha:1,duration:1.2,ease:'sine.out'},6.7)
+  .to('#s8 .ending-actions',{autoAlpha:1,duration:.7},8)
+  .to({},{duration:.3});
+
+/* ENDING_LOGIC_END */
 const pages = [...document.querySelectorAll('section')];
-const timelines = [tl1, tl2, tl3, tl4, tl5];
+const timelines = [tl1, tl2, tl3, tl4, tl5, tl6, tl7, tl8];
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const indicator = document.getElementById('pageIndicator');
@@ -733,6 +1217,9 @@ function updateNav() {
 function ready() { busy = false; updateNav(); }
 tl2.addPause(5.1, ready);
 tl3.eventCallback('onComplete', ready);
+tl6.eventCallback('onComplete', ready);
+tl7.eventCallback('onComplete', ready);
+tl8.eventCallback('onComplete', () => { endingPage.finish(); ready(); });
 // 第四页前段播放结束后直接衔接终章，无需再次点击。
 tl4.eventCallback('onComplete', () => {
   finale = true;
@@ -740,6 +1227,9 @@ tl4.eventCallback('onComplete', () => {
 });
 tl1.eventCallback('onComplete', () => enterPage(1));
 function enterPage(index, preserveFish = false, entranceDelay = 0) {
+  if (current === 5) languagePage.stop();
+  if (current === 6) labPage.stop();
+  if (current === 7) endingPage.stop();
   // 保留小鱼跨页时，不倒放旧时间线，避免位置和缩放瞬间复位。
   if (preserveFish) timelines[current].pause();
   else timelines[current].pause(0, true);
@@ -761,6 +1251,20 @@ function enterPage(index, preserveFish = false, entranceDelay = 0) {
   } else if (current === 4) {
     // 第五页为静态容器，保持小鱼隐藏，并立即开放导航。
     ready();
+  } else if (current === 7) {
+    busy = true; updateNav();
+    endingPage.reset();
+    tl8.invalidate().timeScale(1).restart();
+    if (endingPage.reduced.matches) tl8.progress(1, false);
+  } else if (current === 6) {
+    busy = true; updateNav();
+    labPage.reset();
+    tl7.invalidate().timeScale(1).restart();
+  } else if (current === 5) {
+    busy = true;
+    updateNav();
+    languagePage.reset();
+    tl6.invalidate().timeScale(1).restart();
   } else {
     busy = true;
     updateNav();
@@ -860,6 +1364,17 @@ function startVoyageTransition(enterVoyage, speed = 1) {
 
 nextBtn.addEventListener('click', () => {
   if (busy) return;
+  if (current === 7) { endingPage.restart(); return; }
+  if (current === 6) {
+    busy = true; updateNav(); labPage.stop();
+    const veil = document.getElementById('endingTransition');
+    gsap.timeline()
+      .to('#s7 .lab-content', {autoAlpha:0,duration:.9,ease:'sine.inOut'},0)
+      .fromTo(veil,{autoAlpha:0},{autoAlpha:1,duration:1.2,ease:'sine.inOut'},0)
+      .call(() => {enterPage(7);gsap.set('#s7 .lab-content',{clearProps:'opacity,visibility'});},null,1.2)
+      .to(veil,{autoAlpha:0,duration:.4},1.2);
+    return;
+  }
   if (current === 0) {
     busy = true;
     updateNav();
@@ -1158,8 +1673,10 @@ enterPage(0);
 // 简易开发模式：重新加载后高速沿正式流程前进，不直接改写各页动画状态。
 (() => {
   const params = new URLSearchParams(location.search);
-  if (params.get('debug') !== '1') return;
-  const requested = Number(params.get('page') || 1);
+  const showDebug = params.get('debug') === '1';
+  const quickMap = params.get('start') === '5';
+  if (!showDebug && !quickMap) return;
+  const requested = Number(showDebug ? (params.get('page') || 1) : 5);
   const target = Number.isFinite(requested) ? Math.max(0, Math.min(pages.length - 1, Math.trunc(requested) - 1)) : 0;
   const panel = document.createElement('label');
   panel.id = 'simpleDebug';
@@ -1180,7 +1697,7 @@ enterPage(0);
   });
   panel.append(select);
   panel.addEventListener('keydown', event => event.stopPropagation());
-  document.body.append(panel);
+  if (showDebug) document.body.append(panel);
   if (target === 0) return;
   const veil = document.createElement('div');
   veil.id = 'simpleDebugTransit';
