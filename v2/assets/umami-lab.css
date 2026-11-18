@@ -1,0 +1,46 @@
+/* All laboratory styles are scoped to page seven. */
+#s7{background:radial-gradient(ellipse at 50% 40%,#fff9e8 0%,#f0e1c4 70%,#dfc49a);color:#193b4e;padding:clamp(24px,4vh,44px) 5vw 120px;overflow-y:auto}
+#s7 .lab-content{max-width:1380px;margin:auto}
+#s7 .lab-eyebrow{font-size:12px;letter-spacing:.25em;color:#8a653d;margin:0}
+#s7 h1{font-size:clamp(26px,3vw,40px);line-height:1.5;color:#193b4e;margin:8px 0}
+#s7 p{color:#526571;font-size:14px;line-height:1.9;margin-top:8px}
+#s7 h2{font-size:19px;line-height:1.6;font-weight:600;color:#193b4e}
+#s7 .lab-layout{display:grid;grid-template-columns:minmax(240px,1fr) minmax(260px,1.2fr) minmax(260px,1fr);gap:clamp(20px,3vw,46px);align-items:center;margin-top:32px}
+#s7 .lab-ingredients{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+#s7 .lab-card{font:inherit;text-align:left;background:#fffcf2;border:1px solid #c7b28a;border-radius:14px;padding:14px 12px;color:#193b4e;cursor:pointer;transition:background .2s,border-color .2s;min-width:0}
+#s7 .lab-card[aria-pressed="true"]{background:#e4eee5;border:2px solid #52785d;padding:13px 11px}
+#s7 .lab-card:focus-visible,#s7 .lab-reset:focus-visible,#s7 summary:focus-visible{outline:3px solid #ad7427;outline-offset:4px}
+#s7 .lab-card svg{display:block;width:64px;height:64px;margin:0 auto 10px}
+#s7 .lab-card strong{display:block;font-size:17px}
+#s7 .lab-card small{display:block;font-size:11px;color:#7b5c32;margin-top:5px;line-height:1.6}
+#s7 .lab-card .lab-card-info{font-size:12px;line-height:1.7;margin-top:8px;display:block}
+#s7 .lab-kitchen{text-align:center;min-width:0}
+#s7 .lab-pot-scene{position:relative;padding:75px 20px 15px}
+#s7 .lab-pot{position:relative;width:100%;max-width:340px;height:210px;margin:auto;border:9px solid #21465a;border-top-width:15px;border-radius:45% 45% 42% 42%;background:linear-gradient(#426779,#193b4e);box-shadow:0 18px 26px #1e3c4b22}
+#s7 .lab-pot::before,#s7 .lab-pot::after{content:"";position:absolute;top:65px;width:27px;height:46px;border:8px solid #21465a;border-radius:40%;z-index:0}
+#s7 .lab-pot::before{left:-32px}#s7 .lab-pot::after{right:-32px}
+#s7 .lab-water{position:absolute;left:3%;top:-3%;width:94%;height:60%;border:3px solid #d9c79c;border-radius:50%;overflow:hidden;background:repeating-radial-gradient(ellipse at 50% 40%,#dec68c 0 12px,#eedcae 14px 16px,#dec68c 18px 28px)}
+#s7 .lab-pot-items{position:absolute;inset:14px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;z-index:1}
+#s7 .lab-pot-items svg{width:48px;height:48px;display:block}
+#s7 .lab-ripples{position:absolute;inset:0;pointer-events:none;z-index:2}
+#s7 .lab-ring{position:absolute;left:20%;top:22%;width:60%;height:56%;border:2px solid #fff9df;border-radius:50%;opacity:0}
+#s7 .lab-ring.is-gold{border:3px solid #bd862d;box-shadow:0 0 12px #ffe7a9}
+#s7 .lab-steam{position:absolute;top:15px;left:30%;right:30%;height:90px;display:flex;justify-content:space-between;pointer-events:none}
+#s7 .lab-steam span{display:block;width:12px;height:70px;border-radius:50%;background:linear-gradient(transparent,#fffaf0cc,transparent);filter:blur(5px);opacity:.3}
+#s7 .lab-reset{font:inherit;font-size:14px;background:#193b4e;color:#fff3d4;border:1px solid #193b4e;border-radius:24px;padding:11px 24px;cursor:pointer;margin-top:12px}
+#s7 .lab-discovery{background:#fffaf0;border:1px solid #d4bd91;border-radius:18px;padding:24px;align-self:stretch;min-width:0}
+#s7 .lab-compounds{list-style:none;margin:18px 0;padding:0}
+#s7 .lab-compounds li{font-size:13px;line-height:1.9;border-bottom:1px solid #d3c39f66;padding:10px 0;overflow-wrap:anywhere}
+#s7 .lab-compounds strong{color:#193b4e}
+#s7 .lab-insight{border-radius:12px;background:#f0e6cf;padding:16px;min-height:110px}
+#s7 .lab-insight.is-synergy{background:#f5e2a7;color:#684a11;border:1px solid #cbab5f}
+#s7 .lab-footer{margin-top:30px;border-top:1px solid #c8b58e;padding-top:18px}
+#s7 .lab-science{font-size:12px;max-width:1000px}
+#s7 .lab-ending{font-size:17px;color:#193b4e;margin-top:22px}
+#s7 .lab-sources{font-size:12px;color:#53616a;margin-top:18px;line-height:2}
+#s7 .lab-sources summary{cursor:pointer}#s7 .lab-sources a{color:#2b596e;text-underline-offset:3px}
+#s7 .lab-sources ul{padding-left:20px}
+#s7 .lab-header,#s7 .lab-card,#s7 .lab-kitchen,#s7 .lab-discovery,#s7 .lab-footer{opacity:0;visibility:hidden}
+.page-nav[data-page="7"]{color:#193b4e}
+@media(max-width:1000px){#s7 .lab-layout{grid-template-columns:minmax(210px,1fr) minmax(250px,1.2fr)}#s7 .lab-discovery{grid-column:1/-1}}
+@media(max-width:700px){#s7 .lab-layout{grid-template-columns:1fr;gap:24px;margin-top:24px}#s7 .lab-discovery{grid-column:auto}#s7 .lab-pot{max-width:300px}#s7 .lab-card{padding:14px}#s7 .lab-card[aria-pressed="true"]{padding:13px}#s7 .lab-pot-scene{padding-left:30px;padding-right:30px}#s7 .lab-card svg{width:60px;height:60px}}
