@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    海味山东 · v19.css —— 手机端修复
    目标：图片不再错位、文字不被裁切、底部内容不被翻页键压住
    ============================================================ */
@@ -156,4 +156,29 @@
   body.deck .lex-forms b { font-size: 9px; }
   body.deck .lex-forms span { font-size: 7px; }
   body.deck .lex-story { margin-top: 4px; font-size: 8px; line-height: 1.42; }
+}
+
+/* 手机端：词源翻卡改为「显示/隐藏」切换，不用 3D 翻转。
+   iOS/微信里 backface-visibility 会失效，导致正反面同时出现、文字镜像倒置。 */
+@media (max-width: 860px) {
+  body.deck .lex-inner {
+    transform: none !important;
+    -webkit-transform: none !important;
+    transform-style: flat !important;
+    -webkit-transform-style: flat !important;
+    transition: none !important;
+  }
+  body.deck .lex-face {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    transition: none !important;
+  }
+  body.deck .lex-front { display: flex !important; }
+  body.deck .lex-back {
+    display: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+  body.deck .lex-card.flipped .lex-front { display: none !important; }
+  body.deck .lex-card.flipped .lex-back { display: flex !important; }
 }
