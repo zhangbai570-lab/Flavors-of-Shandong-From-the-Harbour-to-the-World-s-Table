@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    海味山东 · main.js
    纯原生 JS，无任何外部依赖，file:// 双击即可运行
    ============================================================ */
@@ -203,12 +203,42 @@
         "</div>"
       );
     }).join("");
+    window.requestAnimationFrame(fitLexBacks);
   }
 
   function toggleFlip(card) {
     if (!card) return;
     var on = card.classList.toggle("flipped");
     card.setAttribute("aria-pressed", on ? "true" : "false");
+    if (on) {
+      card.offsetHeight; // 先让 display 切换生效
+      var back = card.querySelector(".lex-back");
+      window.setTimeout(function () { fitLexBack(back); }, 60);
+    }
+  }
+
+  /* 词源卡背面：自动选一个「刚好放满卡片」的字号（不再需要卡片内滚动） */
+  function bestLexSize(back) {
+    if (!back || !back.clientHeight) return 0;
+    var max = window.innerWidth <= 860 ? 18 : 24;
+    var lo = 7, hi = max, best = 7, i, mid;
+    for (i = 0; i < 9; i++) {
+      mid = (lo + hi) / 2;
+      back.style.fontSize = mid + "px";
+      if (back.scrollHeight <= back.clientHeight + 1) { best = mid; lo = mid; }
+      else { hi = mid; }
+    }
+    return best;
+  }
+  function fitLexBack(back) {
+    var s = bestLexSize(back);
+    if (s) back.style.fontSize = s + "px";
+  }
+  /* 每张卡片各自撑满自己的卡片（长故事字号小一点、短故事字号大一点） */
+  function fitLexBacks() {
+    document.querySelectorAll(".lex-back").forEach(function (b) {
+      if (b.clientHeight) fitLexBack(b);
+    });
   }
 
   /* ---------------- 叁 · 宴席 ---------------- */
@@ -426,6 +456,7 @@
     lang = next;
     saveLang(lang);
     renderAll();
+    window.requestAnimationFrame(fitLexBacks);
     document.dispatchEvent(new CustomEvent("hx:langchange", { detail: { lang: lang } }));
   }
 
@@ -611,6 +642,12 @@
     bindEvents();
     initScrollFx();
     initReveal();
+    window.requestAnimationFrame(fitLexBacks);
+    var lexFitTimer = null;
+    window.addEventListener("resize", function () {
+      window.clearTimeout(lexFitTimer);
+      lexFitTimer = window.setTimeout(fitLexBacks, 200);
+    });
     /* 参考列表（中文文献名） */
     $("#refList").innerHTML = SITE.refs.map(function (r) {
       return "<li>" + esc(r) + "</li>";

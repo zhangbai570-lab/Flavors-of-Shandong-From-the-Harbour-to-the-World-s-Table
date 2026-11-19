@@ -1,21 +1,31 @@
-﻿/* ============================================================
-   海味山东 · v25.css
-   词源页：压缩上下间距，让卡片背面一屏放下，不再需要卡片内滚动
+/* ============================================================
+   海味山东 · v25.css（v27 调整）
+   词源页：压缩页面/卡片间距，背面文字用 em 相对字号，
+   由 js/main.js 的 fitLexBack() 自动撑到「刚好放满卡片」。
    ============================================================ */
 
 body.deck .page-lexicon .sec-head { margin-bottom: 10px; }
 body.deck .page-lexicon .lex-grid { gap: 10px; }
 
-/* 词源卡：正反面内边距、表单、故事一起收紧 */
 body.deck .page-lexicon .lex-face { padding: 12px 14px; }
+
+/* 背面所有字号以 .lex-back 的 font-size 为基准，JS 会自动调整这个值 */
+body.deck .lex-back {
+  font-size: 11px;
+  line-height: 1.2;
+  overflow: hidden;
+}
 body.deck .lex-back-top { padding-bottom: 4px; margin-bottom: 2px; }
-body.deck .lex-back-top b { font-size: 13px; }
-body.deck .lex-forms li { padding: 0; }
-body.deck .lex-forms span { font-size: 7.5px; }
-body.deck .lex-forms b { font-size: 9.5px; }
-body.deck .lex-story { margin-top: 4px; font-size: 8.5px; line-height: 1.45; }
+body.deck .lex-back-top b { font-size: 1.25em; }
+body.deck .lex-forms li {
+  grid-template-columns: 5em 1fr;
+  padding: 0;
+  align-items: baseline;
+}
+body.deck .lex-forms span { font-size: 0.68em; line-height: 1.5; }
+body.deck .lex-forms b { font-size: 0.9em; line-height: 1.5; }
+body.deck .lex-story { margin-top: 4px; font-size: 0.8em; line-height: 1.55; }
 body.deck .lex-backfoot { display: none; }
-body.deck .lex-back { overflow: hidden; }
 
 @media (min-width: 861px) {
   /* 电脑端把「点击卡片翻面」提示收紧，给卡片让出高度 */
@@ -24,14 +34,4 @@ body.deck .lex-back { overflow: hidden; }
 
 @media (max-width: 860px) {
   body.deck .page-lexicon .lex-face { padding: 10px; }
-}
-/* 手机上英文/日文更长，再收紧一档，保证背面一屏读完 */
-@media (max-width: 860px) {
-  body.deck .page-lexicon .lex-face { padding: 9px 10px; }
-  body.deck .page-lexicon .hint-line { margin: 2px 0 4px; font-size: 8px; }
-  body.deck .lex-back-top { padding-bottom: 3px; margin-bottom: 1px; }
-  body.deck .lex-back-top b { font-size: 12px; }
-  body.deck .lex-forms b { font-size: 9px; }
-  body.deck .lex-forms span { font-size: 7px; }
-  body.deck .lex-story { margin-top: 3px; font-size: 8px; line-height: 1.33; }
 }

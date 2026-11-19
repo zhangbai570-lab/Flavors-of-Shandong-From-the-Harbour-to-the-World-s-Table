@@ -1,5 +1,5 @@
-/* 海味山东 · 首屏加载等待层
-   等首屏背景图（webp 优先，jpg 回退）加载完成后再淡出 */
+﻿/* 海味山东 · 首屏加载等待层
+   预加载首屏背景、词源纸纹、卡片框，加载完成后再淡出 */
 (function () {
   var loader = document.getElementById("bootLoader");
   if (!loader) return;
@@ -10,7 +10,6 @@
   function hide() {
     if (hidden) return;
     hidden = true;
-    // 至少展示 450ms，避免缓存命中时闪一下
     var wait = Math.max(0, 450 - (Date.now() - started));
     window.setTimeout(function () {
       loader.classList.add("done");
@@ -30,17 +29,19 @@
   }
 
   if (!window.Promise) {
-    window.setTimeout(hide, 1200);
+    window.setTimeout(hide, 1500);
     return;
   }
 
-  preload("assets/img/hero-bg.webp")
-    .then(function (ok) {
-      if (ok) return true;
-      return preload("assets/img/hero-bg.jpg");
-    })
-    .then(function () { hide(); })
-    .catch(function () { hide(); });
+  var hero = preload("assets/img/hero-bg.webp").then(function (ok) {
+    return ok ? true : preload("assets/img/hero-bg.jpg");
+  });
+
+  Promise.all([
+    hero,
+    preload("assets/img/lex-bg.webp"),
+    preload("assets/img/card-frame.webp"),
+  ]).then(function () { hide(); }).catch(function () { hide(); });
 
   // 兜底：8 秒还没好就直接放行，避免一直卡在等待层
   window.setTimeout(hide, 8000);
