@@ -77,6 +77,14 @@
   /* ---------------- 壹 · 港口地图 ---------------- */
   var panel = $("#portPanel");
   var portLayer = $("#portLayer");
+  var mapHotspots = $("#mapHotspots");
+  /* v10：美工山东地图上的点位（百分比，按图片 1400×933 量取） */
+  var MAP_POINT = {
+    qingdao: { x: 63.22, y: 58.22 },
+    yantai: { x: 75.97, y: 17.29 },
+    weihai: { x: 94.3, y: 42.26 },
+    rizhao: { x: 50.12, y: 74.52 }
+  };
 
   function renderPorts() {
     portLayer.innerHTML = SITE.cities.map(function (c) {
@@ -94,10 +102,31 @@
         "</g>"
       );
     }).join("");
+
+    if (mapHotspots) {
+      mapHotspots.innerHTML = SITE.cities.map(function (c) {
+        var pt = MAP_POINT[c.id] || { x: 50, y: 50 };
+        var on = c.id === activeCityId ? " on" : "";
+        var left = (c.id === "weihai" || c.id === "rizhao") ? " left" : "";
+        return (
+          '<button type="button" class="map-pin' + on + left + '" data-id="' + c.id + '"' +
+            ' style="--mx:' + pt.x + "%;--my:" + pt.y + '%"' +
+            ' aria-label="' + esc(L(c.name) + " · " + L(c.dish)) + '">' +
+            '<i class="map-pin-dot"></i>' +
+            '<span class="map-pin-label">' + esc(L(c.name)) + "<em>" + esc(c.en) + "</em></span>" +
+          "</button>"
+        );
+      }).join("");
+    }
   }
 
   function setActivePort(id) {
     activeCityId = id;
+    if (mapHotspots) {
+      $$(".map-pin", mapHotspots).forEach(function (b) {
+        b.classList.toggle("on", b.getAttribute("data-id") === id);
+      });
+    }
     $$(".port", portLayer).forEach(function (g) {
       g.classList.toggle("active", g.getAttribute("data-id") === id);
     });
@@ -190,7 +219,7 @@
       return (
         '<article class="dish-card" data-id="' + d.id + '" tabindex="0">' +
           '<span class="dish-no">' + ("0" + (i + 1)).slice(-2) + "</span>" +
-          '<div class="dish-plate"><span class="dish-char">' + esc(d.char || "") + "</span></div>" +
+          '<div class="dish-plate"><img class="dish-art" src="assets/img/dish-' + d.id + '.webp" alt="' + esc(L(d.names)) + '" draggable="false" onerror="this.style.display=\'none\'"><span class="dish-char">' + esc(d.char || "") + "</span></div>" +
           '<h3 class="dish-name">' + esc(L(d.names)) + "</h3>" +
           '<p class="dish-pinyin">' + esc(d.pinyin) + "</p>" +
           '<p class="dish-tag">' + esc(L(d.tag)) + "</p>" +
@@ -211,7 +240,7 @@
         '<article class="craft-step">' +
           '<span class="step-no">' + esc(t("step")) + " " + s.no + "</span>" +
           '<div class="step-verb-row"><span class="step-verb">' + esc(big) + '</span><span class="step-verb-en">' + esc(small) + "</span></div>" +
-          '<div class="step-icon">' + (ICONS[s.icon] || "") + "</div>" +
+          '<div class="step-icon"><img class="step-art" src="assets/img/craft-' + parseInt(s.no, 10) + '.webp" alt="' + esc(L(s.title)) + '" draggable="false" onerror="this.style.display=\'none\'"></div>' +
           '<h3 class="step-title">' + esc(L(s.title)) + "</h3>" +
           '<p class="step-desc">' + esc(L(s.desc)) + "</p>" +
           '<p class="step-meta">' + esc(L(s.meta)) + "</p>" +
@@ -323,10 +352,13 @@
   var timePrev = $("#timePrev");
   var timeNext = $("#timeNext");
 
+  var TIME_ART = ["tang", "yuan", "ming", "qing", "now"];
+
   function renderTimeline() {
-    timeTrack.innerHTML = SITE.timeline.map(function (item) {
+    timeTrack.innerHTML = SITE.timeline.map(function (item, i) {
       return (
         '<article class="time-card">' +
+          '<div class="time-art"><img src="assets/img/time-' + (TIME_ART[i] || "now") + '.webp" alt="' + esc(L(item.title)) + '" draggable="false"></div>' +
           '<p class="time-year">' + esc(item.year) + "</p>" +
           '<p class="time-date">' + esc(L(item.dateLabel)) + "</p>" +
           '<h3 class="time-title">' + esc(L(item.title)) + "</h3>" +
@@ -473,6 +505,14 @@
       var g = e.target.closest ? e.target.closest(".port") : null;
       if (g) { e.preventDefault(); setActivePort(g.getAttribute("data-id")); }
     });
+
+    /* v10：美工地图热区 */
+    if (mapHotspots) {
+      mapHotspots.addEventListener("click", function (e) {
+        var b = e.target.closest ? e.target.closest(".map-pin") : null;
+        if (b) setActivePort(b.getAttribute("data-id"));
+      });
+    }
 
     /* 翻卡 */
     lexGrid.addEventListener("click", function (e) {

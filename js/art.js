@@ -591,9 +591,44 @@
       '<g fill="#bfe8e5" opacity=".7" stroke="none"><circle cx="46" cy="30" r="1.6"/><circle cx="70" cy="22" r="1.2"/><circle cx="98" cy="28" r="1.4"/><circle cx="124" cy="20" r="1"/></g></g>'
   };
 
-  /* ============================================================
-     6.5 · 章节底部的墨浪 / 远山（纯装饰）
-     ============================================================ */
+  /* 四时圆心插画：内容对应当季小字（鲅鱼 / 蛤蜊 / 梭子蟹 / 牡蛎） */
+  var SEASON_ILLUS = {
+    spring:
+      '<g>' +
+        '<path d="M118 214 C 142 186 188 178 222 194 C 200 220 158 230 118 214 Z" fill="#d7e9e3" stroke="#1d4e63" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M222 194 l 26 -15 v 32 l -26 -8" fill="#d7e9e3" stroke="#1d4e63" stroke-width="2" stroke-linejoin="round"/>' +
+        '<circle cx="146" cy="204" r="3.2" fill="#1d4e63"/>' +
+        '<path d="M168 186 c 7 8 7 16 0 24" stroke="#1d4e63" stroke-opacity=".45" fill="none" stroke-width="1.6"/>' +
+        '<path d="M150 214 c 4 6 4 12 0 18" stroke="#1d4e63" stroke-opacity=".3" fill="none"/>' +
+      "</g>" +
+      '<g fill="none" stroke="#2f6f74" stroke-opacity=".32" stroke-linecap="round"><path d="M130 246 c 14 -8 28 -8 42 0 s 28 8 42 0"/><path d="M146 258 c 12 -7 24 -7 36 0"/></g>',
+    summer:
+      '<g>' +
+        '<path d="M200 168 C 158 168 128 198 128 228 C 152 252 248 252 272 228 C 272 198 242 168 200 168 Z" fill="#f6e4d8" stroke="#1d4e63" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M200 172 L 156 240 M 200 172 L 178 246 M 200 172 L 200 248 M 200 172 L 222 246 M 200 172 L 244 240" stroke="#1d4e63" stroke-opacity=".35" fill="none"/>' +
+        '<path d="M128 228 C 152 248 248 248 272 228" stroke="#1d4e63" stroke-opacity=".6" fill="none" stroke-width="2"/>' +
+      "</g>" +
+      '<g fill="none" stroke="#2f6f74" stroke-opacity=".32" stroke-linecap="round"><path d="M130 258 c 14 -8 28 -8 42 0 s 28 8 42 0"/></g>',
+    autumn:
+      '<g stroke="#b8452f" stroke-width="2" fill="none" stroke-linecap="round">' +
+        '<ellipse cx="200" cy="206" rx="44" ry="28" fill="#f6cdb0"/>' +
+        '<circle cx="184" cy="198" r="2.6" fill="#b8452f" stroke="none"/><circle cx="216" cy="198" r="2.6" fill="#b8452f" stroke="none"/>' +
+        '<path d="M160 198 C 140 188 132 170 142 164 C 150 160 158 172 154 184"/>' +
+        '<path d="M240 198 C 260 188 268 170 258 164 C 250 160 242 172 246 184"/>' +
+        '<path d="M164 228 C 154 244 152 254 160 258 M 180 234 C 174 250 176 260 184 264 M 220 234 C 226 250 224 260 216 264 M 236 228 C 246 244 248 254 240 258"/>' +
+        '<path d="M178 176 l -4 -10 M 200 170 l 0 -12 M 222 176 l 4 -10" stroke-opacity=".7"/>' +
+      "</g>" +
+      '<g fill="none" stroke="#2f6f74" stroke-opacity=".32" stroke-linecap="round"><path d="M132 268 c 14 -8 28 -8 42 0 s 28 8 42 0"/></g>',
+    winter:
+      '<g>' +
+        '<path d="M200 160 C 168 160 146 182 150 214 C 154 244 176 260 200 260 C 224 260 246 244 250 214 C 254 182 232 160 200 160 Z" fill="#e1ebe7" stroke="#1d4e63" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M200 166 C 186 192 186 232 200 254 M 200 166 C 214 192 214 232 200 254" stroke="#1d4e63" stroke-opacity=".35" fill="none"/>' +
+        '<circle cx="200" cy="210" r="13" fill="#f7f1e3" stroke="#1d4e63" stroke-opacity=".4"/>' +
+      "</g>" +
+      '<g fill="none" stroke="#2f6f74" stroke-opacity=".32" stroke-linecap="round"><path d="M130 268 c 14 -8 28 -8 42 0 s 28 8 42 0"/></g>'
+  };
+
+
   var DECO_DARK =
     '<svg viewBox="0 0 1440 260" preserveAspectRatio="none">' +
       '<path class="iw" d="M0 128 C 220 92 380 172 600 146 C 820 120 980 70 1200 100 C 1320 116 1400 140 1440 132 L1440 260 L0 260 Z" fill="rgba(30,111,122,.16)"/>' +
@@ -733,6 +768,8 @@
       var plate = card.querySelector(".dish-plate");
       if (!plate) continue;
       if (plate.getAttribute("data-art") === "done") continue;
+      /* v10：已使用美工菜品图，跳过 SVG 插画 */
+      if (plate.querySelector("img.dish-art")) { plate.setAttribute("data-art", "done"); continue; }
       var id = card.getAttribute("data-id");
       var fn = DISH_ART[id] || DISH_ART.haishen;
       var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -771,6 +808,8 @@
       var step = steps[i];
       var box = step.querySelector(".step-icon");
       if (!box || box.getAttribute("data-art") === "done") continue;
+      /* v10：已使用美工工序图，跳过 SVG 插画 */
+      if (box.querySelector("img.step-art")) { box.setAttribute("data-art", "done"); continue; }
       var svgMarkup = box.querySelector("svg");
       var key = null;
       var keys = ["fish", "knife", "bowl", "chive", "roller", "pot"];
@@ -920,7 +959,9 @@
       if (!s) return;
       var id = s.id;
       var pic = wheel.querySelector("#tidePic");
-      pic.innerHTML = '<g transform="translate(81 123) scale(1.35)">' + (SEASON_ICON[id] || "") + "</g>";
+      pic.innerHTML =
+        '<g class="td-illus">' + (SEASON_ILLUS[id] || SEASON_ILLUS.spring) + "</g>" +
+        '<text class="td-illus-sub" x="200" y="286" text-anchor="middle">' + esc(L(s.dish)) + "</text>";
       wheel.querySelectorAll(".td-sector").forEach(function (p, idx) {
         p.classList.toggle("on", idx === i);
       });

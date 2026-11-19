@@ -139,6 +139,11 @@
       var id = (links[j].getAttribute("href") || "").replace(/^#/, "");
       links[j].classList.toggle("on", !!page && id === page.id);
     }
+
+    /* v10：广播翻页事件，供右侧翻页键 / 页面状态使用 */
+    document.dispatchEvent(new CustomEvent("hx:pagechange", {
+      detail: { index: current, total: pages.length }
+    }));
   }
 
   /* ---------------- 内容高度兜底 ----------------
@@ -213,8 +218,9 @@
       }
     });
 
-    /* 滚轮：一次滚动手势 = 翻一页（不会停在页面中间） */
-    deck.addEventListener("wheel", function (e) {
+    /* 滚轮：一次滚动手势 = 翻一页（不会停在页面中间）
+       v10：监听挂到 window（capture），不再要求先点击页面/焦点在 .deck 上 */
+    window.addEventListener("wheel", function (e) {
       if (modal && modal.classList.contains("open")) return;
       if (e.ctrlKey) return;
       // 横向滚动（如年表）交还给浏览器
@@ -244,7 +250,7 @@
         wheelAcc = 0;
         goTo(current + dir);
       }
-    }, { passive: false });
+    }, { passive: false, capture: true });
 
     /* 滚动 = 翻页，状态由滚动位置驱动（触摸/系统滚动也能更新） */
     deck.addEventListener("scroll", function () {

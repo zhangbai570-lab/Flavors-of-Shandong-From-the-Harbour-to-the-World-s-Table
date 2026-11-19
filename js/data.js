@@ -9,7 +9,7 @@ window.SITE = {
     {
       id: "qingdao",
       no: "01",
-      x: 490, y: 398, labelDx: 26, labelDy: -2, labelAnchor: "start",
+      x: 525, y: 286, labelDx: 20, labelDy: 8, labelAnchor: "start",
       name: { zh: "青岛", en: "Qingdao", ja: "青島", ko: "칭다오" },
       en: "QINGDAO",
       region: { zh: "胶州湾", en: "JIAOZHOU BAY", ja: "膠州湾", ko: "자오저우만" },
@@ -38,7 +38,7 @@ window.SITE = {
     {
       id: "yantai",
       no: "02",
-      x: 534, y: 228, labelDx: 0, labelDy: -34, labelAnchor: "middle",
+      x: 619, y: 120, labelDx: 0, labelDy: -26, labelAnchor: "middle",
       name: { zh: "烟台", en: "Yantai", ja: "煙台", ko: "옌타이" },
       en: "YANTAI",
       region: { zh: "鲁菜 · 蓬莱", en: "LU CUISINE · PENGLAI", ja: "魯菜 · 蓬莱", ko: "루차이 · 펑라이" },
@@ -67,7 +67,7 @@ window.SITE = {
     {
       id: "weihai",
       no: "03",
-      x: 652, y: 300, labelDx: -16, labelDy: 8, labelAnchor: "end",
+      x: 685, y: 123, labelDx: -14, labelDy: 18, labelAnchor: "end",
       name: { zh: "威海", en: "Weihai", ja: "威海", ko: "웨이하이" },
       en: "WEIHAI",
       region: { zh: "胶东 · 家常", en: "JIAODONG · HOME TABLE", ja: "膠東 · 家庭", ko: "자오둥 · 집밥" },
@@ -96,7 +96,7 @@ window.SITE = {
     {
       id: "rizhao",
       no: "04",
-      x: 448, y: 456, labelDx: 0, labelDy: 38, labelAnchor: "middle",
+      x: 443, y: 359, labelDx: 0, labelDy: 30, labelAnchor: "middle",
       name: { zh: "日照", en: "Rizhao", ja: "日照", ko: "르자오" },
       en: "RIZHAO",
       region: { zh: "日照 · 渔家", en: "RIZHAO · FISHERMAN", ja: "日照 · 漁家", ko: "르자오 · 어부" },
@@ -470,7 +470,7 @@ window.SITE = {
   /* ---------- 陆 · 年表 ---------- */
   timeline: [
     {
-      year: "7–13 c.",
+      year: "7–13 世纪",
       dateLabel: { zh: "唐宋", en: "Tang–Song", ja: "唐・宋", ko: "당·송" },
       title: { zh: "登州与板桥镇", en: "Dengzhou and Banqiao", ja: "登州と板橋鎮", ko: "덩저우와 반차오진" },
       text: {
