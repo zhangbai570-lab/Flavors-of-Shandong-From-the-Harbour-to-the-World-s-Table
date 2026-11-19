@@ -217,10 +217,10 @@ window.SITE = {
         { key: "ko", word: "바지락" }
       ],
       story: {
-        zh: "蛤蜊在青岛话里是「嘎啦」，念出来像两片壳相碰。英语的 clam 来自古英语「夹紧」，德语叫 Herzmuschel——「心形贝」。一个按声音命名，一个按动作命名，一个按形状命名。",
-        en: "In Qingdao dialect a clam is 'gá la', which sounds like two shells knocking. English 'clam' comes from an Old English word for clamping shut; German calls it Herzmuschel, 'heart-shell'. One language names the sound, one the action, one the shape.",
-        ja: "青島方言では「嘎啦」、貝がぶつかる音のようです。英語 clam は「締める」、ドイツ語は「心臓の貝」。音で、動作で、形で名づけられました。",
-        ko: "칭다오 방언으로 '嘎啦'는 껍데기 부딪는 소리입니다. 영어 clam은 '집다', 독일어 Herzmuschel은 '심장 조개'입니다. 소리와 동작과 모양으로 이름 붙였습니다."
+        zh: "蛤蜊在青岛话里是「嘎啦」，念出来像两片壳相碰；英语的 clam 来自古英语「夹紧」，说的是合壳的动作。德语把这类贝统称 Muschel，而 Herzmuschel（心蛤）是另一个科、因壳形像心而得名——并不是同一种蛤蜊。",
+        en: "In Qingdao dialect a clam is 'gá la', which sounds like two shells knocking; English 'clam' comes from an Old English word for clamping shut — the action of closing. German calls shellfish in general Muschel; Herzmuschel ('heart shell') is a different family, named for its heart-shaped shell, not the same clam.",
+        ja: "青島方言では「嘎啦」、貝がぶつかる音のようです。英語 clam は「締める」動作から。ドイツ語は貝類をまとめて Muschel と呼び、Herzmuschel（心臓形の貝）は別の科の貝で、同じ蛤ではありません。",
+        ko: "칭다오 방언 '嘎啦'는 껍데기 부딪는 소리입니다. 영어 clam은 '집다'는 동작에서 왔습니다. 독일어는 조개류를 통칭 Muschel이라 하고, Herzmuschel(심장 모양 조개)은 다른 과의 조개로 같은 바지락이 아닙니다."
       }
     },
     {
@@ -314,7 +314,7 @@ window.SITE = {
     {
       id: "urchin", icon: "urchin", char: "胆", pinyin: "hǎi dǎn zhēng dàn",
       names: { zh: "海胆蒸蛋", en: "Steamed Sea Urchin Custard", ja: "ウニの茶碗蒸し", ko: "성게알 계란찜" },
-      tag: { zh: "长岛 · 威海", en: "CHANGDAO · WEIHAI", ja: "長島 · 威海", ko: "창다오 · 웨이하이" }
+      tag: { zh: "长岛 · 烟台", en: "CHANGDAO · YANTAI", ja: "長島 · 煙台", ko: "창다오 · 옌타이" }
     }
   ],
 
@@ -674,22 +674,22 @@ window.SITE = {
         ko: "굴"
       },
       line: {
-        zh: "冬天的牡蛎最甜。乳山一带把蛎子养在潮间带，冷水期它们把养分存成糖原，肉才肥。",
-        en: "Winter oysters are the sweetest. Around Rushan they are farmed on the tidal flats; through the cold months they store their food as glycogen, and the flesh turns plump.",
-        ja: "冬のカキは最も甘い。乳山周辺では潮間帯で養殖し、冷水期に養分をグリコーゲンとして蓄えるため身が肥えます。",
-        ko: "겨울 굴이 가장 답니다. 루산 일대에서는 조간대에서 굴을 기르는데, 찬물철에 양분을 글리코겐으로 저장해 살이 통통해집니다."
+        zh: "冬天的牡蛎最甜。乳山一带在浅海用筏架养殖，冷水期它们把养分存成糖原，肉才肥。",
+        en: "Winter oysters are the sweetest. Around Rushan they are grown on rafts in shallow water; through the cold months they store food as glycogen, and the flesh turns plump.",
+        ja: "冬のカキは最も甘い。乳山周辺では浅海の筏で養殖し、冷水期に養分をグリコーゲンとして蓄えるため身が肥えます。",
+        ko: "겨울 굴이 가장 답니다. 루산 일대에서는 얕은 바다의 수하식(筏) 양식으로 기르며, 찬물철에 양분을 글리코겐으로 저장해 살이 통통해집니다."
       },
       note: {
-        zh: "牡蛎有两个常用的英语名字：oyster 指上桌的那一只，Ostrea 是它的属名。",
-        en: "Two English names: oyster for the one on your plate, Ostrea for its genus.",
-        ja: "英語の名前は二つ。食卓に上るのが oyster、属名が Ostrea。",
-        ko: "영어 이름은 둘. 식탁에 오르는 것이 oyster, 속명이 Ostrea입니다."
+        zh: "上桌的牡蛎英语叫 oyster；乳山养殖的太平洋牡蛎属名是 Magallana（旧属名 Crassostrea），Ostrea 是牡蛎科里另一个属（欧洲牡蛎等），不是它的属名。",
+        en: "On the plate it is simply 'oyster'. The Pacific oyster farmed around Rushan belongs to the genus Magallana (formerly Crassostrea); Ostrea is a different genus in the same family, not its genus.",
+        ja: "食卓では oyster。乳山で養殖される太平洋牡蠣の属名は Magallana（旧 Crassostrea）で、Ostrea は同じ科の別属（ヨーロッパガキなど）です。",
+        ko: "식탁에서는 oyster. 루산에서 기르는 참굴(태평양굴)의 속명은 Magallana(옛 Crassostrea)이며, Ostrea는 같은 과의 다른 속(유럽굴 등)입니다."
       },
       meta: {
-        zh: "十二月至二月 · 潮间带",
-        en: "DECEMBER–FEBRUARY · INTERTIDAL ZONE",
-        ja: "十二月から二月 · 潮間帯",
-        ko: "12월에서 2월 · 조간대"
+        zh: "十二月至二月 · 浅海筏架",
+        en: "DECEMBER–FEBRUARY · RAFT CULTURE",
+        ja: "十二月から二月 · 浅海筏",
+        ko: "12월에서 2월 · 수하식 양식"
       }
     }
   ],
@@ -708,7 +708,7 @@ window.SITE = {
   aiStatement: [
     {
       h: "一、工具与用途",
-      p: "网页结构、交互逻辑与样式由团队使用 AI 编程助手（DeepSeek）辅助生成并逐行调试；多语种译名与词源初稿由 AI 辅助检索，再对照《在线词源词典》、Wiktionary 与 FishBase 人工核校；地图、图标与插画由团队手写 SVG，AI 仅参与配色讨论。"
+      p: "网页结构、交互逻辑与样式由团队用 AI 编程助手（DeepSeek）辅助生成并逐行调试；多语种译名与词源初稿由 AI 辅助检索，再对照《在线词源词典》、Wiktionary 与 FishBase 人工核校；主视觉与菜品、工序、年表插画由 AI 绘图工具生成底稿，经人工筛选、调色与排版；地图依据公开地理数据绘制，线稿、图标与版式由团队完成。"
     },
     {
       h: "二、人工主导部分",
