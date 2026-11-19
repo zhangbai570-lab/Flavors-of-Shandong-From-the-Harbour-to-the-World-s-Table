@@ -107,7 +107,7 @@ window.SITE = {
     ja: "漁村の海神祭。春には一番新鮮なサワラ水餃子を義父の家へ。海藻屋根の家。",
     ko: "어촌 해신제. 봄에는 가장 신선한 삼치 만두를 장인 댁에 드립니다. 해초 지붕 집."
   },
-      dish: { zh: "鲅鱼水饺", en: "Spanish Mackerel Dumplings", ja: "サワラ水餃子", ko: "삼치 물만두" },
+      dish: { zh: "鲅鱼水饺", en: "Mackerel Dumplings", ja: "サワラ水餃子", ko: "삼치 물만두" },
       pinyin: "bà yú shuǐ jiǎo",
       dialect: { zh: "「鲅鱼跳，丈人笑」", en: "'when the mackerel jumps, the father-in-law smiles'", ja: "「サワラが跳ねれば義父が笑う」", ko: "'삼치가 뛰면 장인이 웃는다'" },
       story: {
@@ -233,10 +233,10 @@ window.SITE = {
         { key: "ko", word: "다시마" }
       ],
       story: {
-        zh: "昆布本是汉语里的古词，却在日语里长成了「こんぶ」，又在上个世纪以 kombu 的身份进入英语词典。山东荣成是全国最大的海带产区——词从海上来，也回到海上去。",
-        en: "Kombu began as a classical Chinese word, grew into Japanese konbu, and entered English dictionaries as 'kombu' in the last century. Rongcheng in Shandong is China's largest kelp-growing region: the word came from the sea and returned to it.",
-        ja: "昆布はもともと漢語の古い言葉で、日本語の「こんぶ」になり、二十世紀に kombu として英語辞書に入りました。山東省栄成は中国最大の昆布産地です。",
-        ko: "곤포(昆布)는 본래 한자어였고, 일본어 '곤부'가 되었다가 20세기에 kombu로 영어 사전에 들어갔습니다. 산둥 룽청은 중국 최대 다시마 산지입니다."
+        zh: "昆布本是汉语里的古词，却在日语里长成了「こんぶ」，又在 19 世纪末以 kombu 的身份进入英语词典。山东荣成是全国最大的海带产区——词从海上来，也回到海上去。",
+        en: "Kombu began as a classical Chinese word, grew into Japanese konbu, and entered English dictionaries as 'kombu' in the late 19th century. Rongcheng in Shandong is China's largest kelp-growing region: the word came from the sea and returned to it.",
+        ja: "昆布はもともと漢語の古い言葉で、日本語の「こんぶ」になり、十九世紀末に kombu として英語辞書に入りました。山東省栄成は中国最大の昆布産地です。",
+        ko: "곤포(昆布)는 본래 한자어였고, 일본어 '곤부'가 되었다가 19세기 말에 kombu로 영어 사전에 들어갔습니다. 산둥 룽청은 중국 최대 다시마 산지입니다."
       }
     },
     {
@@ -250,10 +250,10 @@ window.SITE = {
         { key: "ko", word: "전복" }
       ],
       story: {
-        zh: "英语 abalone 的旅行路线长得惊人：它借自西班牙语 abulón，而 abulón 又来自美国加州原住民语言 Rumsen（拉姆森语）的 aulón。一个山东人熟悉的词，绕了半个地球，才在英语里落脚。",
-        en: "English 'abalone' has travelled absurdly far: from Spanish abulón, which came from aulón in Rumsen, a Native Californian language. A familiar word on the Shandong coast took half the globe to land in English.",
-        ja: "英語 abalone はスペイン語 abulón から、さらにカリフォルニア先住民のルムセン語 aulón にさかのぼります。山東の食卓の言葉が、地球の半周を回って英語にたどり着きました。",
-        ko: "영어 abalone은 스페인어 abulón에서, 다시 캘리포니아 원주민 언어인 럼센어 aulón에서 왔습니다. 산둥의 친숙한 말이 지구 반 바퀴를 돌아 영어에 닿았습니다."
+        zh: "英语 abalone 的旅行路线长得惊人：它借自西班牙语 abulón，而 abulón 又来自美国加州原住民语言 Rumsen（拉姆森语）的 aulón。一种山东人熟悉的海味，绕了半个地球，才在英语里落脚。",
+        en: "English 'abalone' has travelled absurdly far: from Spanish abulón, which came from aulón in Rumsen, a Native Californian language. A seafood familiar on the Shandong coast took half the globe to land in English.",
+        ja: "英語 abalone はスペイン語 abulón から、さらにカリフォルニア先住民のルムセン語 aulón にさかのぼります。山東の食卓でおなじみの海の幸が、地球の半周を回って英語にたどり着きました。",
+        ko: "영어 abalone은 스페인어 abulón에서, 다시 캘리포니아 원주민 언어인 럼센어 aulón에서 왔습니다. 산둥에서 친숙한 해산물이 지구 반 바퀴를 돌아 영어에 닿았습니다."
       }
     },
     {
@@ -293,7 +293,7 @@ window.SITE = {
     },
     {
       id: "clam", icon: "clam", char: "蛤", pinyin: "là chǎo gé lí",
-      names: { zh: "辣炒蛤蜊", en: "Spicy Clams", ja: "アサリの辛炒め", ko: "바지락 볶음" },
+      names: { zh: "辣炒蛤蜊", en: "Spicy Stir-fried Clams", ja: "アサリの辛炒め", ko: "바지락 볶음" },
       tag: { zh: "夜市 · 青岛", en: "NIGHT MARKET · QINGDAO", ja: "夜市 · 青島", ko: "야시장 · 칭다오" }
     },
     {
@@ -303,7 +303,7 @@ window.SITE = {
     },
     {
       id: "soup", icon: "soup", char: "汤", pinyin: "hǎi xiān gē da tāng",
-      names: { zh: "海鲜疙瘩汤", en: "Dough-Drop Soup", ja: "海鮮すいとん", ko: "해산물 수제비" },
+      names: { zh: "海鲜疙瘩汤", en: "Seafood Dough-Drop Soup", ja: "海鮮すいとん", ko: "해산물 수제비" },
       tag: { zh: "渔家 · 日照", en: "FISHERMAN · RIZHAO", ja: "漁家 · 日照", ko: "어부 · 르자오" }
     },
     {
@@ -544,10 +544,10 @@ window.SITE = {
       dateLabel: { zh: "明代", en: "Ming", ja: "明", ko: "명" },
       title: { zh: "郑和与海禁之间", en: "Between Zheng He and the Sea Ban", ja: "鄭和と海禁のあいだ", ko: "정화와 해금 사이" },
       text: {
-        zh: "郑和七下西洋，把瓷器与茶叶带向印度洋；同一时期，山东渔船仍在近海讨生活。",
-        en: "Zheng He's seven voyages carried porcelain and tea to the Indian Ocean; meanwhile Shandong's fishing boats still worked the coastal waters.",
-        ja: "鄭和の七度の航海は陶磁器と茶をインド洋へ運びました。同じ頃、山東の漁船は近海で暮らしを立てていました。",
-        ko: "정화의 일곱 번 항해는 도자기와 차를 인도양으로 실어 날랐습니다. 그 시기 산둥의 어선은 여전히 연안에서 삶을 이어 갔습니다."
+        zh: "郑和七下西洋，把瓷器与丝绸带向印度洋；同一时期，山东渔船仍在近海讨生活。",
+        en: "Zheng He's seven voyages carried porcelain and silk to the Indian Ocean; meanwhile Shandong's fishing boats still worked the coastal waters.",
+        ja: "鄭和の七度の航海は陶磁器と絹をインド洋へ運びました。同じ頃、山東の漁船は近海で暮らしを立てていました。",
+        ko: "정화의 일곱 번 항해는 도자기와 비단을 인도양으로 실어 날랐습니다. 그 시기 산둥의 어선은 여전히 연안에서 삶을 이어 갔습니다."
       }
     },
     {
@@ -699,12 +699,12 @@ window.SITE = {
     "《风味人间》第一季（陈晓卿，2018）—— 海洋与食物的叙事启发",
     "Wiktionary / Online Etymology Dictionary —— tea、clam、abalone、junk、kombu 词源核对",
     "FishBase —— 蓝点马鲛 Scomberomorus niphonius 的学名与分布",
-    "中国非物质文化遗产网 —— 胶东海鲜烹饪技艺、蓬莱小面制作技艺",
+    "山东省非物质文化遗产名录 —— 胶东海鲜烹饪技艺、蓬莱小面制作技艺",
     "山东省文化和旅游厅 —— 胶东海洋饮食文化资料",
     "自然资源部标准地图服务 —— 地图规范参考（本页为示意地图）"
   ],
 
-  /* ---------- AI 创作说明（提交用中文，约 430 字） ---------- */
+  /* ---------- AI 创作说明（提交用中文，约 455 字） ---------- */
   aiStatement: [
     {
       h: "一、工具与用途",

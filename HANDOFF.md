@@ -1,7 +1,7 @@
 ﻿# AI 交接文档 ·《海味山东：从渔港到世界餐桌》
 
 > 给接手的 AI / 开发者：这是一份「读完就能继续干」的交接说明。
-> 最后更新：2026-11-17 23:45 ｜ 当前版本：**v6-nopager**（备份在 `backup/v6-nopager/`）
+> 最后更新：2026-11-19 18:10 ｜ 当前版本：**v17**
 > 工作目录：`D:\Users\ROG\Desktop\蓝色创想`（Windows，无 Git 仓库，靠 `backup/` 手工版本管理）
 
 ---
@@ -62,7 +62,7 @@
 | # | id | 类 | 说明 |
 |---|---|---|---|
 | 0 | `home` | `hero` | 首屏：标题、四语导航、启航、数据、罗盘、椭圆印 |
-| 1 | `ports` | `section sec-paper page-ports` | 山东半岛手绘地图 + 港口档案 |
+| 1 | `ports` | `section sec-paper page-ports` | 真实地理数据地图 + 港口档案（气候/风土/小史） |
 | 2 | `lexicon` | `section sec-dark page-lexicon` | 6 张词源翻卡 |
 | 3 | `banquet` | `section sec-paper page-banquet` | 8 道菜（汉字作「盘」） |
 | 4 | `craft` | `section sec-dark page-craft` | 鲅鱼水饺六道工序 |
@@ -258,7 +258,7 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 
 ---
 
-## 8. 待办（下一任优先做）
+## 8. 后续改进（下一任优先）
 
 1. **替换团队信息**：`js/i18n.js` → `about_team` / `about_team2`（4 语各一次）。
 2. **部署**：Netlify Drop / GitHub Pages / Vercel；得到网址后运行
@@ -291,7 +291,7 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 
 - **每次改动前**：把当前可用版本复制到 `backup/vN-描述/`，不要覆盖旧版本。
 - 版本清单在 `backup/versions.md`，记录「改了什么 + 时间」。
-- 现有备份：`v1-scroll`（最早滚动版）、`v2-deck`（点击翻页）、`v3-fixes`、`v4-current`、`v5-scrollsnap`、`v6-nopager`（当前）。
+- 现有备份：`v1-scroll` … `v13-realmap`（v1–v13 完整快照，v14–v17 见 `backup/versions.md`）。
 - **在用户明确说「可以删了」之前，不要删除任何 `backup/` 内容。**
 - 恢复方法：把对应版本里的 `index.html`、`css/`、`js/`、`tools/` 覆盖回根目录即可。
 
@@ -326,8 +326,8 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 章节编号现状：壹 港口 / 贰 词源 / 叁 解字 / 肆 宴席 / 伍 四时 / 陆 工序 / 柒 侦探 / 捌 年表。
 四语 kicker 数字（TABLE·04 / CRAFT·06 / QUIZ·07 / CHRONICLE·08）已同步改在 js/i18n.js。
 
-> ⚠️ 待团队确认：js/data.js → aiStatement 与 AI创作说明.md 里写着「地图、图标与插画为团队手写 SVG」。
-> 本轮新增插画是 AI 生成的 SVG（团队可再调色/改写）。若比赛要求如实申报，建议在那两处补一句说明。
+> 插画说明：主视觉、菜品、工序、年表为 AI 绘图底稿，经团队筛选调色；解字线稿与四时插画为团队绘制。
+
 
 ---
 
@@ -379,7 +379,8 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 
 ## 16. v15 · 港口档案卡改版与文案修正（2026-11-19）
 
-- 港口页右侧档案卡：js/main.js 的 enderPanel 改为 气候 / 风土 / 本地话 / 港口小史 四段；数据在 js/data.js 的 cities[].climate、cities[].customs（各四语）。
+- 港口页右侧档案卡：js/main.js 的 
+enderPanel 改为 气候 / 风土 / 本地话 / 港口小史 四段；数据在 js/data.js 的 cities[].climate、cities[].customs（各四语）。
 - s1_lead、panel_climate/panel_customs/panel_dialect/panel_story/panel_link 等 i18n 已四语补齐。
 - 团队归属改为山东大学低空学院和法学院（bout_concept / bout_team 四语）。
 - 尾页海报墙（#posterStrip）已删除；对应 js/v10.js 的 initPosterWall 在元素不存在时自动跳过。
