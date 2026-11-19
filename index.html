@@ -41,8 +41,24 @@
 <link rel="stylesheet" href="css/v15.css">
 <link rel="stylesheet" href="css/v19.css">
 <link rel="stylesheet" href="css/v22.css">
+<link rel="stylesheet" href="css/v23.css">
 </head>
 <body class="deck">
+
+<noscript><style>#bootLoader{display:none}</style></noscript>
+<div class="boot-loader" id="bootLoader" role="status" aria-live="polite">
+  <div class="boot-inner">
+    <svg class="boot-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M6 30c5-4 9-4 15 0s10 4 15 0" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M6 24c5-4 9-4 15 0s10 4 15 0" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <path d="M24 8v5M24 35v5M8 24h5M35 24h5" stroke="currentColor" stroke-width="1" opacity=".6"/>
+    </svg>
+    <p class="boot-title">海味山东</p>
+    <p class="boot-sub" data-i18n="loading">正在加载…</p>
+    <div class="boot-bar"><i></i></div>
+  </div>
+</div>
 
 <noscript>
   <div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;padding:14px 20px;background:#0a2233;color:#e7f3f2;font:14px/1.6 sans-serif;text-align:center;">
@@ -407,5 +423,6 @@
 <script src="js/v10.js"></script>
 <script src="js/v11.js"></script>
 <script src="js/v12.js"></script>
+<script src="js/boot.js"></script>
 </body>
 </html>

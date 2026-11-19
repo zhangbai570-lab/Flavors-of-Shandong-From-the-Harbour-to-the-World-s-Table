@@ -131,6 +131,7 @@ window.I18N = {
     common_flip: "查看词源",
     common_back: "返回",
     common_close: "关闭",
+    loading: "正在加载…",
     step: "工序"
   },
 
@@ -259,6 +260,7 @@ window.I18N = {
     common_flip: "View etymology",
     common_back: "Back",
     common_close: "Close",
+    loading: "Loading…",
     step: "Step"
   },
 
@@ -387,6 +389,7 @@ window.I18N = {
     common_flip: "語源を見る",
     common_back: "戻る",
     common_close: "閉じる",
+    loading: "読み込み中…",
     step: "工程"
   },
 
@@ -515,6 +518,7 @@ window.I18N = {
     common_flip: "어원 보기",
     common_back: "뒤로",
     common_close: "닫기",
+    loading: "불러오는 중…",
     step: "단계"
   }
 };
