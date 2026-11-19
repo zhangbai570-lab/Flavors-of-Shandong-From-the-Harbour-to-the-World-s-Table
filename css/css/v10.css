@@ -1,0 +1,458 @@
+/* ============================================================
+   海味山东 · v10.css —— 米白纸感主题 + 美工插画接入
+   叠加在 base/sections/deck/art 之后，负责：
+   1) 全站统一米白纸感（去掉深色页）
+   2) 美工素材的版式（地图热区 / 菜品图 / 工序图 / 年表图 / 装饰）
+   3) 右侧翻页键、海报墙、看大图
+   ============================================================ */
+
+:root {
+  --v10-paper: #f7f2e8;
+  --v10-paper-2: #f0e9da;
+  --v10-paper-3: #ece2d0;
+  --v10-ink: #1b2c31;
+  --v10-ink-soft: #4b5c61;
+  --v10-line: rgba(27, 44, 49, .13);
+  --v10-line-2: rgba(27, 44, 49, .26);
+  --v10-accent: #b8452f;
+  --v10-teal: #2f6f74;
+}
+
+/* ================= 0 · 全局底色 ================= */
+body.deck { background: var(--v10-paper); color: var(--v10-ink); }
+body.deck .deck { background: var(--v10-paper); }
+.grain { opacity: .03; }
+
+/* 导航统一浅色 */
+body.deck .nav,
+body.deck .nav.solid,
+body.deck.on-paper .nav,
+body.deck.on-paper .nav.solid {
+  color: var(--v10-ink);
+  background: rgba(247, 242, 232, .9);
+  border-bottom: 1px solid rgba(27, 44, 49, .08);
+  box-shadow: 0 8px 30px rgba(27, 44, 49, .05);
+  backdrop-filter: blur(8px);
+}
+body.deck .nav-brand-cn { color: var(--v10-ink); }
+body.deck .nav-brand-en { color: var(--v10-ink-soft); }
+body.deck .nav-mark { color: var(--v10-teal); }
+body.deck .nav-links a,
+body.deck.on-paper .nav-links a { color: rgba(27, 44, 49, .5); }
+body.deck .nav-links a:hover,
+body.deck .nav-links a.on,
+body.deck.on-paper .nav-links a:hover,
+body.deck.on-paper .nav-links a.on { color: var(--v10-ink); }
+body.deck .nav-links a.on::after { background: var(--v10-accent); }
+body.deck .lang { border-color: rgba(27, 44, 49, .18); }
+body.deck .lang button { color: rgba(27, 44, 49, .55); }
+body.deck .lang button.on { background: var(--v10-ink); color: var(--v10-paper); }
+body.deck .progress i { background: linear-gradient(90deg, var(--v10-accent), var(--v10-teal)); }
+
+/* ================= 1 · 首屏：无字主图背景 ================= */
+.hero {
+  background: var(--v10-paper) !important;
+  color: var(--v10-ink);
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("../assets/img/hero-bg.webp") center/cover no-repeat;
+}
+/* 覆盖 art.css 的深色压边；改成纸感渐变 */
+body.deck #deck #home::after {
+  height: 40%;
+  background: linear-gradient(180deg, rgba(247, 242, 232, 0) 0%, rgba(247, 242, 232, .35) 55%, rgba(247, 242, 232, .94) 100%);
+}
+/* 左侧纸感渐变，保证标题可读 */
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(247, 242, 232, .99) 0%,
+    rgba(247, 242, 232, .97) 34%,
+    rgba(247, 242, 232, .86) 52%,
+    rgba(247, 242, 232, .42) 70%,
+    rgba(247, 242, 232, .06) 100%);
+}
+.hero-waves, .hero-art { display: none !important; }
+.hero-eyebrow { color: var(--v10-accent); }
+.ht-cn { color: var(--v10-ink); text-shadow: none; }
+.ht-en { color: var(--v10-ink-soft); }
+.hero-sub { color: var(--v10-teal); }
+.hero-tag { color: var(--v10-ink-soft); }
+.hero-desc { color: rgba(27, 44, 49, .66); }
+.hero-actions .btn-primary { background: var(--v10-ink); color: var(--v10-paper); box-shadow: 0 10px 26px rgba(27, 44, 49, .18); }
+.hero-actions .btn-ghost { border-color: rgba(27, 44, 49, .22); color: var(--v10-ink); }
+.hero-actions .btn-ghost:hover { background: rgba(27, 44, 49, .05); border-color: rgba(27, 44, 49, .5); }
+.hero-stats li { border-color: rgba(27, 44, 49, .14); }
+.hero-stats b { color: var(--v10-ink); }
+.hero-stats span { color: var(--v10-ink-soft); }
+.hero-scroll { color: rgba(27, 44, 49, .5); }
+
+/* ================= 2 · 所有章节统一纸感 ================= */
+body.deck .section,
+body.deck .footer {
+  background: var(--v10-paper);
+  color: var(--v10-ink);
+}
+body.deck .sec-paper { background: var(--v10-paper); }
+.sec-title { color: var(--v10-ink); }
+.sec-lead { color: rgba(27, 44, 49, .68); }
+.sec-kicker { color: var(--v10-teal); }
+.sec-no { color: var(--v10-accent); }
+.hint-line { color: rgba(27, 44, 49, .5); }
+.hint-line i { color: var(--v10-accent); }
+
+/* 卡片类统一：白纸卡 + 细线 */
+.lex-face,
+.craft-step,
+.time-card,
+.dish-card,
+.quiz-box,
+.port-panel,
+.tide-panel {
+  border-color: var(--v10-line-2);
+}
+
+/* ---------- 词源翻卡：羊皮纸底纹 ---------- */
+.lex-face {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .55), rgba(247, 242, 232, .52)),
+    url("../assets/img/lex-bg.webp") center/cover no-repeat;
+  color: var(--v10-ink);
+  border: 1px solid var(--v10-line-2);
+}
+.lex-card:hover .lex-face { border-color: rgba(47, 111, 116, .5); }
+.lex-top, .lex-pinyin { color: rgba(27, 44, 49, .55); }
+.lex-glyph { color: var(--v10-ink); }
+.lex-word { color: var(--v10-ink); }
+.lex-preview span { color: rgba(27, 44, 49, .5); }
+.lex-watermark { color: rgba(27, 44, 49, .06); }
+.lex-flip { color: var(--v10-teal); }
+.lex-back .lex-back-top b { color: var(--v10-ink); }
+.lex-back .lex-back-top span { color: rgba(27, 44, 49, .4); }
+.lex-forms li { border-color: var(--v10-line); }
+.lex-forms span { color: rgba(27, 44, 49, .55); }
+.lex-forms b { color: var(--v10-ink); }
+.lex-story { color: rgba(27, 44, 49, .7); }
+.lex-backfoot { color: rgba(27, 44, 49, .42); }
+
+/* ---------- 工序：步骤插画 ---------- */
+.craft-step {
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid var(--v10-line);
+  border-radius: 14px;
+  padding: 20px 16px 18px;
+}
+.step-no { color: var(--v10-accent); }
+.step-verb { color: var(--v10-ink); }
+.step-verb-en { color: var(--v10-teal); }
+.step-title { color: var(--v10-ink); }
+.step-desc { color: rgba(27, 44, 49, .7); }
+.step-meta { color: rgba(27, 44, 49, .45); }
+.step-icon { width: 96px; height: 96px; margin: 10px 0 6px; display: grid; place-items: center; }
+.step-art { width: 96px; height: 96px; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(27, 44, 49, .10)); }
+.craft-note { color: rgba(27, 44, 49, .55); }
+
+/* ---------- 年表：素描插画 ---------- */
+.time-card {
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid var(--v10-line-2);
+  border-radius: 14px;
+  color: var(--v10-ink);
+}
+.time-art { width: 100%; height: 118px; border-radius: 9px; overflow: hidden; margin-bottom: 14px; background: var(--v10-paper-2); }
+.time-art img { width: 100%; height: 100%; object-fit: cover; }
+.time-year { color: var(--v10-accent); }
+.time-date { color: rgba(27, 44, 49, .5); }
+.time-title { color: var(--v10-ink); }
+.time-text { color: rgba(27, 44, 49, .7); }
+.time-hint { color: rgba(27, 44, 49, .5); }
+.time-nav button { border-color: var(--v10-line-2); color: var(--v10-ink); }
+.time-nav button:hover { background: var(--v10-ink); color: var(--v10-paper); }
+.time-dots button { background: rgba(27, 44, 49, .18); }
+.time-dots button.on { background: var(--v10-accent); }
+
+/* ---------- 答题：纸卡 ---------- */
+.quiz-box { background: rgba(255, 255, 255, .55); box-shadow: 0 18px 50px rgba(27, 44, 49, .08); }
+.quiz-q, .quiz-title { color: var(--v10-ink); }
+.quiz-opt { border-color: var(--v10-line); color: var(--v10-ink); background: rgba(255, 255, 255, .45); }
+.quiz-opt:hover { border-color: rgba(47, 111, 116, .5); }
+.quiz-opt.correct { background: rgba(79, 132, 110, .14); border-color: rgba(79, 132, 110, .5); }
+.quiz-opt.wrong { background: rgba(184, 69, 47, .12); border-color: rgba(184, 69, 47, .5); }
+.quiz-explain { color: rgba(27, 44, 49, .7); }
+
+/* ---------- 港口：档案卡 / 地图 ---------- */
+.port-panel { background: rgba(255, 255, 255, .55); border: 1px solid var(--v10-line); border-radius: 14px; }
+.pp-name { color: var(--v10-ink); }
+.pp-dish-name { color: var(--v10-ink); }
+.pp-story, .pp-dialect { color: rgba(27, 44, 49, .7); }
+.pp-forms b { color: var(--v10-ink); }
+.pp-forms span { color: rgba(27, 44, 49, .5); }
+.pp-note p { color: rgba(27, 44, 49, .6); }
+.pp-link { color: var(--v10-teal); }
+.map-meta, .map-hint, .map-disclaimer { color: rgba(27, 44, 49, .5); }
+
+/* 美工地图：隐藏原 SVG，显示图片 + 热区 */
+.map-frame .map { display: none; }
+.map-frame { padding: 10px; background: rgba(255, 255, 255, .5); border: 1px solid var(--v10-line); border-radius: 16px; }
+.map-art { position: relative; width: 100%; }
+.map-img { width: 100%; height: auto; display: block; border-radius: 10px; user-select: none; }
+.map-hotspots { position: absolute; inset: 0; }
+.map-pin {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--v10-ink);
+  cursor: pointer;
+  z-index: 2;
+}
+.map-pin.left { flex-direction: row-reverse; }
+.map-pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--v10-paper);
+  border: 3px solid var(--v10-accent);
+  box-shadow: 0 0 0 4px rgba(184, 69, 47, .13);
+  transition: transform .3s var(--ease), background .3s;
+  flex-shrink: 0;
+}
+.map-pin-label {
+  font-size: 12px;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(247, 242, 232, .9);
+  border: 1px solid var(--v10-line);
+  white-space: nowrap;
+  transition: color .3s, border-color .3s;
+}
+.map-pin-label em { display: block; font-style: normal; font-size: 9px; letter-spacing: .14em; color: rgba(27, 44, 49, .42); }
+.map-pin:hover .map-pin-dot { transform: scale(1.12); }
+.map-pin.on .map-pin-dot { background: var(--v10-accent); transform: scale(1.15); }
+.map-pin.on .map-pin-label { border-color: rgba(184, 69, 47, .55); color: var(--v10-accent); }
+
+/* ---------- 宴席：美工菜品图 ---------- */
+.dish-card {
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid var(--v10-line);
+  border-radius: 16px;
+  min-height: 296px;
+  padding: 16px 16px 20px;
+  transition: background .4s, transform .4s var(--ease), border-color .4s;
+}
+.dish-card:hover { background: rgba(255, 255, 255, .85); border-color: rgba(47, 111, 116, .35); transform: translateY(-3px); }
+.dish-plate {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin: 2px 0 6px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dish-art {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(27, 44, 49, .12));
+  transition: transform .5s var(--ease);
+}
+.dish-card:hover .dish-art { transform: translateY(-3px) scale(1.03); }
+.dish-char {
+  position: absolute;
+  right: -6px;
+  top: -14px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 1;
+  color: rgba(184, 69, 47, .09);
+  pointer-events: none;
+}
+.dish-no { color: rgba(27, 44, 49, .32); }
+.dish-name { color: var(--v10-ink); }
+.dish-pinyin { color: rgba(27, 44, 49, .5); }
+.dish-tag { color: var(--v10-teal); }
+.dish-float {
+  background: rgba(247, 242, 232, .94);
+  border: 1px solid var(--v10-line);
+  border-radius: 12px;
+  color: var(--v10-ink);
+}
+.float-row span { color: rgba(27, 44, 49, .5); }
+.float-row b { color: var(--v10-ink); }
+.float-hint { color: rgba(27, 44, 49, .45); }
+
+/* ---------- 四时：罗盘中心 ---------- */
+.tide-wheel { position: relative; }
+.tide-compass-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+  opacity: .85;
+  pointer-events: none;
+  z-index: 2;
+}
+.tide-tabs button { border-color: var(--v10-line); color: rgba(27, 44, 49, .6); }
+.tide-tabs button.on { border-color: var(--v10-accent); color: var(--v10-accent); background: rgba(184, 69, 47, .06); }
+.tide-title { color: var(--v10-ink); }
+.tide-pinyin, .tide-meta { color: rgba(27, 44, 49, .5); }
+.tide-text { color: rgba(27, 44, 49, .7); }
+
+/* ---------- 解字「鲜」页：浅底文字 + 反色线稿 ---------- */
+.glyph-body { color: rgba(27, 44, 49, .72); }
+.glyph-words { display: grid; }
+.gw-item { border: 1px solid var(--v10-line); background: rgba(255, 255, 255, .5); }
+.gw-item:hover { border-color: rgba(47, 111, 116, .45); background: rgba(255, 255, 255, .85); }
+.gw-item b { color: var(--v10-ink); }
+.gw-item span { color: rgba(27, 44, 49, .55); }
+.glyph-note { color: rgba(27, 44, 49, .5); border-left-color: rgba(184, 69, 47, .35); }
+.glyph-svg { filter: invert(1) hue-rotate(180deg) saturate(.85); }
+
+/* ================= 3 · 尾页 / 海报墙 ================= */
+.footer { background: var(--v10-paper-2); color: var(--v10-ink); }
+.footer::before { background: rgba(27, 44, 49, .08); }
+.footer h3 { color: var(--v10-ink); }
+.footer p, .footer .muted, .footer .tiny, .footer-note { color: rgba(27, 44, 49, .62); }
+.footer-kicker { color: rgba(27, 44, 49, .4); }
+.refs li { color: rgba(27, 44, 49, .7); }
+.refs a { color: var(--v10-teal); }
+.footer .btn-ghost { border-color: rgba(27, 44, 49, .2); color: var(--v10-ink); }
+.to-top { border-color: var(--v10-line-2); color: var(--v10-ink); }
+.to-top:hover { background: var(--v10-ink); color: var(--v10-paper); }
+
+.poster-wall { margin-top: clamp(16px, 3vh, 28px); }.poster-wall-kicker { font-size: 10px; letter-spacing: .22em; color: rgba(27, 44, 49, .42); margin-bottom: 10px; }
+.poster-strip { display: flex; gap: 12px; overflow-x: auto; padding: 2px 2px 8px; scrollbar-width: thin; }
+.poster-strip img {
+  height: 92px;
+  border-radius: 10px;
+  border: 1px solid var(--v10-line);
+  box-shadow: 0 10px 24px rgba(27, 44, 49, .10);
+  cursor: zoom-in;
+  transition: transform .3s var(--ease);
+  flex-shrink: 0;
+}
+.poster-strip img:hover { transform: translateY(-4px); }
+
+/* 尾页原有的收束插画在浅色底上偏灰，隐藏，改用海报墙收尾 */
+.close-art { display: none !important; }
+
+.v10-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  place-items: center;
+  background: rgba(18, 26, 28, .74);
+  backdrop-filter: blur(4px);
+  cursor: zoom-out;
+}
+.v10-lightbox.open { display: grid; }
+.v10-lightbox img { max-width: 88vw; max-height: 86vh; border-radius: 12px; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+
+/* ================= 4 · 右侧翻页键 ================= */
+.pager {
+  position: fixed;
+  right: clamp(8px, 1.6vw, 22px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 7px;
+  border-radius: 999px;
+  background: rgba(247, 242, 232, .88);
+  border: 1px solid var(--v10-line);
+  box-shadow: 0 12px 32px rgba(27, 44, 49, .14);
+  backdrop-filter: blur(8px);
+}
+.pager-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--v10-line-2);
+  color: var(--v10-ink);
+  background: rgba(255, 255, 255, .55);
+  font-size: 16px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background .3s, color .3s, transform .3s;
+}
+.pager-btn:hover { background: var(--v10-ink); color: var(--v10-paper); border-color: var(--v10-ink); }
+.pager-btn:active { transform: scale(.94); }
+.pager-btn:disabled { opacity: .28; cursor: default; }
+.pager-btn:disabled:hover { background: rgba(255, 255, 255, .55); color: var(--v10-ink); border-color: var(--v10-line-2); }
+.pager-num { font-size: 11px; letter-spacing: .05em; color: rgba(27, 44, 49, .55); display: flex; align-items: baseline; gap: 2px; }
+.pager-num b { color: var(--v10-ink); font-weight: 600; }
+.pager-num i { font-style: normal; opacity: .5; }
+
+/* ================= 5 · 小装饰（采纳「ds如是说」建议：40–60px 微浮动） ================= */
+.decor-img {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 16px rgba(27, 44, 49, .10));
+  animation: v10float 6s ease-in-out infinite alternate;
+  opacity: .92;
+}@keyframes v10float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-9px); }
+}
+
+/* ================= 6 · AI 弹窗：空白菜品卡框做底 ================= */
+.modal-card {
+  background:
+    linear-gradient(rgba(247, 242, 232, .93), rgba(247, 242, 232, .96)),
+    url("../assets/img/card-frame.webp") center top/cover no-repeat;
+  border: 1px solid var(--v10-line-2);
+  color: var(--v10-ink);
+}
+.modal-card h2 { color: var(--v10-ink); }
+.modal-note, .modal-body p, .modal-body li { color: rgba(27, 44, 49, .72); }
+.modal-kicker { color: var(--v10-accent); }
+.modal-x { color: var(--v10-ink); }
+
+/* ================= 7 · 手机 ================= */
+@media (max-width: 860px) {
+  .pager {
+    top: auto;
+    bottom: 14px;
+    right: 10px;
+    transform: none;
+    flex-direction: row;
+    padding: 6px 9px;
+    gap: 6px;
+  }
+  .pager-btn { width: 30px; height: 30px; font-size: 13px; }
+  .pager-num { font-size: 9px; }
+  .dish-plate { height: 110px; }
+  .dish-art { max-height: 110px; }
+  .step-icon, .step-art { width: 76px; height: 76px; }
+  .map-pin-label { font-size: 10px; padding: 3px 7px; }
+  .map-pin-dot { width: 12px; height: 12px; border-width: 2px; }
+  .decor-img { width: 40px !important; opacity: .8; }
+  .poster-strip img { height: 72px; }
+  .time-art { height: 92px; }
+}

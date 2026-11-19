@@ -1,4 +1,4 @@
-# AI 交接文档 ·《海味山东：从渔港到世界餐桌》
+﻿# AI 交接文档 ·《海味山东：从渔港到世界餐桌》
 
 > 给接手的 AI / 开发者：这是一份「读完就能继续干」的交接说明。
 > 最后更新：2026-11-17 23:45 ｜ 当前版本：**v6-nopager**（备份在 `backup/v6-nopager/`）
@@ -328,3 +328,49 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 
 > ⚠️ 待团队确认：js/data.js → aiStatement 与 AI创作说明.md 里写着「地图、图标与插画为团队手写 SVG」。
 > 本轮新增插画是 AI 生成的 SVG（团队可再调色/改写）。若比赛要求如实申报，建议在那两处补一句说明。
+
+---
+
+## 12. v10 · 美工素材版（2026-11-19）
+
+- 主题：全站统一米白纸感（css/v10.css 覆盖原深色页）；深色页的 .sec-dark 已改为 .sec-paper。
+- 素材：ssets/img/（webp，约 2.7MB，由 	ools_v10_make_assets.py 从 蓝色创想美工/蓝色创想美工/ 生成）。
+- 接入点：
+  - 首屏 主图背景.jpg → .hero-photo；
+  - 港口 山东地图.png → .map-art + #mapHotspots（js/main.js 的 MAP_POINT 百分比坐标）；
+  - 词源 词汇卡片底图1.png → .lex-face 背景；
+  - 宴席 叁/*.png → .dish-art（鲅鱼水饺为海报裁切，dish-dumpling.webp）；
+  - 工序 肆/步骤1-6 → .step-art；
+  - 年表 陆/* → .time-art；
+  - 尾页 5 张海报 → #posterStrip 海报墙（js/v10.js 点击看大图）；
+  - 小装饰 → .decor-img（40–60px 微浮动，采纳「ds如是说」建议）。
+- 翻页：新增右侧 .pager（↑/↓ + 页码），js/v10.js 监听 hx:pagechange；deck.js 的 wheel 监听移到 window（capture），修复“先点击再滚轮”。
+- 注意：rt.js 的 SVG 菜品/工序插画已加判断——检测到 img.dish-art / img.step-art 时跳过，避免覆盖美工图。
+- 备份：改动前版本在 ackup/v10-pre-img/。
+---
+
+## 13. v12 · 首屏主视觉海报（2026-11-19）
+
+- 首屏 #home 改为海报舞台：ssets/img/poster-3.webp（主图调色1），宽度受 100svh 约束一屏放下。
+- 开场：.poster-main 用 clip-path 从左到右揭示（文字随揭幕出现）+ scale(1.045→1)；.poster-bar / .poster-stats 延迟淡入；js/v12.js 做滚动视差（下移 + 淡出）。
+- 保留：启航 跳 #ports、滑动提示、4/8/6/4 数据；旧首屏文案/按钮已移除。
+- 地图：js/main.js 的 MAP_POINT 已按美工地图圆点重新核对（烟台 75.97/17.29、威海 94.3/42.26、青岛 63.22/58.22、日照 50.12/74.52）。
+- 备份：v11 在 ackup/v11-poster/。
+---
+
+## 14. v13 · 真实地理数据地图（2026-11-19）
+
+- 地图不再用美工图片，改为内联 SVG：数据来自阿里 DataV 370000_full.json（青岛市/烟台市/威海市/日照市等 16 市边界），墨卡托投影 + RDP 简化，生成脚本在开发环境 	ools_v13_map.py（未打包进作品）。
+- SVG 结构：<rect> 海洋渐变 + <g class="map-land"> 市界路径 + <g id="portLayer">（由 main.js 渲染城市点，点击联动档案）。
+- 城市坐标在 js/data.js 的 cities[].x/y（viewBox 760×496），标签偏移也在同一行。
+- 样式在 css/v13.css；免责声明已改为「示意地图 · 边界数据来自公开地理数据」。
+- 备份：v12 在 ackup/v12-before-realmap/。
+
+---
+
+## 15. v14 · 满屏首屏与四时圆心（2026-11-19）
+
+- 首屏 #home.hero-v14：.hero-v14-bg 用 hero-bg.webp 全屏 cover；.hero-v14-shade 纸感渐变；文字沿用 v11 的 .v11-char 逐字动画（由 js/v11.js 拆分标题），按钮/提示/数据用 12 的 fade 动画。
+- 四时页：js/art.js 的 show(i) 改为输出 <text class="td-char">当季字</text> + 菜名 + 潮线；季节强调色见 ACCENT；样式在 css/v14.css。
+- 首屏视差在 js/v12.js，选择器为 .hero-v14-inner。
+- 备份：v13 在 ackup/v13-realmap/。

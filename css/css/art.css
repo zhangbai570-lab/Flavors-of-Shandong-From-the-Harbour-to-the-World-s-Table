@@ -1,0 +1,639 @@
+/* ============================================================
+   海味山东 · art.css —— 插画与动效层
+   依赖：base.css / sections.css / deck.css
+   只做叠加：不改原有排版骨架，只上色、加画、加动。
+   ============================================================ */
+
+/* ================= 0 · 导航随页面色调切换 ================= */
+body.deck.on-paper .nav,
+body.deck.on-paper .nav.solid {
+  color: var(--ink);
+  background: rgba(245, 239, 227, .92);
+  border-bottom: 1px solid rgba(10, 34, 51, .1);
+  box-shadow: 0 6px 26px rgba(10, 34, 51, .06);
+}
+body.deck.on-paper .nav-brand-en { color: var(--ink-soft); }
+body.deck.on-paper .nav-links a { color: rgba(10, 34, 51, .5); }
+body.deck.on-paper .nav-links a:hover,
+body.deck.on-paper .nav-links a.on { color: var(--ink); }
+body.deck.on-paper .nav-links a.on::after { background: var(--cinnabar); }
+body.deck.on-paper .nav-mark { color: var(--teal); }
+body.deck.on-paper .lang { border-color: rgba(10, 34, 51, .2); }
+body.deck.on-paper .lang button { color: rgba(10, 34, 51, .55); }
+body.deck.on-paper .lang button.on { background: var(--ink); color: var(--paper); }
+body.deck.on-paper .progress i { background: linear-gradient(90deg, var(--cinnabar), var(--teal)); }
+
+/* ================= 1 · 首屏水墨场景 ================= */
+.compass.painted .ring-a { opacity: .3; }
+.compass.painted .ring-b { opacity: .2; }
+.compass.painted .ring-c { opacity: .5; }
+.compass.painted .ticks { opacity: .28; }
+
+.sun-halo { animation: haloPulse 11s ease-in-out infinite; transform-origin: 300px 252px; }
+.sun-disc { animation: sunGlow 9s ease-in-out infinite; transform-origin: 300px 252px; }
+.glitter .gl { animation: glimmer 5.4s ease-in-out infinite alternate; }
+.glitter .g2 { animation-duration: 4.2s; animation-delay: -.9s; }
+.glitter .g3 { animation-duration: 6.6s; animation-delay: -1.8s; }
+.glitter .g4 { animation-duration: 4.8s; animation-delay: -2.6s; }
+.gulls .gull { animation: flap 4.6s ease-in-out infinite; transform-origin: center; }
+.gulls .gu2 { animation-duration: 3.6s; animation-delay: -1.2s; }
+.gulls .gu3 { animation-duration: 5.2s; animation-delay: -2.1s; }
+.scene-boat {
+  animation: boatBob 9s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 70%;
+}
+.scene-stars .st { animation: twinkle 4.2s ease-in-out infinite; }
+.scene-stars .st2 { animation-delay: -1.4s; }
+.scene-stars .st3 { animation-delay: -2.6s; }
+.scene-stars .st4 { animation-delay: -3.4s; }
+.scene-stars .st5 { animation-delay: -1.9s; }
+.near-waves .nw { animation: waveDrift 14s ease-in-out infinite; }
+.near-waves .nw2 { animation-duration: 19s; animation-delay: -3s; }
+.near-waves .nw3 { animation-duration: 24s; animation-delay: -6s; }
+
+@keyframes haloPulse {
+  0%, 100% { opacity: .75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes sunGlow {
+  0%, 100% { opacity: .92; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+@keyframes glimmer { from { opacity: .2; } to { opacity: .75; } }
+@keyframes flap {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  45% { transform: translateY(-4px) scaleY(.55); }
+  55% { transform: translateY(-4px) scaleY(.55); }
+}
+@keyframes boatBob {
+  0%, 100% { transform: translateY(0) rotate(-.7deg); }
+  50% { transform: translateY(-6px) rotate(.7deg); }
+}
+@keyframes twinkle { 0%, 100% { opacity: .25; } 50% { opacity: .9; } }
+@keyframes waveDrift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-12px); }
+}
+
+/* 首屏：底部压一层墨色，收住画面 */
+body.deck #deck #home::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 32%;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 18, 26, 0) 0%, rgba(4, 18, 26, .42) 60%, rgba(4, 18, 26, .82) 100%);
+  z-index: 1;
+}
+
+/* ================= 2 · 章节背景：墨浪与印记 ================= */
+.sec-dark, .sec-paper { position: relative; overflow: hidden; }
+
+.ink-deco {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 46%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .55;
+}
+.ink-deco svg { width: 100%; height: 100%; }
+.sec-paper .ink-deco { opacity: .38; }
+.ink-deco .iw { animation: waveDrift 22s ease-in-out infinite; }
+.ink-deco .iw2 { animation-duration: 30s; }
+.ink-deco .iw3 { animation-duration: 38s; }
+
+/* 章节标题右侧的两道笔触 */
+.sec-head::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 62px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(184, 69, 47, .42), rgba(184, 69, 47, 0));
+  transform: rotate(-1.6deg);
+  pointer-events: none;
+}
+.sec-head::before {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 24px;
+  width: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(184, 69, 47, .26), rgba(184, 69, 47, 0));
+  transform: rotate(-1.6deg);
+  pointer-events: none;
+}
+.sec-dark .sec-head::after { background: linear-gradient(90deg, rgba(208, 90, 63, .5), rgba(208, 90, 63, 0)); }
+.sec-dark .sec-head::before { background: linear-gradient(90deg, rgba(208, 90, 63, .3), rgba(208, 90, 63, 0)); }
+
+/* ================= 3 · 菜卡插画 ================= */
+.dish-card .dish-plate {
+  width: 100%;
+  height: 112px;
+  margin: 0 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  display: block;
+  overflow: visible;
+}
+.dish-card .dish-plate::before { display: none; }
+.dish-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  transition: transform .55s var(--ease);
+  transform-origin: 50% 70%;
+}
+.dish-art [stroke="#0a2233"] { stroke-opacity: .5; }
+.dish-art [stroke="#120b07"],
+.dish-art [stroke="#0d0805"] { stroke-opacity: .85; }
+.dish-card:hover .dish-art { transform: translateY(-2px) scale(1.05); }
+.dish-card .dish-char {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 26px;
+  color: rgba(30, 111, 122, .18);
+  transform: none;
+  pointer-events: none;
+}
+.dish-card:hover .dish-char { transform: none; }
+.dish-art .steam { opacity: 0; transition: opacity .5s; }
+.dish-card:hover .dish-art .steam { opacity: 1; }
+.dish-card:hover .dish-art .steam path { animation: steamRise 2.8s ease-in-out infinite; }
+.dish-card:hover .dish-art .steam path:last-child { animation-delay: -.9s; }
+
+@keyframes steamRise {
+  0% { opacity: 0; transform: translateY(4px) scaleY(.7); }
+  35% { opacity: .9; }
+  100% { opacity: 0; transform: translateY(-10px) scaleY(1.15); }
+}
+
+./* 卡片内容收紧，避免英文长菜名把标签挤出卡片 */
+body.deck .dish-card { gap: 4px; padding: 18px 16px; }
+body.deck .dish-card .dish-name { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.26; }
+body.deck .dish-card .dish-pinyin { font-size: 9.5px; }
+body.deck .dish-card .dish-tag { margin-top: 6px; padding-top: 8px; font-size: 9px; }
+html[lang="en"] body.deck .dish-card .dish-name,
+html[lang="ko"] body.deck .dish-card .dish-name { font-size: 15.5px; }
+html[lang="ja"] body.deck .dish-card .dish-name { font-size: 16px; }
+
+.dish-card {
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 70%),
+    rgba(255, 255, 255, .34);
+}
+.dish-card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(30, 111, 122, .07);
+  pointer-events: none;
+}
+
+/* ================= 4 · 词源卡水印 ================= */
+/* 注意：.lex-front 必须保持 absolute（由 sections.css 决定），
+   否则会变成参与布局、把翻卡高度撑坏。所以水印挂在面上，不挂卡片。 */
+.lex-motif {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 176px;
+  height: 176px;
+  margin: -88px 0 0 -88px;
+  color: var(--aqua);
+  opacity: .1;
+  pointer-events: none;
+  transition: opacity .5s, transform .8s var(--ease);
+}
+.lex-motif svg { width: 100%; height: 100%; }
+.lex-card:hover .lex-motif { opacity: .22; transform: rotate(-4deg) scale(1.03); }
+.lex-glyph { position: relative; z-index: 1; }
+.lex-preview, .lex-word, .lex-top { position: relative; z-index: 1; }
+
+/* ================= 5 · 工序插画 ================= */
+.craft-step { overflow: hidden; }
+body.deck .craft-step .step-icon,
+body.deck .page-craft .craft-step .step-icon {
+  width: 100%;
+  height: 84px;
+  margin: 8px 0 4px;
+  color: rgba(191, 232, 229, .82);
+}
+.craft-art { width: 100%; height: 100%; }
+.craft-step:hover .step-icon { color: var(--mint); }
+.craft-step::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -26px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgba(121, 207, 214, .12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ================= 6 · 年表页航海图 ================= */
+.time-art {
+  position: relative;
+  height: 88px;
+  margin-top: 12px;
+  pointer-events: none;
+  opacity: .9;
+}
+.time-art svg { width: 100%; height: 100%; }
+.ta-route { animation: routeFlow 22s linear infinite; }
+@keyframes routeFlow { to { stroke-dashoffset: -320; } }
+.ta-boat {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 44px;
+  height: 36px;
+  animation: sailAcross 26s linear infinite;
+}
+.ta-boat svg { width: 100%; height: 100%; }
+@keyframes sailAcross {
+  0% { left: -6%; opacity: 0; }
+  8% { opacity: .85; }
+  92% { opacity: .85; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* ================= 7 · 侦探页手绘图腾 ================= */
+.page-quiz { position: relative; }
+
+/* 把题卡放进剩余空间的正中，页面不再头重脚轻 */
+body.deck .page-quiz .quiz-shell {
+  height: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  justify-content: center;
+}
+
+.quiz-art {
+  position: absolute;
+  left: clamp(6px, 2vw, 40px);
+  bottom: clamp(16px, 4vh, 56px);
+  width: clamp(120px, 15vw, 200px);
+  opacity: .5;
+  pointer-events: none;
+  z-index: 0;
+}
+.quiz-art svg { width: 100%; height: auto; }
+.page-quiz .quiz-shell { position: relative; z-index: 1; }
+
+.sec-paper::after {
+  content: "";
+  position: absolute;
+  left: -60px;
+  top: -60px;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(10, 34, 51, .05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ================= 8 · 解字页「鲜」 ================= */
+.sec-glyph { background: linear-gradient(165deg, #08202c 0%, #061a24 55%, #04131b 100%); }
+
+body.deck .page-glyph > .wrap,
+body.deck .page-tide > .wrap { justify-content: center; }
+
+.glyph-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(16px, 3vw, 48px);
+  align-items: center;
+  flex: 0 1 auto;
+  min-height: 0;
+}
+.glyph-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+.glyph-svg {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+}
+.gy-char { animation: glyphIn 1.3s var(--ease); transform-origin: 210px 200px; }
+.gy-fish { animation: swimIn 1.5s var(--ease) .15s; }
+.gy-sheep { animation: swimIn 1.5s var(--ease) .3s; }
+.gy-pinyin, .gy-label { animation: fadeIn 1.2s ease .9s; }
+
+@keyframes glyphIn {
+  0% { opacity: 0; transform: scale(1.14); filter: blur(5px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+@keyframes swimIn {
+  0% { opacity: 0; transform: translateX(-14px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+.glyph-copy { min-height: 0; display: flex; flex-direction: column; gap: 14px; }
+.glyph-body {
+  font-size: 13px;
+  line-height: 2.05;
+  color: rgba(231, 243, 242, .62);
+  max-width: 620px;
+  text-align: justify;
+}
+.glyph-words {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+.gw-item {
+  padding: 12px 14px;
+  border: 1px solid rgba(231, 243, 242, .14);
+  background: linear-gradient(170deg, rgba(121, 207, 214, .07), rgba(255, 255, 255, 0));
+  transition: border-color .4s, transform .4s var(--ease), background .4s;
+}
+.gw-item:hover {
+  border-color: rgba(121, 207, 214, .45);
+  transform: translateY(-3px);
+  background: linear-gradient(170deg, rgba(121, 207, 214, .14), rgba(255, 255, 255, 0));
+}
+.gw-item b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--mint);
+  letter-spacing: .04em;
+  margin-bottom: 5px;
+}
+.gw-item span {
+  display: block;
+  font-size: 10.5px;
+  line-height: 1.75;
+  color: rgba(231, 243, 242, .52);
+}
+.glyph-note {
+  font-size: 11px;
+  line-height: 1.85;
+  color: rgba(121, 207, 214, .62);
+  padding-left: 12px;
+  border-left: 1px solid rgba(121, 207, 214, .3);
+}
+
+/* ================= 9 · 四时页 ================= */
+.tide-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(16px, 3vw, 44px);
+  align-items: center;
+  flex: 0 1 auto;
+  min-height: 0;
+}
+.tide-wheel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+.td-svg { width: 430px; max-width: 100%; height: auto; }
+.td-sector {
+  fill: rgba(30, 111, 122, .045);
+  stroke: rgba(10, 34, 51, .1);
+  cursor: pointer;
+  transition: fill .45s, stroke .45s;
+}
+.td-sector:hover { fill: rgba(30, 111, 122, .13); }
+.td-sector.on { fill: rgba(184, 69, 47, .1); stroke: rgba(184, 69, 47, .35); }
+.td-spin { animation: spin 120s linear infinite; transform-origin: 200px 200px; }
+.td-lab {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: .08em;
+  fill: rgba(10, 34, 51, .55);
+  pointer-events: none;
+}
+.td-ico { opacity: .38; pointer-events: none; transition: opacity .4s; }
+.td-sector.on + .td-ico,
+.td-ico.on { opacity: .8; }
+.td-pic { animation: fadeIn .55s ease; }
+.tide-panel { min-height: 0; display: flex; flex-direction: column; gap: 16px; }
+.tide-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.td-tab {
+  padding: 10px 8px;
+  text-align: left;
+  border: 1px solid rgba(10, 34, 51, .14);
+  background: rgba(255, 255, 255, .3);
+  transition: border-color .35s, background .35s, transform .35s var(--ease);
+}
+.td-tab b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.td-tab span {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  opacity: .75;
+}
+.td-tab:hover { border-color: var(--teal); transform: translateY(-2px); }
+.td-tab.on { border-color: var(--cinnabar); background: rgba(184, 69, 47, .07); }
+.td-tab.on b { color: var(--cinnabar); }
+.tide-body {
+  padding: 20px 22px;
+  border: 1px solid var(--line-2);
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(221, 207, 180, .45), rgba(221, 207, 180, 0) 65%),
+    rgba(255, 255, 255, .42);
+  box-shadow: 0 16px 44px rgba(10, 34, 51, .07);
+  position: relative;
+}
+.tide-body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 42px; height: 3px;
+  background: var(--cinnabar);
+}
+.tide-body.anim { animation: panelIn2 .5s var(--ease); }
+@keyframes panelIn2 {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: none; }
+}
+.td-word {
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.1vw, 25px);
+  color: var(--ink);
+  letter-spacing: .03em;
+}
+.td-line {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 2;
+  color: var(--ink-soft);
+  text-align: justify;
+}
+.td-note {
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(30, 111, 122, .3);
+  font-size: 11.5px;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  opacity: .85;
+}
+.td-meta {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dotted var(--line);
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--cinnabar);
+}
+
+/* ================= 11 · 尾页收束 ================= */
+body.deck .page-about > .wrap { position: relative; z-index: 1; }
+.close-art {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(150px, 30vh, 280px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: .95;
+}
+.close-art svg { width: 100%; height: 100%; }
+.close-boat {
+  animation: boatBob 11s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 70%;
+}
+
+/* ================= 12 · 港口地图 ================= */
+.sea-label {
+  font-family: var(--serif);
+  font-size: 17px;
+  letter-spacing: .32em;
+  fill: rgba(30, 111, 122, .5);
+}
+.sea-small {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: .2em;
+  fill: rgba(30, 111, 122, .5);
+}
+.river-label {
+  font-family: var(--serif);
+  font-size: 10px;
+  letter-spacing: .3em;
+  fill: rgba(30, 111, 122, .48);
+}
+.land-small {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: .24em;
+  fill: rgba(10, 34, 51, .2);
+}
+.land-coast-wash { pointer-events: none; }
+
+/* 页码锁住图片高度优先级（deck.css 里的小屏规则会把它压小） */
+body.deck .dish-card .dish-plate { height: 112px; }
+
+/* ================= 10 · 窄屏适配 ================= */
+@media (max-width: 1000px) {
+  .glyph-layout, .tide-layout { grid-template-columns: 1fr; }
+  .glyph-art, .tide-wheel { order: -1; }
+  .glyph-svg { width: 300px; }
+  .td-svg { width: 320px; }
+  .quiz-art { display: none; }
+}
+
+@media (max-width: 860px) {
+  .sec-head::after, .sec-head::before { display: none; }
+  .ink-deco { height: 30%; opacity: .3; }
+  body.deck .dish-card .dish-plate { height: 78px; margin: 0 auto 4px; }
+  .dish-card { justify-content: center; gap: 3px; }
+  .dish-card .dish-name { margin-top: 0; }
+  .dish-card .dish-tag { margin-top: 6px; }
+  .dish-card .dish-char { display: none; }
+  .dish-card::after { inset: 4px; }
+
+  /* 四时页：竖排、轮盘缩小但标签放大 */
+  .tide-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    flex: 1 1 auto;
+  }
+  .tide-wheel { flex: none; }
+  .td-svg { width: min(66vw, 268px); }
+  .td-lab { font-size: 15px; }
+  .tide-panel { flex: 1 1 auto; justify-content: flex-start; gap: 8px; }
+  body.deck .page-craft .craft-step .step-icon { height: 40px; margin: 2px 0; }
+  .lex-motif { width: 96px; height: 96px; margin: -48px 0 0 -48px; opacity: .1; }
+  .glyph-body { font-size: 11px; line-height: 1.8; }
+  .glyph-words { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .gw-item { padding: 8px; }
+  .gw-item b { font-size: 13px; }
+  .gw-item span { font-size: 9px; line-height: 1.5; }
+  .glyph-note { display: none; }
+  .glyph-svg { width: 200px; }
+  .td-svg { width: min(66vw, 268px); }
+  .tide-tabs { gap: 5px; }
+  .td-tab { padding: 6px; }
+  .td-tab b { font-size: 14px; }
+  .td-tab span { font-size: 8px; }
+  .tide-body { padding: 12px; }
+  .td-word { font-size: 15px; }
+  .td-line { font-size: 10px; line-height: 1.7; }
+  .td-note { font-size: 9.5px; line-height: 1.6; margin-top: 6px; }
+  .td-meta { display: none; }
+  .time-art { height: 44px; margin-top: 6px; }
+  .ta-boat { width: 26px; height: 22px; }
+  .close-art { height: 120px; opacity: .8; }
+}
+
+/* 矮屏（1366×768 / 1600×900 视口 800 高） */
+@media (min-width: 861px) and (max-height: 820px) {
+  body.deck .dish-card .dish-plate { height: 94px; }
+  body.deck .page-craft .craft-step .step-icon { height: 62px; }
+  .glyph-svg { width: 360px; }
+  .td-svg { width: 370px; }
+  .glyph-body { font-size: 11.5px; line-height: 1.92; }
+  .gw-item { padding: 9px 10px; }
+  .gw-item b { font-size: 15px; }
+  .td-line { font-size: 11.5px; line-height: 1.85; }
+  .time-art { height: 58px; }
+}
+
+/* 尊重「减少动效」偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .sun-halo, .sun-disc, .glitter .gl, .gulls .gull, .scene-boat,
+  .scene-stars .st, .near-waves .nw, .td-spin, .ta-boat, .ta-route,
+  .gy-char, .gy-fish, .gy-sheep, .gy-pinyin, .ink-deco .iw {
+    animation: none !important;
+  }
+}

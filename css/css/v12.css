@@ -1,0 +1,170 @@
+/* ============================================================
+   海味山东 · v12.css —— 首屏主视觉海报（调色1）
+   设计参考：品牌官网常见的「整屏主视觉 + 遮罩揭示 + 视差」开场
+   （如南孚国际站那种首屏即一张片子，文字/画面逐层入场）
+   ============================================================ */
+
+/* 清掉旧首屏的深色压边 */
+body.deck #deck #home::after { background: none; }
+.hero::after { background: none; }
+.hero-photo, .hero-waves, .hero-art, .hero-inner, .hero-scroll { display: none !important; }
+
+/* ---------- 首屏舞台 ---------- */
+body.deck #deck #home.hero-poster-stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(84px + 2.2vh) clamp(14px, 3vw, 44px) 2.6vh;
+  background: var(--v10-paper);
+  overflow: hidden;
+  color: var(--v10-ink);
+}
+
+.poster-stage {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.6vh, 18px);
+  will-change: transform, opacity;
+}
+
+/* 海报：宽度受屏幕高度约束，保证一屏放下 */
+.poster-frame {
+  position: relative;
+  width: min(1180px, 94vw, calc((100svh - 268px) * 1.414));
+  border-radius: 18px;
+  overflow: hidden;
+  background: #efe4d0;
+  box-shadow:
+    0 36px 90px rgba(27, 44, 49, .20),
+    0 4px 18px rgba(27, 44, 49, .08);
+}
+.poster-main {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation:
+    v12Reveal 1.5s .25s var(--ease) both,
+    v12Zoom 1.9s var(--ease) both;
+}
+.poster-wipe { display: none; }
+
+/* 从左到右「揭幕」，文字随揭幕逐字出场 */
+@keyframes v12Reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+@keyframes v12Zoom {
+  0% { opacity: 0; transform: scale(1.045); }
+  55% { opacity: 1; }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- 下方操作条 ---------- */
+.poster-bar {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 28px);
+  animation: v12Fade .9s .95s var(--ease) both;
+}
+.poster-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--v10-ink);
+  color: var(--v10-paper);
+  font-size: 13px;
+  letter-spacing: .14em;
+  box-shadow: 0 12px 28px rgba(27, 44, 49, .20);
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.poster-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(27, 44, 49, .26); }
+.poster-cta em { font-style: normal; transition: transform .3s var(--ease); }
+.poster-cta:hover em { transform: translateX(4px); }
+
+.poster-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: rgba(27, 44, 49, .5);
+}
+.poster-hint i {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(27, 44, 49, .25);
+  border-radius: 50%;
+}
+.poster-hint i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 1px;
+  height: 8px;
+  background: currentColor;
+  transform: translateX(-50%);
+  animation: v12Drop 1.8s ease-in-out infinite;
+}
+@keyframes v12Drop {
+  0%, 100% { opacity: .2; transform: translate(-50%, 0); }
+  50% { opacity: 1; transform: translate(-50%, 5px); }
+}
+
+.poster-stats {
+  display: flex;
+  gap: clamp(16px, 3vw, 40px);
+  margin-top: 2px;
+  animation: v12Fade .9s 1.15s var(--ease) both;
+}
+.poster-stats li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: rgba(27, 44, 49, .55);
+}
+.poster-stats b {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--v10-ink);
+}
+@keyframes v12Fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* ---------- 手机 ---------- */
+@media (max-width: 860px) {
+  body.deck #deck #home.hero-poster-stage {
+    padding: calc(76px + 1.4vh) 12px 2vh;
+  }
+  .poster-frame { width: 94vw; border-radius: 12px; }
+  .poster-bar { gap: 12px; }
+  .poster-cta { padding: 10px 20px; font-size: 12px; }
+  .poster-hint { font-size: 10px; letter-spacing: .1em; }
+  .poster-stats { gap: 14px; }
+  .poster-stats b { font-size: 16px; }
+  .poster-stats li { font-size: 10px; }
+}
+
+/* ---------- 无障碍：减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .poster-main, .poster-bar, .poster-stats, .poster-hint i::after {
+    animation: none !important;
+  }
+}

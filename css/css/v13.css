@@ -1,0 +1,55 @@
+﻿/* ============================================================
+   海味山东 · v13.css —— 真实地理数据重绘的山东地图
+   数据：阿里 DataV 山东 GeoJSON（省/市界）
+   投影：墨卡托；四个港口按城市中心经纬度标注
+   ============================================================ */
+
+/* 地图容器：海洋色底，地图居中 */
+body.deck .page-ports .map-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: linear-gradient(160deg, #eaf2ee 0%, #e1ede7 55%, #d6e6e0 100%);
+  border: 1px solid var(--v10-line);
+  border-radius: 14px;
+}
+
+/* 覆盖 v10 里隐藏 SVG 的规则 */
+body.deck .page-ports .map.map-v13 {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.map-v13 .map-land {
+  filter: drop-shadow(0 10px 14px rgba(27, 44, 49, .10));
+}
+.map-v13 .map-land path {
+  fill: #f7efdf;
+  stroke: #1f4e79;
+  stroke-width: 1.1;
+  stroke-opacity: .62;
+  stroke-linejoin: round;
+}
+
+.map-v13 .sea-label13 {
+  fill: rgba(47, 111, 116, .40);
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: .32em;
+}
+.map-v13 .land-label13 {
+  fill: rgba(27, 44, 49, .22);
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: .42em;
+}
+
+/* 港口点：在 760 宽的 viewBox 里稍微放大，远景也看得清 */
+.map-v13 .port-core { r: 5.4; stroke-width: 2.2; }
+.map-v13 .port-halo { r: 20; }
+.map-v13 .port-label { font-size: 17px; }
+.map-v13 .port-label-en { font-size: 8.5px; }

@@ -1,0 +1,116 @@
+/* ============================================================
+   海味山东 · v14.css
+   1) 首屏：主图背景满屏铺满，文字逐字浮现（复用 v11 的逐字动画）
+   2) 四时页：圆心插画重绘（大字 + 拼音/菜名 + 潮线）
+   ============================================================ */
+
+/* ---------- 首屏满屏 ---------- */
+body.deck #deck #home.hero-v14 {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(104px, 13vh, 150px) clamp(20px, 6vw, 90px) clamp(36px, 7vh, 70px);
+  overflow: hidden;
+  background: var(--v10-paper);
+  color: var(--v10-ink);
+}
+body.deck #deck #home.hero-v14::after { background: none; }
+
+.hero-v14-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("../assets/img/hero-bg.webp") center 42% / cover no-repeat;
+  transform: scale(1.03);
+  animation: v14Bg 2.6s var(--ease) both;
+}
+@keyframes v14Bg {
+  0% { opacity: 0; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1.03); }
+}
+
+.hero-v14-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(247, 242, 232, .97) 0%,
+      rgba(247, 242, 232, .92) 28%,
+      rgba(247, 242, 232, .60) 50%,
+      rgba(247, 242, 232, .14) 72%,
+      rgba(247, 242, 232, 0) 100%),
+    linear-gradient(180deg, rgba(247, 242, 232, .35) 0%, rgba(247, 242, 232, 0) 26%, rgba(247, 242, 232, .55) 100%);
+}
+
+.hero-v14-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+body.deck #deck #home.hero-v14 .hero-title .ht-cn {
+  font-size: clamp(66px, 10.8vw, 170px);
+}
+body.deck #deck #home.hero-v14 .hero-sub {
+  font-size: clamp(22px, 2.8vw, 38px);
+  margin-top: clamp(14px, 2vw, 22px);
+}
+body.deck #deck #home.hero-v14 .hero-poster-tag {
+  margin-top: 12px;
+}
+.hero-v14 .hero-eyebrow {
+  color: var(--v10-accent);
+  animation: v11Sub .9s .1s var(--ease) both;
+}
+.hero-v14 .hero-actions {
+  margin-top: clamp(24px, 3.4vw, 40px);
+  gap: clamp(14px, 2.4vw, 26px);
+  align-items: center;
+}
+.hero-v14 .poster-cta {
+  background: var(--v10-ink);
+  color: var(--v10-paper);
+}
+.hero-v14 .poster-hint { color: rgba(27, 44, 49, .55); }
+.hero-v14 .poster-stats { margin-top: clamp(20px, 3.4vh, 34px); }
+
+/* ---------- 四时页圆心：当季插画 ---------- */
+.td-illus { animation: v14Illus 6s ease-in-out infinite alternate; transform-origin: 200px 210px; }
+@keyframes v14Illus {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+.td-illus-sub {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .24em;
+  fill: rgba(27, 44, 49, .48);
+}
+
+/* ---------- 手机 ---------- */
+@media (max-width: 860px) {
+  body.deck #deck #home.hero-v14 {
+    padding: 96px 18px 30px;
+  }
+  .hero-v14-shade {
+    background: linear-gradient(180deg,
+      rgba(247, 242, 232, .95) 0%,
+      rgba(247, 242, 232, .82) 45%,
+      rgba(247, 242, 232, .55) 100%);
+  }
+  body.deck #deck #home.hero-v14 .hero-title .ht-cn {
+    font-size: clamp(56px, 15vw, 84px);
+  }
+  .td-char { font-size: 62px; }
+}
+
+/* ---------- 无障碍 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-v14-bg, .td-wave-lines { animation: none !important; }
+}
