@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    海味山东 · v14.css
    1) 首屏：主图背景满屏铺满，文字逐字浮现（复用 v11 的逐字动画）
    2) 四时页：圆心插画重绘（大字 + 拼音/菜名 + 潮线）
@@ -22,7 +22,9 @@ body.deck #deck #home.hero-v14::after { background: none; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("../assets/img/hero-bg.webp") center 42% / cover no-repeat;
+  background: url("../assets/img/hero-bg.jpg") center 42% / cover no-repeat;
+  background-image: -webkit-image-set(url("../assets/img/hero-bg.webp") type("image/webp"), url("../assets/img/hero-bg.jpg") type("image/jpeg"));
+  background-image: image-set(url("../assets/img/hero-bg.webp") type("image/webp"), url("../assets/img/hero-bg.jpg") type("image/jpeg"));
   transform: scale(1.03);
   animation: v14Bg 2.6s var(--ease) both;
 }
@@ -98,11 +100,18 @@ body.deck #deck #home.hero-v14 .hero-poster-tag {
   body.deck #deck #home.hero-v14 {
     padding: 96px 18px 30px;
   }
+  .hero-v14-bg { background-position: 62% 64%; }
   .hero-v14-shade {
-    background: linear-gradient(180deg,
-      rgba(247, 242, 232, .95) 0%,
-      rgba(247, 242, 232, .82) 45%,
-      rgba(247, 242, 232, .55) 100%);
+    background:
+      linear-gradient(180deg,
+        rgba(247, 242, 232, .90) 0%,
+        rgba(247, 242, 232, .62) 30%,
+        rgba(247, 242, 232, .10) 58%,
+        rgba(247, 242, 232, 0) 100%),
+      linear-gradient(90deg,
+        rgba(247, 242, 232, .50) 0%,
+        rgba(247, 242, 232, .10) 60%,
+        rgba(247, 242, 232, 0) 100%);
   }
   body.deck #deck #home.hero-v14 .hero-title .ht-cn {
     font-size: clamp(56px, 15vw, 84px);

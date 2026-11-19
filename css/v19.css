@@ -21,7 +21,7 @@
 
   /* ---------- 首屏 ---------- */
   body.deck #deck #home.hero-v14 { padding: 88px 18px 26px; }
-  .hero-v14-bg { background-position: 62% 58%; }
+  .hero-v14-bg { background-position: 62% 64%; }
 
   /* ---------- 宴席：菜图居中、文字不溢出卡片 ---------- */
   body.deck .page-banquet .dish-grid {
