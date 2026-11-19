@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    海味山东 · deck.js —— 上下滑动 + 整页吸附
    只保留滚动翻页：滚轮一次手势翻一页，触摸交给原生吸附
    ============================================================ */
@@ -226,13 +226,6 @@
       // 横向滚动（如年表）交还给浏览器
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
 
-      // 卡片/档案内部可滚动时，先让内部滚完，再翻页
-      var inner = e.target.closest ? e.target.closest(".port-panel, .lex-back") : null;
-      if (inner && inner.scrollHeight > inner.clientHeight + 2) {
-        var atTop = inner.scrollTop <= 1;
-        var atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 1;
-        if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) return;
-      }
 
       e.preventDefault();
       wheelAcc += e.deltaY;
