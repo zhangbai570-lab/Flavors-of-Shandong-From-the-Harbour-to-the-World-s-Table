@@ -1,16 +1,48 @@
-﻿/* 海味山东 · 首屏加载等待层
-   预加载首屏背景、词源纸纹、卡片框，加载完成后再淡出 */
+/* 海味山东 · 首屏加载等待层
+   先把整站图片（首屏背景、纸纹、菜品、工序、年表、装饰）全部加载完，
+   再淡出等待页，避免翻到后面才突然出现贴图 */
 (function () {
   var loader = document.getElementById("bootLoader");
   if (!loader) return;
 
+  var IMAGES = [
+    "assets/img/hero-bg.webp",
+    "assets/img/lex-bg.webp",
+    "assets/img/card-frame.webp",
+    "assets/img/craft-1.webp",
+    "assets/img/craft-2.webp",
+    "assets/img/craft-3.webp",
+    "assets/img/craft-4.webp",
+    "assets/img/craft-5.webp",
+    "assets/img/craft-6.webp",
+    "assets/img/decor-boat.webp",
+    "assets/img/decor-bowl.webp",
+    "assets/img/decor-compass.webp",
+    "assets/img/decor-net.webp",
+    "assets/img/decor-star.webp",
+    "assets/img/dish-clam.webp",
+    "assets/img/dish-dumpling.webp",
+    "assets/img/dish-haishen.webp",
+    "assets/img/dish-jelly.webp",
+    "assets/img/dish-noodle.webp",
+    "assets/img/dish-prawn.webp",
+    "assets/img/dish-soup.webp",
+    "assets/img/dish-urchin.webp",
+    "assets/img/time-ming.webp",
+    "assets/img/time-now.webp",
+    "assets/img/time-qing.webp",
+    "assets/img/time-tang.webp",
+    "assets/img/time-yuan.webp"
+  ];
+
   var started = Date.now();
   var hidden = false;
+  var heroOk = false;
 
   function hide() {
     if (hidden) return;
     hidden = true;
-    var wait = Math.max(0, 450 - (Date.now() - started));
+    var wait = Math.max(0, 500 - (Date.now() - started));
     window.setTimeout(function () {
       loader.classList.add("done");
       window.setTimeout(function () {
@@ -29,20 +61,20 @@
   }
 
   if (!window.Promise) {
-    window.setTimeout(hide, 1500);
+    window.setTimeout(hide, 2000);
     return;
   }
 
-  var hero = preload("assets/img/hero-bg.webp").then(function (ok) {
-    return ok ? true : preload("assets/img/hero-bg.jpg");
+  var first = preload(IMAGES[0]).then(function (ok) {
+    heroOk = ok;
+    if (!ok) return preload("assets/img/hero-bg.jpg");
+    return true;
   });
 
-  Promise.all([
-    hero,
-    preload("assets/img/lex-bg.webp"),
-    preload("assets/img/card-frame.webp"),
-  ]).then(function () { hide(); }).catch(function () { hide(); });
+  var rest = IMAGES.slice(1).map(function (src) { return preload(src); });
 
-  // 兜底：8 秒还没好就直接放行，避免一直卡在等待层
-  window.setTimeout(hide, 8000);
+  Promise.all([first].concat(rest)).then(function () { hide(); }).catch(function () { hide(); });
+
+  // 兜底：20 秒还没全部好就直接放行
+  window.setTimeout(hide, 20000);
 })();
