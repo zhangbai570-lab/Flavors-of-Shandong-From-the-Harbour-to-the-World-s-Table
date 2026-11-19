@@ -35,3 +35,51 @@ body.deck .lex-backfoot { display: none; }
 @media (max-width: 860px) {
   body.deck .page-lexicon .lex-face { padding: 10px; }
 }
+
+/* 统一字号测量用：临时显示所有背面但不绘制 */
+body.lex-measuring .lex-back {
+  display: flex !important;
+  visibility: hidden !important;
+}
+
+/* ---------- 背面视觉优化：统一字号后，内容垂直居中、分隔更清楚 ---------- */
+body.deck .lex-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.deck .lex-back-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .8em;
+  padding-bottom: .45em;
+  margin-bottom: .25em;
+  border-bottom: 1px solid rgba(27, 44, 49, .16);
+}
+body.deck .lex-back-top b {
+  font-size: 1.3em;
+  letter-spacing: .06em;
+}
+body.deck .lex-back-top span {
+  font-size: .58em;
+  letter-spacing: .3em;
+  opacity: .45;
+}
+body.deck .lex-forms {
+  margin: .1em 0 0;
+}
+body.deck .lex-forms li {
+  grid-template-columns: 5.4em 1fr;
+  padding: .16em 0;
+}
+body.deck .lex-forms span {
+  text-align: right;
+  padding-right: .7em;
+}
+body.deck .lex-story {
+  margin-top: .7em;
+  padding-top: .55em;
+  border-top: 1px dashed rgba(27, 44, 49, .16);
+  line-height: 1.6;
+}

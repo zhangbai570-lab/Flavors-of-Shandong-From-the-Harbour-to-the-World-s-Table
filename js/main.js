@@ -210,10 +210,8 @@
     if (!card) return;
     var on = card.classList.toggle("flipped");
     card.setAttribute("aria-pressed", on ? "true" : "false");
-    if (on) {
-      card.offsetHeight; // 先让 display 切换生效
-      var back = card.querySelector(".lex-back");
-      window.setTimeout(function () { fitLexBack(back); }, 60);
+    if (on && !card.querySelector(".lex-back").style.fontSize) {
+      fitLexBacks();
     }
   }
 
@@ -230,15 +228,19 @@
     }
     return best;
   }
-  function fitLexBack(back) {
-    var s = bestLexSize(back);
-    if (s) back.style.fontSize = s + "px";
-  }
-  /* 每张卡片各自撑满自己的卡片（长故事字号小一点、短故事字号大一点） */
+  /* 统一字号：所有卡片都用「内容最多那张」刚好放满的尺寸 */
   function fitLexBacks() {
-    document.querySelectorAll(".lex-back").forEach(function (b) {
-      if (b.clientHeight) fitLexBack(b);
+    var backs = Array.prototype.slice.call(document.querySelectorAll(".lex-back"));
+    if (!backs.length) return;
+    document.body.classList.add("lex-measuring");
+    var min = Infinity;
+    backs.forEach(function (b) {
+      var s = bestLexSize(b);
+      if (s) min = Math.min(min, s);
     });
+    document.body.classList.remove("lex-measuring");
+    if (!isFinite(min)) return;
+    backs.forEach(function (b) { b.style.fontSize = min + "px"; });
   }
 
   /* ---------------- 叁 · 宴席 ---------------- */
