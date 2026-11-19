@@ -191,7 +191,7 @@
               '<div class="lex-glyph">' + esc(w.glyph) + "</div>" +
               '<div class="lex-preview">' + preview + "</div>" +
               '<div><p class="lex-word">' + esc(L(w.word)) + "</p></div>" +
-              '<span class="lex-flip">' + esc(t("common_flip")) + " <i>→</i></span>" +
+              '<span class="lex-flip">' + esc(t("common_flip")) + " <i>↻</i></span>" +
             "</div>" +
             '<div class="lex-face lex-back">' +
               '<div class="lex-back-top"><b>' + esc(w.glyph) + " · " + esc(L(w.word)) + '</b><span>LEXICON</span></div>' +
@@ -205,32 +205,10 @@
     }).join("");
   }
 
-  /* 词源详情：点击卡片打开弹窗（不再使用 3D 翻面，避免手机端镜像/重叠） */
-  function openLex(card) {
-    if (!lexModal || !card) return;
-    var i = parseInt(card.getAttribute("data-i"), 10);
-    var w = SITE.lexicon[i];
-    if (!w) return;
-    lexLastFocus = document.activeElement;
-    lexKicker.textContent = "LEXICON · " + w.no;
-    lexTitle.textContent = w.glyph + " · " + L(w.word);
-    lexBody.innerHTML =
-      '<ul class="lex-forms">' + w.forms.map(function (f) {
-        return "<li><span>" + esc(t("lname_" + f.key)) + "</span><b>" + esc(f.word) + "</b></li>";
-      }).join("") + "</ul>" +
-      '<p class="lex-story">' + esc(L(w.story)) + "</p>";
-    lexModal.classList.add("open");
-    lexModal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    var btn = $(".modal-x", lexModal);
-    if (btn) btn.focus();
-  }
-  function closeLex() {
-    if (!lexModal) return;
-    lexModal.classList.remove("open");
-    lexModal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    if (lexLastFocus && lexLastFocus.focus) lexLastFocus.focus();
+  function toggleFlip(card) {
+    if (!card) return;
+    var on = card.classList.toggle("flipped");
+    card.setAttribute("aria-pressed", on ? "true" : "false");
   }
 
   /* ---------------- 叁 · 宴席 ---------------- */
@@ -445,7 +423,6 @@
 
   function setLang(next) {
     if (!I18N[next] || next === lang) return;
-    if (lexModal && lexModal.classList.contains("open")) closeLex();
     lang = next;
     saveLang(lang);
     renderAll();
@@ -455,11 +432,6 @@
   /* ---------------- 弹窗 ---------------- */
   var modal = $("#aiModal");
   var lastFocus = null;
-  var lexModal = $("#lexModal");
-  var lexKicker = $("#lexKicker");
-  var lexTitle = $("#lexTitle");
-  var lexBody = $("#lexBody");
-  var lexLastFocus = null;
 
   function openAI() {
     lastFocus = document.activeElement;
@@ -549,12 +521,12 @@
     /* 翻卡 */
     lexGrid.addEventListener("click", function (e) {
       var card = e.target.closest ? e.target.closest(".lex-card") : null;
-      if (card) openLex(card);
+      if (card) toggleFlip(card);
     });
     lexGrid.addEventListener("keydown", function (e) {
       if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
       var card = e.target.closest ? e.target.closest(".lex-card") : null;
-      if (card) { e.preventDefault(); openLex(card); }
+      if (card) { e.preventDefault(); toggleFlip(card); }
     });
 
     /* 宴席（触屏点击展开） */
@@ -621,13 +593,8 @@
     $$("[data-close-ai]").forEach(function (b) {
       b.addEventListener("click", closeAI);
     });
-    $$("[data-close-lex]").forEach(function (b) {
-      b.addEventListener("click", closeLex);
-    });
     document.addEventListener("keydown", function (e) {
-      if (e.key !== "Escape") return;
-      if (modal.classList.contains("open")) closeAI();
-      else if (lexModal && lexModal.classList.contains("open")) closeLex();
+      if (e.key === "Escape" && modal.classList.contains("open")) closeAI();
     });
 
     /* 回到顶部 */
