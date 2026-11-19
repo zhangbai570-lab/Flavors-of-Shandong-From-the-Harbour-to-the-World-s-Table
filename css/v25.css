@@ -83,3 +83,25 @@ body.deck .lex-story {
   border-top: 1px dashed rgba(27, 44, 49, .16);
   line-height: 1.6;
 }
+
+/* ---------- 统一对齐：标题、四种叫法、故事三段各从同一高度开始 ---------- */
+body.deck .lex-back {
+  justify-content: flex-start;
+}
+body.deck .lex-back-top {
+  flex: 0 0 auto;
+  min-height: 2.3em;
+}
+body.deck .lex-forms {
+  flex: 0 0 auto;
+  min-height: 8.6em; /* 预留 5 行，让下面故事从同一高度开始 */
+}
+body.deck .lex-story {
+  margin-top: .6em;
+}
+
+
+@media (max-width: 860px) {
+  body.deck .lex-back-top { min-height: 0; }
+  body.deck .lex-forms { min-height: 0; }
+}
