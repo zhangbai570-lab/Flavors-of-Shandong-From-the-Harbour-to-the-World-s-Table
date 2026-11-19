@@ -195,7 +195,7 @@
 
     /* 键盘 */
     document.addEventListener("keydown", function (e) {
-      if (modal && modal.classList.contains("open")) return;
+      if (document.querySelector(".modal.open")) return;
       var tag = (e.target.tagName || "").toLowerCase();
       if (tag === "input" || tag === "textarea") return;
       var inControl = e.target.closest && e.target.closest("button, a");
@@ -221,7 +221,7 @@
     /* 滚轮：一次滚动手势 = 翻一页（不会停在页面中间）
        v10：监听挂到 window（capture），不再要求先点击页面/焦点在 .deck 上 */
     window.addEventListener("wheel", function (e) {
-      if (modal && modal.classList.contains("open")) return;
+      if (document.querySelector(".modal.open")) return;
       if (e.ctrlKey) return;
       // 横向滚动（如年表）交还给浏览器
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;

@@ -155,3 +155,8 @@
 - 为首屏背景增加 JPEG 备用图 assets/img/hero-bg.jpg（image-set 优先 webp，老浏览器/不支持 webp 的微信内核自动回退 jpg）。
 - 团队名统一为「海味山东：从渔港到世界餐桌」：AI创作说明、README、页面团队区（四语）均已更新。
 - 改动：css/v14.css、css/v19.css、js/i18n.js、assets/img/hero-bg.jpg、README.md、AI创作说明.md。
+
+## v22 · 2026-11-19 19:55
+- 词源页交互改版：点击卡片不再做 3D 翻面，而是打开「词源详情」弹窗（四种叫法 + 词源故事），关闭后即可正常上下滑翻页。
+- 解决手机上「点击卡片后要先把卡片内部滚到底才能翻页」的问题；弹窗打开时滚轮/触摸不会误翻页。
+- 新增 css/v22.css 与 #lexModal；改动 index.html、js/main.js、js/i18n.js、js/deck.js；引导文案改为「点击卡片查看词源」。

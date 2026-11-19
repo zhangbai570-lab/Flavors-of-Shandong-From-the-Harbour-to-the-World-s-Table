@@ -1,0 +1,43 @@
+﻿/* ============================================================
+   海味山东 · v22.css
+   词源卡详情弹窗（替代 3D 翻面，避免手机端镜像/重叠，也不阻挡翻页）
+   ============================================================ */
+
+#lexModal .modal-card { max-width: 680px; }
+#lexModal .lex-forms {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+#lexModal .lex-forms li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(27, 44, 49, .12);
+}
+#lexModal .lex-forms span {
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: rgba(27, 44, 49, .45);
+}
+#lexModal .lex-forms b {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--v10-ink);
+}
+#lexModal .lex-story {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.95;
+  color: rgba(27, 44, 49, .72);
+  text-align: justify;
+}
+
+@media (max-width: 860px) {
+  #lexModal { padding: 14px; }
+  #lexModal .modal-card { padding: 24px 18px; max-height: 88svh; }
+  #lexModal .lex-forms li { grid-template-columns: 56px 1fr; padding: 5px 0; }
+  #lexModal .lex-story { font-size: 12px; line-height: 1.85; }
+}

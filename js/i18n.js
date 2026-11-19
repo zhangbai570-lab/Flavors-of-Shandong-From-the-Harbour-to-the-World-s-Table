@@ -53,7 +53,7 @@ window.I18N = {
     s2_kicker: "LEXICON · 02",
     s2_title: "六个海边的词",
     s2_lead: "同一个海，在四种语言里留下不同的名字。有的词漂过海，有的就在原地长出来。",
-    lex_hint: "点击卡片翻面",
+    lex_hint: "点击卡片查看词源",
 
     s3_no: "叁",
     s3_kicker: "TABLE · 04",
@@ -128,7 +128,7 @@ window.I18N = {
     lname_ms: "马来语",
     lname_rum: "拉姆森语",
 
-    common_flip: "点击翻面",
+    common_flip: "查看词源",
     common_back: "返回",
     common_close: "关闭",
     step: "工序"
@@ -181,7 +181,7 @@ window.I18N = {
     s2_kicker: "LEXICON · 02",
     s2_title: "Six Words from the Seaside",
     s2_lead: "One sea, four languages, different names. Some words crossed the sea; others grew where they were born.",
-    lex_hint: "Click a card to turn it over",
+    lex_hint: "Tap a card for its etymology",
 
     s3_no: "III",
     s3_kicker: "TABLE · 04",
@@ -256,7 +256,7 @@ window.I18N = {
     lname_ms: "Malay",
     lname_rum: "Rumsen",
 
-    common_flip: "Click to flip",
+    common_flip: "View etymology",
     common_back: "Back",
     common_close: "Close",
     step: "Step"
@@ -309,7 +309,7 @@ window.I18N = {
     s2_kicker: "LEXICON · 02",
     s2_title: "海辺の六つの言葉",
     s2_lead: "同じ海が、四つの言語で違う名前を残しました。海を渡った言葉もあれば、その土地で生まれた言葉もあります。",
-    lex_hint: "カードをクリックして裏返す",
+    lex_hint: "カードをクリックで語源を見る",
 
     s3_no: "参",
     s3_kicker: "TABLE · 04",
@@ -384,7 +384,7 @@ window.I18N = {
     lname_ms: "マレー語",
     lname_rum: "ルムセン語",
 
-    common_flip: "クリックで裏返す",
+    common_flip: "語源を見る",
     common_back: "戻る",
     common_close: "閉じる",
     step: "工程"
@@ -437,7 +437,7 @@ window.I18N = {
     s2_kicker: "LEXICON · 02",
     s2_title: "바닷가의 여섯 개의 말",
     s2_lead: "같은 바다가 네 언어에서 서로 다른 이름을 남겼습니다. 바다를 건넌 말도 있고, 그 자리에서 생겨난 말도 있습니다.",
-    lex_hint: "카드를 클릭해 뒤집기",
+    lex_hint: "카드를 눌러 어원 보기",
 
     s3_no: "三",
     s3_kicker: "TABLE · 04",
@@ -512,7 +512,7 @@ window.I18N = {
     lname_ms: "말레이어",
     lname_rum: "럼센어",
 
-    common_flip: "클릭해서 뒤집기",
+    common_flip: "어원 보기",
     common_back: "뒤로",
     common_close: "닫기",
     step: "단계"

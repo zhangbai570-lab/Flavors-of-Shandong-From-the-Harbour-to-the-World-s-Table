@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="css/v14.css">
 <link rel="stylesheet" href="css/v15.css">
 <link rel="stylesheet" href="css/v19.css">
+<link rel="stylesheet" href="css/v22.css">
 </head>
 <body class="deck">
 
@@ -380,6 +381,20 @@
     <div class="modal-body" id="aiBody"></div>
     <button class="btn btn-primary btn-block" type="button" data-close-ai>
       <span data-i18n="ai_close"></span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ 词源详情 ============ -->
+<div class="modal" id="lexModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-lex></div>
+  <div class="modal-card modal-lex" role="dialog" aria-modal="true" aria-labelledby="lexTitle">
+    <button class="modal-x" type="button" data-close-lex aria-label="关闭">×</button>
+    <p class="modal-kicker" id="lexKicker">LEXICON</p>
+    <h2 id="lexTitle"></h2>
+    <div class="modal-body" id="lexBody"></div>
+    <button class="btn btn-primary btn-block" type="button" data-close-lex>
+      <span data-i18n="common_close"></span>
     </button>
   </div>
 </div>
