@@ -1,4 +1,4 @@
-/* 海味山东 · 内容数据
+﻿/* 海味山东 · 内容数据
  * 所有可替换的文字都在这里；HTML/CSS/main.js 不需要动。
  * 每个字段以 {zh, en, ja, ko} 提供四语种；修改时请四种语言一起改。
  */
@@ -13,6 +13,18 @@ window.SITE = {
       name: { zh: "青岛", en: "Qingdao", ja: "青島", ko: "칭다오" },
       en: "QINGDAO",
       region: { zh: "胶州湾", en: "JIAOZHOU BAY", ja: "膠州湾", ko: "자오저우만" },
+  climate: {
+    zh: "温带季风气候，三面环海。夏天不闷热，冬天不算冷，春夏海上多雾。",
+    en: "Temperate monsoon, sea on three sides: mild summers, cool winters, and foggy springs.",
+    ja: "温帯モンスーン気候。三方を海に囲まれ、夏は蒸し暑くならず冬も穏やか。春から夏は海霧が多い。",
+    ko: "온대 몬순 기후. 삼면이 바다로 둘러싸여 여름은 덥지 않고 겨울은 온화하며, 봄에는 해무가 잦습니다."
+  },
+  customs: {
+    zh: "夏天散啤装进塑料袋，退潮时赶海挖蛤蜊，八月有啤酒节。",
+    en: "Draught beer in plastic bags in summer, clam-digging on the ebb tide, and a beer festival in August.",
+    ja: "夏はビニール袋の生ビール、干潮時の潮干狩り、8月のビール祭り。",
+    ko: "여름엔 비닐봉지 생맥주, 썰물 때 바지락 캐기, 8월 맥주 축제."
+  },
       dish: { zh: "辣炒蛤蜊", en: "Spicy Stir-fried Clams", ja: "アサリの辛炒め", ko: "바지락 볶음" },
       pinyin: "là chǎo gé lí",
       dialect: { zh: "青岛话叫「嘎啦」", en: "in the local dialect: gá la", ja: "青島方言では「嘎啦」", ko: "칭다오 방언으로 '嘎啦'" },
@@ -42,6 +54,18 @@ window.SITE = {
       name: { zh: "烟台", en: "Yantai", ja: "煙台", ko: "옌타이" },
       en: "YANTAI",
       region: { zh: "鲁菜 · 蓬莱", en: "LU CUISINE · PENGLAI", ja: "魯菜 · 蓬莱", ko: "루차이 · 펑라이" },
+  climate: {
+    zh: "温带季风，冬春多雪，是有名的「雪窝」；夏天凉爽，苹果和樱桃长得好。",
+    en: "Temperate monsoon: heavy winter snow earns it the name 'snow nest', while cool summers suit apples and cherries.",
+    ja: "温帯モンスーン。冬から春は雪が多く「雪の巣」と呼ばれ、夏は涼しくリンゴやサクランボが育ちます。",
+    ko: "온대 몬순. 겨울과 봄에 눈이 많아 '눈의 둥지'라 불리며, 여름은 서늘해 사과와 체리가 잘 자랍니다."
+  },
+  customs: {
+    zh: "开海后第一网先祭海；渔灯节放灯；鲁菜讲究「鲜咸」。",
+    en: "The first catch after the fishing ban is offered in a sea rite; lanterns at the fishing-lamp festival; Lu cuisine's fresh-and-salty style.",
+    ja: "禁漁明けの初網は海神に供え、漁灯祭りでは灯りを流します。魯菜は「鮮鹹」が身上。",
+    ko: "금어기 후 첫 조업은 해신제로 바치고, 어등 축제에는 등불을 띄웁니다. 루차이는 '신선하고 짭짤한' 맛이 특징입니다."
+  },
       dish: { zh: "葱烧海参", en: "Braised Sea Cucumber with Scallions", ja: "ナマコの葱炒め", ko: "해삼 파볶음" },
       pinyin: "cōng shāo hǎi shēn",
       dialect: { zh: "鲁菜头牌", en: "a signature of Lu cuisine", ja: "魯菜の看板", ko: "루차이의 대표 요리" },
@@ -71,6 +95,18 @@ window.SITE = {
       name: { zh: "威海", en: "Weihai", ja: "威海", ko: "웨이하이" },
       en: "WEIHAI",
       region: { zh: "胶东 · 家常", en: "JIAODONG · HOME TABLE", ja: "膠東 · 家庭", ko: "자오둥 · 집밥" },
+  climate: {
+    zh: "海洋性季风，冬暖夏凉，海风大；沿海常见海草屋顶的老屋。",
+    en: "Maritime monsoon: mild winters, cool summers, strong sea winds; old cottages with seaweed-thatch roofs line the coast.",
+    ja: "海洋性モンスーン。冬は暖かく夏は涼しく風が強い。海岸には海藻屋根の古い家が残ります。",
+    ko: "해양성 몬순. 겨울은 따뜻하고 여름은 서늘하며 바람이 강합니다. 해안에는 해초 지붕 집이 남아 있습니다."
+  },
+  customs: {
+    zh: "渔村祭海；春天把最新鲜的鲅鱼饺子送去丈人家；住海草房。",
+    en: "Sea rites in fishing villages; in spring, the freshest mackerel dumplings go to one's father-in-law; seaweed-thatch houses.",
+    ja: "漁村の海神祭。春には一番新鮮なサワラ水餃子を義父の家へ。海藻屋根の家。",
+    ko: "어촌 해신제. 봄에는 가장 신선한 삼치 만두를 장인 댁에 드립니다. 해초 지붕 집."
+  },
       dish: { zh: "鲅鱼水饺", en: "Spanish Mackerel Dumplings", ja: "サワラ水餃子", ko: "삼치 물만두" },
       pinyin: "bà yú shuǐ jiǎo",
       dialect: { zh: "「鲅鱼跳，丈人笑」", en: "'when the mackerel jumps, the father-in-law smiles'", ja: "「サワラが跳ねれば義父が笑う」", ko: "'삼치가 뛰면 장인이 웃는다'" },
@@ -100,6 +136,18 @@ window.SITE = {
       name: { zh: "日照", en: "Rizhao", ja: "日照", ko: "르자오" },
       en: "RIZHAO",
       region: { zh: "日照 · 渔家", en: "RIZHAO · FISHERMAN", ja: "日照 · 漁家", ko: "르자오 · 어부" },
+  climate: {
+    zh: "暖温带季风，四季分明，日照充足——城市名字就是这么来的。",
+    en: "Warm-temperate monsoon with four clear seasons and plenty of sunshine — the very source of its name.",
+    ja: "暖温帯モンスーン。四季がはっきりし日照が多いことが、地名の由来です。",
+    ko: "난온대 몬순. 사계절이 뚜렷하고 일조량이 많아 지명의 유래가 되었습니다."
+  },
+  customs: {
+    zh: "赶海节挖蛤蜊；渔民号子；黑陶与海盐是老手艺。",
+    en: "Clam-digging at the tidal-flat festival, fishermen's work songs, and the old crafts of black pottery and sea salt.",
+    ja: "潮干狩り祭り、漁師の労働歌、黒陶と海塩の古い技。",
+    ko: "갯벌 축제에서 바지락 캐기, 어부의 노동요, 흑도자기와 천일염의 오랜 기술."
+  },
       dish: { zh: "海鲜疙瘩汤", en: "Seafood Dough-Drop Soup", ja: "海鮮すいとん", ko: "해산물 수제비" },
       pinyin: "hǎi xiān gē da tāng",
       dialect: { zh: "疙瘩：最难译的一个词", en: "'gēda': the hardest word to translate", ja: "「疙瘩」：最も訳しにくい言葉", ko: "'거다(疙瘩)': 가장 번역하기 어려운 말" },
@@ -653,7 +701,7 @@ window.SITE = {
     "FishBase —— 蓝点马鲛 Scomberomorus niphonius 的学名与分布",
     "中国非物质文化遗产网 —— 胶东海鲜烹饪技艺、蓬莱小面制作技艺",
     "山东省文化和旅游厅 —— 胶东海洋饮食文化资料",
-    "自然资源部标准地图服务 —— 地图规范参考（本页为手绘示意图）"
+    "自然资源部标准地图服务 —— 地图规范参考（本页为示意地图）"
   ],
 
   /* ---------- AI 创作说明（提交用中文，约 430 字） ---------- */

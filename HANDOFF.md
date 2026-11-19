@@ -374,3 +374,13 @@ Set-Content -Path (Join-Path $dir "_probe.html") -Value $html -Encoding UTF8
 - 四时页：js/art.js 的 show(i) 改为输出 <text class="td-char">当季字</text> + 菜名 + 潮线；季节强调色见 ACCENT；样式在 css/v14.css。
 - 首屏视差在 js/v12.js，选择器为 .hero-v14-inner。
 - 备份：v13 在 ackup/v13-realmap/。
+
+---
+
+## 16. v15 · 港口档案卡改版与文案修正（2026-11-19）
+
+- 港口页右侧档案卡：js/main.js 的 enderPanel 改为 气候 / 风土 / 本地话 / 港口小史 四段；数据在 js/data.js 的 cities[].climate、cities[].customs（各四语）。
+- s1_lead、panel_climate/panel_customs/panel_dialect/panel_story/panel_link 等 i18n 已四语补齐。
+- 团队归属改为山东大学低空学院和法学院（bout_concept / bout_team 四语）。
+- 尾页海报墙（#posterStrip）已删除；对应 js/v10.js 的 initPosterWall 在元素不存在时自动跳过。
+- 新增 css/v15.css；参考说明与 OG 封面里的学院名同步更新。

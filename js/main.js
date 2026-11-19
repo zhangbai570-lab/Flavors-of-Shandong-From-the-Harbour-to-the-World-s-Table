@@ -149,16 +149,20 @@
         '<span class="pp-region">' + esc(L(c.region)) + "</span>" +
       "</div>" +
       '<h3 class="pp-name">' + esc(L(c.name)) + "<em>" + esc(subName) + "</em></h3>" +
-      '<div class="pp-dish">' +
-        '<span class="pp-label">' + esc(t("panel_dish")) + "</span>" +
-        '<p class="pp-dish-name">' + esc(L(c.dish)) + "</p>" +
-        '<p class="pp-dish-pinyin">' + esc(c.pinyin) + "</p>" +
-        '<p class="pp-dialect">' + esc(L(c.dialect)) + "</p>" +
+      '<div class="pp-block">' +
+        '<span class="pp-label">' + esc(t("panel_climate")) + "</span>" +
+        "<p>" + esc(L(c.climate)) + "</p>" +
       "</div>" +
-      '<ul class="pp-forms">' + forms + "</ul>" +
-      '<p class="pp-story">' + esc(L(c.story)) + "</p>" +
-      '<div class="pp-note"><span>' + esc(t("panel_note")) + "</span><p>" + esc(L(c.note)) + "</p></div>" +
-      '<a class="pp-link" href="#craft">' + esc(t("panel_link")) + "</a>";
+      '<div class="pp-block">' +
+        '<span class="pp-label">' + esc(t("panel_customs")) + "</span>" +
+        "<p>" + esc(L(c.customs)) + "</p>" +
+      "</div>" +
+      '<p class="pp-dialect-line"><b>' + esc(t("panel_dialect")) + "</b>" + esc(L(c.dialect)) + "</p>" +
+      '<div class="pp-block pp-story-block">' +
+        '<span class="pp-label">' + esc(t("panel_story")) + "</span>" +
+        "<p>" + esc(L(c.story)) + "</p>" +
+      "</div>" +
+      '<a class="pp-link" href="#banquet">' + esc(t("panel_link")) + "</a>";
 
     if (animate) {
       panel.classList.remove("anim");

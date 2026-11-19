@@ -1,0 +1,47 @@
+/* ============================================================
+   海味山东 · v15.css
+   港口档案卡：从「招牌菜」改为「气候 / 风土 / 港口小史」
+   ============================================================ */
+
+.pp-block { margin-top: 14px; }
+
+.pp-block .pp-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--v10-accent);
+  margin-bottom: 6px;
+}
+
+.pp-block p {
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: rgba(27, 44, 49, .74);
+}
+
+.pp-dialect-line {
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(27, 44, 49, .58);
+}
+
+.pp-dialect-line b {
+  color: var(--v10-teal);
+  font-weight: 400;
+  letter-spacing: .08em;
+  margin-right: 8px;
+}
+
+.pp-story-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--v10-line);
+}
+
+.pp-story-block p { font-size: 12.5px; }
+
+/* 档案卡内容变多，允许卡内滚动（滚轮先滚完卡内再翻页） */
+.port-panel {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
